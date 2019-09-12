@@ -1,0 +1,18 @@
+{
+  "name": "juno-toolbar-plus",
+  "main": "./lib/juno-toolbar-plus",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "juno-toolbar-plus:toggle"
+  },
+  "repository": "https://github.com/atom/juno-toolbar-plus",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
