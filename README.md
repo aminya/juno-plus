@@ -2,6 +2,6 @@
 
 Enhances Julia Client Toolbar.
 
-After installation you might need to restart Atom 2 times!
+After installation if the Julia Client icons are still present, you might need to restart Atom 2 times!
 
-![A screenshot of juno-toolbar-plus package](https://github.com/aminya/juno-toolbar-plus/blob/master/screenshot.jpg)
+![screenshot](https://user-images.githubusercontent.com/16418197/64777690-64e66000-d520-11e9-81d9-9cf4b73738ff.jpg)

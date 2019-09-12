@@ -36,7 +36,7 @@ module.exports =
 
   consumeToolBar: (bar) ->
 
-    if atom.config.get('juno-toolbar-plus.enableToolbarPlus') then atom.config.set('julia-client.uiOptions.enableToolBar', false)
+    if atom.config.get('juno-toolbar-plus.enableToolbarPlus') then atom.config.set('julia-client.uiOptions.enableToolBar', false) else atom.config.set('julia-client.uiOptions.enableToolBar', true)
     if atom.config.get('juno-toolbar-plus.topPosition') then atom.config.set('tool-bar:position', 'Top')
 
     # getting toolbar object
