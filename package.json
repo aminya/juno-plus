@@ -1,18 +1,24 @@
 {
   "name": "juno-toolbar-plus",
   "main": "./lib/juno-toolbar-plus",
-  "version": "0.0.0",
-  "description": "A short description of your package",
-  "keywords": [
+  "version": "0.1.0",
+  "description": "Enhances Julia Client Toolbar",
+  "keywords": [ "julia", "juno", "toolbar", "tool-bar", "button"
   ],
-  "activationCommands": {
-    "atom-workspace": "juno-toolbar-plus:toggle"
-  },
-  "repository": "https://github.com/atom/juno-toolbar-plus",
+  "repository": "https://github.com/aminya/juno-toolbar-plus",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
+  "packageDependencies": [
+    "tool-bar",
+    "julia-client"
+  ],
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
   }
 }
