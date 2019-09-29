@@ -1,3 +1,10 @@
+# Restart Julia
+atom.commands.add 'atom-workspace', 'juno-toolbar-plus:juliaRestart': (event) ->
+  view = atom.views.getView(atom.workspace.getActiveTextEditor())
+  atom.commands.dispatch(view, 'julia-client:kill-julia')
+  .then () -> atom.commands.dispatch(view, 'julia-client:start-julia')
+
+
 module.exports =
 
   config:
@@ -84,15 +91,16 @@ module.exports =
     @bar.addSpacer()
 
     @bar.addButton
-      icon: 'globe'
-      tooltip: 'Start Local Julia Process'
-      callback: 'julia-client:start-julia'
-
-    @bar.addButton
       iconset: 'ion'
       icon: 'planet'
       tooltip: 'Start Remote Julia Process'
       callback: 'julia-client:start-remote-julia-process'
+
+    @bar.addButton
+      iconset: 'mdi'
+      icon: 'alpha-j'
+      tooltip: 'Start Local Julia Process'
+      callback: 'julia-client:start-julia'
 
     @bar.addButton
       icon: 'pause'
@@ -109,7 +117,8 @@ module.exports =
     @bar.addButton
       icon: 'sync'
       tooltip: 'Restart Julia'
-      callback: 'julia-client:restart-julia'
+      callback:'juno-toolbar-plus:juliaRestart'
+
 
     @bar.addButton
       icon: 'eraser'
