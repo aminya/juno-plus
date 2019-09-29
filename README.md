@@ -1,7 +1,8 @@
 # Juno-Toolbar-Plus Atom package
 This is a simple Atom's package that enhances Julia Client Toolbar by adding some useful buttons.
 
-![](https://user-images.githubusercontent.com/16418197/64777690-64e66000-d520-11e9-81d9-9cf4b73738ff.jpg)
+![image](https://user-images.githubusercontent.com/16418197/65828089-a3885400-e25c-11e9-86ef-7a49f02acbfc.png)
+
 ### Installation
 https://atom.io/packages/juno-toolbar-plus
 
