@@ -31,12 +31,12 @@ module.exports =
     #   enum: ['Top', 'Right', 'Bottom', 'Left'],
     #   order: 3
 
-  # Restart Julia
-  activate: ->
-    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:juliaRestart': (event) ->
-      view = atom.views.getView(atom.workspace.getActiveTextEditor())
-      atom.commands.dispatch(view, 'julia-client:kill-julia')
-      .then () -> atom.commands.dispatch(view, 'julia-client:start-julia')
+  activate:
+   # Restart Julia
+    atom.commands.add 'atom-workspace', 'julia-client:restart-julia': (event) ->
+      element = atom.workspace.getElement();
+      atom.commands.dispatch(element, 'julia-client:kill-julia')
+      .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
 
   deactivate: ->
     @bar?.removeItems()
@@ -117,7 +117,7 @@ module.exports =
     @bar.addButton
       icon: 'sync'
       tooltip: 'Restart Julia'
-      callback:'juno-toolbar-plus:juliaRestart'
+      callback:'julia-client:restart-julia'
 
 
     @bar.addButton
