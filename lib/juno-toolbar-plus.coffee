@@ -1,10 +1,3 @@
-# Restart Julia
-atom.commands.add 'atom-workspace', 'juno-toolbar-plus:juliaRestart': (event) ->
-  view = atom.views.getView(atom.workspace.getActiveTextEditor())
-  atom.commands.dispatch(view, 'julia-client:kill-julia')
-  .then () -> atom.commands.dispatch(view, 'julia-client:start-julia')
-
-
 module.exports =
 
   config:
@@ -37,6 +30,13 @@ module.exports =
     #   default: 'Top',
     #   enum: ['Top', 'Right', 'Bottom', 'Left'],
     #   order: 3
+
+  # Restart Julia
+  activate: ->
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:juliaRestart': (event) ->
+      view = atom.views.getView(atom.workspace.getActiveTextEditor())
+      atom.commands.dispatch(view, 'julia-client:kill-julia')
+      .then () -> atom.commands.dispatch(view, 'julia-client:start-julia')
 
   deactivate: ->
     @bar?.removeItems()
