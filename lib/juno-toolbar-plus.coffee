@@ -92,7 +92,7 @@ module.exports =
 
     @bar.addButton
       iconset: 'ion'
-      icon: 'planet'
+      icon: 'md-planet'
       tooltip: 'Start Remote Julia Process'
       callback: 'julia-client:start-remote-julia-process'
 
@@ -104,13 +104,13 @@ module.exports =
 
     @bar.addButton
       icon: 'pause'
-      iconset: 'ion'
+      iconset: 'fa'
       tooltip: 'Interrupt Julia'
       callback: 'julia-client:interrupt-julia'
 
     @bar.addButton
       icon: 'stop'
-      iconset: 'ion'
+      iconset: 'fa'
       tooltip: 'Stop Julia'
       callback: 'julia-client:kill-julia'
 
@@ -136,7 +136,7 @@ module.exports =
       callback: 'julia-client:run-and-move'
 
     @bar.addButton
-      icon: 'play'
+      icon: 'md-play'
       iconset: 'ion'
       tooltip: 'Run All'
       callback: 'julia-client:run-all'
@@ -226,8 +226,8 @@ module.exports =
 
     if atom.packages.loadedPackages['language-weave']
       @bar.addButton
-        icon: 'social-html5',
-        iconset: 'ion',
+        icon: 'language-html5',
+        iconset: 'mdi',
         callback: 'weave:weave-to-html',
         tooltip: 'Weave HTML'
 
@@ -259,7 +259,7 @@ module.exports =
       callback: 'window:toggle-full-screen'
 
     @bar.addButton
-      icon: 'navicon-round'
+      icon: 'grip-lines'
       callback: 'command-palette:toggle'
       tooltip: 'Toggle Command Palette'
-      iconset: 'ion'
+      iconset: 'fa'
