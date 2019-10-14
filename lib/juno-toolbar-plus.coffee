@@ -124,7 +124,7 @@ module.exports =
       icon: 'eraser'
       iconset: 'fa'
       tooltip: 'Clear Julia Console'
-      callback: 'julia-client:clear-console'
+      callback: 'julia-client:clear-REPL'
 
     # Evaluation
 
@@ -191,7 +191,7 @@ module.exports =
       @bar.addButton
         icon: 'terminal'
         tooltip: 'Show Console'
-        callback: 'julia-client:open-console'
+        callback: 'julia-client:open-REPL'
 
       @bar.addButton
         icon: 'book'
