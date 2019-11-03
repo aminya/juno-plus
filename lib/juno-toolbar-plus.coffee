@@ -190,7 +190,7 @@ module.exports =
 
       @bar.addButton
         icon: 'terminal'
-        tooltip: 'Show Console'
+        tooltip: 'Show REPL'
         callback: 'julia-client:open-REPL'
 
       @bar.addButton
@@ -199,13 +199,18 @@ module.exports =
         callback: 'julia-client:open-workspace'
 
       @bar.addButton
+        icon: 'list-unordered'
+        tooltip: 'Show Outline'
+        callback: 'julia-client:open-outline-pane'
+
+      @bar.addButton
         icon: 'info'
         tooltip: 'Show Documentation Browser'
         callback: 'julia-client:open-documentation-browser'
 
       @bar.addButton
         icon: 'graph'
-        tooltip: 'Show Plots'
+        tooltip: 'Show Plot Pane'
         callback: 'julia-client:open-plot-pane'
 
       @bar.addButton
