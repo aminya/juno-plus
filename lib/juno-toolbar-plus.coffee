@@ -13,11 +13,11 @@ module.exports =
       title: 'Layout Adjustment Buttons'
       description: 'Adds buttons to adjust the layout (changing requires restart).'
 
-    extraButtons:
-      type: 'boolean'
-      default: true
-      title: 'Extra Buttons'
-      description: 'Adds some extra toolbar buttons (changing requires restart).'
+    # extraButtons:
+    #   type: 'boolean'
+    #   default: true
+    #   title: 'Extra Buttons'
+    #   description: 'Adds some extra toolbar buttons (changing requires restart).'
 
     topPosition:
       type: 'boolean'
@@ -158,6 +158,7 @@ module.exports =
       tooltip: 'View Bookmarks'
       callback: 'bookmarks:view-all'
 
+    # if extraButtons
     # Fold
     @bar.addButton
       icon: 'chevron-right'
