@@ -145,6 +145,12 @@ module.exports =
 
     @bar.addSpacer()
 
+    # Documentation
+    @bar.addButton
+      icon: 'question'
+      tooltip: 'Show Documentation [Selection]'
+      callback: 'julia-client:show-documentation'
+
     # Bookmarks
     @bar.addButton
       icon: 'md-bookmark'
@@ -158,7 +164,27 @@ module.exports =
       tooltip: 'View Bookmarks'
       callback: 'bookmarks:view-all'
 
+    # Code Formatters
+    @bar.addButton
+      icon: 'format-float-none'
+      iconset: 'mdi'
+      tooltip: 'Format Code'
+      callback: 'julia-client:format-code'
+
     # if extraButtons
+    if atom.packages.loadedPackages['atom-beautify']
+      @bar.addButton
+        'icon': 'star'
+        'callback': 'atom-beautify:beautify-editor'
+        'tooltip': 'Beautify'
+        'iconset': 'fa'
+
+    @bar.addButton
+      icon: 'indent'
+      callback: 'editor:auto-indent'
+      tooltip: 'Auto indent (selection)'
+      iconset: 'fa'
+
     # Fold
     @bar.addButton
       icon: 'chevron-right'
@@ -171,26 +197,6 @@ module.exports =
       callback: 'editor:unfold-all'
       tooltip: 'Unfold all'
       iconset: 'fa'
-
-    @bar.addButton
-      icon: 'question'
-      tooltip: 'Show Documentation [Selection]'
-      callback: 'julia-client:show-documentation'
-
-    if extraButtons
-      @bar.addButton
-        icon: 'indent'
-        callback: 'editor:auto-indent'
-        tooltip: 'Auto indent (selection)'
-        iconset: 'fa'
-
-    if extraButtons
-      if atom.packages.loadedPackages['atom-beautify']
-        @bar.addButton
-          'icon': 'star'
-          'callback': 'atom-beautify:beautify-editor'
-          'tooltip': 'Beautify'
-          'iconset': 'fa'
 
     # Layout Adjustment
 
@@ -277,3 +283,9 @@ module.exports =
       callback: 'command-palette:toggle'
       tooltip: 'Toggle Command Palette'
       iconset: 'fa'
+
+    # @bar.addButton
+    #   icon: 'x'
+    #   callback: 'tool-bar:toggle'
+    #   tooltip: 'Close Tool-Bar'
+    #   iconset: ''
