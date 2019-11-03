@@ -103,14 +103,14 @@ module.exports =
       callback: 'julia-client:start-julia'
 
     @bar.addButton
-      icon: 'pause'
-      iconset: 'fa'
+      icon: 'md-pause'
+      iconset: 'ion'
       tooltip: 'Interrupt Julia'
       callback: 'julia-client:interrupt-julia'
 
     @bar.addButton
-      icon: 'stop'
-      iconset: 'fa'
+      icon: 'md-square'
+      iconset: 'ion'
       tooltip: 'Stop Julia'
       callback: 'julia-client:kill-julia'
 
