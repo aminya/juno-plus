@@ -145,12 +145,20 @@ module.exports =
 
     @bar.addSpacer()
 
+    # Bookmarks
     @bar.addButton
-      icon: 'format-float-none'
-      iconset: 'mdi'
-      tooltip: 'Format Code'
-      callback: 'julia-client:format-code'
+      icon: 'md-bookmark'
+      iconset: 'ion'
+      tooltip: 'Add Bookmar Here'
+      callback: 'bookmarks:toggle-bookmark'
 
+    @bar.addButton
+      icon: 'md-bookmarks'
+      iconset: 'ion'
+      tooltip: 'View Bookmarks'
+      callback: 'bookmarks:view-all'
+
+    # Fold
     @bar.addButton
       icon: 'chevron-right'
       callback: 'editor:fold-all'
