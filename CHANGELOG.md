@@ -1,4 +1,2 @@
-## 0.4.0
-* Added Bookmakrs
-* Rearranging
-* Using ion instead of fa
+## 0.5.0
+* Adding Revise button
