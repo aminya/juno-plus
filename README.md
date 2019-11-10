@@ -1,5 +1,5 @@
 # Juno-Toolbar-Plus Atom package
-This is a simple Atom's package that enhances Julia Client Toolbar by adding some useful buttons.
+This is a simple Atom's package that enhances Julia Client Toolbar by adding some useful buttons. It also, provides some code snippets for Julia and Weave,
 
 ![image](https://user-images.githubusercontent.com/16418197/68539924-ece5bc00-034f-11ea-9fa4-da30d12135e3.png)
 
@@ -41,6 +41,7 @@ Julia:
 * Docstring with Examples: `doce`
 * Julia Example block: `example`
 * Union{Nothing,type}: `UN`
+* Separator: `sep`
 
 Weave:
 * Hidden Output for Julia code chunk: `outJuliaFalse`
