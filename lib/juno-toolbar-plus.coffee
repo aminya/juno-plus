@@ -41,6 +41,14 @@ module.exports =
       evalsimple(command)
       atom.notifications.addSuccess("Revise Started")
 
+    # Clear Console
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:ClearConsole': (event) ->
+      juliaClient.boot()
+      evalsimple = juliaClient.import(rpc: [ 'evalsimple' ]).evalsimple
+      command = """println("\\33[2J");"""
+      command += "Juno.clearconsole();" # for multi-line
+      evalsimple(command)
+
   deactivate: ->
     @bar?.removeItems()
 
@@ -114,7 +122,7 @@ module.exports =
       iconset: 'mdi'
       tooltip: 'Start Local Julia Process'
       callback: 'julia-client:start-julia'
-      
+
     @bar.addButton
       icon: 'md-infinite'
       iconset: 'ion'
