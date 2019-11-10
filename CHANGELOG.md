@@ -1,3 +1,3 @@
-## 0.5.0
-* Adding Revise button
-* Better Clear Console
+## 0.6.0
+* Adding Code Snippets for Julia
+* Adding Code Snippets for Weave 
