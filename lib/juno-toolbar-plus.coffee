@@ -27,13 +27,13 @@ module.exports =
 
   activate: ->
     # Restart Julia
-    atom.commands.add 'atom-workspace', 'julia-client:restart-julia': (event) ->
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:restart-julia': (event) ->
       element = atom.workspace.getElement()
       atom.commands.dispatch(element, 'julia-client:kill-julia')
       .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
 
     # Revise
-    atom.commands.add 'atom-workspace', 'julia-client:Revise': (event) ->
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:Revise': (event) ->
       juliaClient.boot()
       evalsimple = juliaClient.import(rpc: [ 'evalsimple' ]).evalsimple
       command = 'using Revise;'
@@ -119,7 +119,7 @@ module.exports =
       icon: 'md-infinite'
       iconset: 'ion'
       tooltip: 'Revise Julia'
-      callback: 'julia-client:Revise'
+      callback: 'juno-toolbar-plus:Revise'
 
     @bar.addButton
       icon: 'md-pause'
@@ -136,7 +136,7 @@ module.exports =
     @bar.addButton
       icon: 'sync'
       tooltip: 'Restart Julia'
-      callback:'julia-client:restart-julia'
+      callback:'juno-toolbar-plus:restart-julia'
 
     @bar.addButton
       icon: 'eraser'
