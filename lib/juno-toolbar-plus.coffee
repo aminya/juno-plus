@@ -37,7 +37,6 @@ module.exports =
       juliaClient.boot()
       evalsimple = juliaClient.import(rpc: [ 'evalsimple' ]).evalsimple
       command = 'using Revise;'
-      # command += 'julia line;' # for multi-line
       evalsimple(command)
       atom.notifications.addSuccess("Revise Started")
 
@@ -46,7 +45,7 @@ module.exports =
       juliaClient.boot()
       evalsimple = juliaClient.import(rpc: [ 'evalsimple' ]).evalsimple
       command = """println("\\33[2J");"""
-      command += "Juno.clearconsole();" # for multi-line
+      command += "Juno.clearconsole();"
       evalsimple(command)
 
   deactivate: ->
