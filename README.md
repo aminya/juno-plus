@@ -1,7 +1,7 @@
 # Juno-Toolbar-Plus Atom package
 This is a simple Atom's package that enhances Julia Client Toolbar by adding some useful buttons.
 
-![image](https://user-images.githubusercontent.com/16418197/68081362-d46b2400-fdda-11e9-98ae-2ab2993dab22.jpg)
+![image](https://user-images.githubusercontent.com/16418197/68539924-ece5bc00-034f-11ea-9fa4-da30d12135e3.png)
 
 ### Installation
 https://atom.io/packages/juno-toolbar-plus
@@ -14,6 +14,7 @@ https://atom.io/packages/juno-toolbar-plus
 * Restart Julia (which removes workspace)
 * Erase console
 * Show documentation of selection
+* using Revise
 
 ### Code Tools:
 * Bookmarks
