@@ -14,26 +14,13 @@ module.exports =
       title: 'Layout Adjustment Buttons'
       description: 'Adds buttons to adjust the layout (changing requires restart).'
 
-    # extraButtons:
-    #   type: 'boolean'
-    #   default: true
-    #   title: 'Extra Buttons'
-    #   description: 'Adds some extra toolbar buttons (changing requires restart).'
-
     topPosition:
       type: 'boolean'
       default: true
       title: 'Toolbar Position'
       description: 'Puts toolbar at top (changing requires restart).'
 
-    # position:
-    #   type: 'string',
-    #   default: 'Top',
-    #   enum: ['Top', 'Right', 'Bottom', 'Left'],
-    #   order: 3
 
-  activate:
-   # Restart Julia
   consumeJuliaClient: (client) ->
     # getting client object
     juliaClient = client
@@ -59,14 +46,24 @@ module.exports =
 
   consumeToolBar: (bar) ->
 
-    if atom.config.get('juno-toolbar-plus.enableToolbarPlus') then atom.config.set('julia-client.uiOptions.enableToolBar', false) else atom.config.set('julia-client.uiOptions.enableToolBar', true)
-    if atom.config.get('juno-toolbar-plus.topPosition') then atom.config.set('tool-bar:position', 'Top')
+    # Enabling Toolbar
+    if atom.config.get('juno-toolbar-plus.enableToolbarPlus')
+      atom.config.set('julia-client.uiOptions.enableToolBar', false)
+    else
+      atom.config.set('julia-client.uiOptions.enableToolBar', true)
+
+    # Toolbar Position
+    if atom.config.get('juno-toolbar-plus.topPosition')
+      atom.config.set('tool-bar:position', 'Top')
 
     # getting toolbar object
     @bar = bar 'juno-toolbar-plus'
 
-    if atom.config.get('juno-toolbar-plus.layoutAdjustmentButtons') then layoutAdjustmentButtons = true else layoutAdjustmentButtons = false
-    if atom.config.get('juno-toolbar-plus.extraButtons') then extraButtons = true else extraButtons = false
+    # layout Adjustment Buttons
+    if atom.config.get('juno-toolbar-plus.layoutAdjustmentButtons')
+      layoutAdjustmentButtons = true
+    else
+      layoutAdjustmentButtons = false
 
     # Buttons:
 
@@ -107,14 +104,14 @@ module.exports =
     @bar.addSpacer()
 
     @bar.addButton
-      iconset: 'ion'
       icon: 'md-planet'
+      iconset: 'ion'
       tooltip: 'Start Remote Julia Process'
       callback: 'julia-client:start-remote-julia-process'
 
     @bar.addButton
-      iconset: 'mdi'
       icon: 'alpha-j'
+      iconset: 'mdi'
       tooltip: 'Start Local Julia Process'
       callback: 'julia-client:start-julia'
       
@@ -140,7 +137,6 @@ module.exports =
       icon: 'sync'
       tooltip: 'Restart Julia'
       callback:'julia-client:restart-julia'
-
 
     @bar.addButton
       icon: 'eraser'
@@ -193,7 +189,6 @@ module.exports =
       tooltip: 'Format Code'
       callback: 'julia-client:format-code'
 
-    # if extraButtons
     if atom.packages.loadedPackages['atom-beautify']
       @bar.addButton
         'icon': 'star'
