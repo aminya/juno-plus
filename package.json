@@ -1,7 +1,7 @@
 {
   "name": "juno-toolbar-plus",
   "main": "./lib/juno-toolbar-plus",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Enhances Julia Client Toolbar",
   "keywords": [
     "julia",
@@ -20,18 +20,15 @@
     "julia-client"
   ],
   "consumedServices": {
-
     "tool-bar": {
       "versions": {
         "^0 || ^1": "consumeToolBar"
       }
     },
-
     "julia-client": {
       "versions": {
         "0.1.0": "consumeJuliaClient"
       }
     }
-
   }
 }
