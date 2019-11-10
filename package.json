@@ -20,10 +20,18 @@
     "julia-client"
   ],
   "consumedServices": {
+
     "tool-bar": {
       "versions": {
         "^0 || ^1": "consumeToolBar"
       }
+    },
+
+    "julia-client": {
+      "versions": {
+        "0.1.0": "consumeJuliaClient"
+      }
     }
+
   }
 }
