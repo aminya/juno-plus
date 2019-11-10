@@ -1,5 +1,6 @@
-module.exports =
+juliaClient = null
 
+module.exports =
   config:
     enableToolbarPlus:
       type: 'boolean'
@@ -33,10 +34,25 @@ module.exports =
 
   activate:
    # Restart Julia
+  consumeJuliaClient: (client) ->
+    # getting client object
+    juliaClient = client
+
+  activate: ->
+    # Restart Julia
     atom.commands.add 'atom-workspace', 'julia-client:restart-julia': (event) ->
-      element = atom.workspace.getElement();
+      element = atom.workspace.getElement()
       atom.commands.dispatch(element, 'julia-client:kill-julia')
       .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+
+    # Revise
+    atom.commands.add 'atom-workspace', 'julia-client:Revise': (event) ->
+      juliaClient.boot()
+      evalsimple = juliaClient.import(rpc: [ 'evalsimple' ]).evalsimple
+      command = 'using Revise;'
+      # command += 'julia line;' # for multi-line
+      evalsimple(command)
+      atom.notifications.addSuccess("Revise Started")
 
   deactivate: ->
     @bar?.removeItems()
@@ -101,6 +117,12 @@ module.exports =
       icon: 'alpha-j'
       tooltip: 'Start Local Julia Process'
       callback: 'julia-client:start-julia'
+      
+    @bar.addButton
+      icon: 'md-infinite'
+      iconset: 'ion'
+      tooltip: 'Revise Julia'
+      callback: 'julia-client:Revise'
 
     @bar.addButton
       icon: 'md-pause'
