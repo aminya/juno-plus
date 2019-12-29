@@ -174,7 +174,7 @@ ${1:body}
   """
 ################################################################
   "typeof subtype":
-    prefix: "typeof comparison"
+    prefix: "typeof subtype"
     body: """
   typeof(${1:object}) <: ${2:type}
   """
