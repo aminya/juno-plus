@@ -1,3 +1,2 @@
-## 0.6.0
-* Adding Code Snippets for Julia
-* Adding Code Snippets for Weave 
+## 0.6.2
+* Package renamed to Juno-Plus
