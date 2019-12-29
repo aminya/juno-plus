@@ -70,7 +70,12 @@ ${1:body}
     end
     '''
 ################################################################
-
+  "First matching string":
+    prefix: "findfirststring"
+    body: '''
+    findfirst("${1:find}", "${2:source}")
+    '''
+################################################################
   "Documented Function with Examples":
     prefix: "functionde"
     body: '''
