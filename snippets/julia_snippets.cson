@@ -76,6 +76,13 @@ ${1:body}
     findfirst("${1:find}", "${2:source}")
     '''
 ################################################################
+  "Find and replace string":
+    prefix: "replacestring"
+    body: '''
+    replace("${1:source}", "${2:find}"=>"${3:replace}")
+    '''
+################################################################
+################################################################
   "Documented Function with Examples":
     prefix: "functionde"
     body: '''
