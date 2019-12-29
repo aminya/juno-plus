@@ -106,6 +106,12 @@ ${1:body}
     prefix: "double"
     body: 'Float64'
 ################################################################
+  "Union{Nothing,type}":
+    prefix: "UN"
+    body: """
+  Union{Nothing,${1:type}}
+  """
+################################################################
 ################################################################
   "Documented Function with Examples":
     prefix: "functionde"
