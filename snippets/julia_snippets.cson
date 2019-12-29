@@ -118,6 +118,14 @@ ${1:body}
   Union{Nothing,${1:type}}
   """
 ################################################################
+  "Inheritted Struct":
+    prefix: "structinheritted"
+    body: """
+  struct ${1:name} <: ${2:BaseType}
+    \t${3:fields}
+  end
+  """
+################################################################
 ## Functions - Docstring
 ################################################################
   "Documented Function with Examples":
