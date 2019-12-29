@@ -118,10 +118,25 @@ ${1:body}
   Union{Nothing,${1:type}}
   """
 ################################################################
+  "where":
+    prefix: "where"
+    body: """
+  where {${1:T}}
+  """
+################################################################
+################################################################
   "Inheritted Struct":
     prefix: "structinheritted"
     body: """
   struct ${1:name} <: ${2:BaseType}
+    \t${3:fields}
+  end
+  """
+################################################################
+  "Parametric Struct":
+    prefix: "structinheritted"
+    body: """
+  struct ${1:name}{${2:Parameter}}
     \t${3:fields}
   end
   """
