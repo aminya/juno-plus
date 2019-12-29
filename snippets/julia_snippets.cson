@@ -180,9 +180,9 @@ ${1:body}
   """
 ################################################################
   "typeof isa":
-    prefix: "typeof comparison"
+    prefix: "typeof isa"
     body: """
-  typeof(${1:object}) <: ${2:type}
+  isa(${1:object}, ${2:type})
   """
 ################################################################
 ## Functions - Docstring
