@@ -168,6 +168,14 @@ ${1:body}
   end
   """
 ################################################################
+  "Parametric Inheritted Struct":
+    prefix: "struct parametric inheritted"
+    body: """
+  struct ${1:name}{${2:Parameter}} <: ${3:BaseType}
+    \t${4:fields}
+  end
+  """
+################################################################
 ## Functions - Docstring
 ################################################################
   "Documented Function with Examples":
