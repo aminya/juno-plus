@@ -50,6 +50,12 @@ ${1:body}
     Int('${1:C}')
     '''
 ################################################################
+  "Charecter from Code":
+    prefix: "charFromCode"
+    body: '''
+    Char('${1:65}')
+    '''
+################################################################
 
   "Documented Function with Examples":
     prefix: "functionde"
