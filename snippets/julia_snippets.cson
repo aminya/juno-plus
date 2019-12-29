@@ -146,6 +146,12 @@ ${1:body}
   ${1:name}{${2:T}} where {${2:T}}
   """
 ################################################################
+  "Parametric abstract type":
+    prefix: "abstract type parametric"
+    body: """
+  abstract type ${1:name}{${2:Parameter}} end
+  """
+################################################################
   "Inheritted Struct":
     prefix: "struct inheritted"
     body: """
