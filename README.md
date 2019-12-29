@@ -1,10 +1,10 @@
-# Juno-Toolbar-Plus Atom package
+# juno-plus Atom package
 This is a simple Atom's package that enhances Julia Client Toolbar by adding some useful buttons. It also, provides some code snippets for Julia and Weave,
 
 ![image](https://user-images.githubusercontent.com/16418197/68539924-ece5bc00-034f-11ea-9fa4-da30d12135e3.png)
 
 ### Installation
-https://atom.io/packages/juno-toolbar-plus
+https://atom.io/packages/juno-plus
 
 ## Buttons
 
@@ -57,6 +57,6 @@ Weave:
 ### Installation Tip:
 After installation, if the Julia Client icons are still present, you might need to reload/restart Atom 2 times! (because this package adjusts Julia Client and Tool-bar config settings).
 
-Repo: https://github.com/aminya/juno-toolbar-plus
+Repo: https://github.com/aminya/juno-plus
 
 If you have any suggestions, I would be happy to include.

@@ -1,6 +1,6 @@
 {
   "name": "juno-plus",
-  "main": "./lib/juno-toolbar-plus",
+  "main": "./lib/juno-plus",
   "version": "0.6.1",
   "description": "Enhances Julia Client Toolbar",
   "keywords": [
@@ -10,7 +10,7 @@
     "tool-bar",
     "button"
   ],
-  "repository": "https://github.com/aminya/juno-toolbar-plus",
+  "repository": "https://github.com/aminya/juno-plus",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
