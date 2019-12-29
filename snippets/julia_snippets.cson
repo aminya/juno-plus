@@ -106,6 +106,10 @@ ${1:body}
     prefix: "double"
     body: 'Float64'
 ################################################################
+  "Parametric type":
+    prefix: "Type parametric"
+    body: '${1:name}{${2:Parameter}}'
+################################################################
   "Union{}":
     prefix: "Union"
     body: """
