@@ -136,6 +136,11 @@ ${1:body}
   where {${1:T1}<:${2:T2}}
   """
 ################################################################
+  "UnionAll using where":
+    prefix: "UnionAllwhere"
+    body: """
+  ${1:name}{${2:T}} where {${2:T}}
+  """
 ################################################################
   "Inheritted Struct":
     prefix: "structinheritted"
