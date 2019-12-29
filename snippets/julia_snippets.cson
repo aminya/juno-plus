@@ -112,6 +112,7 @@ ${1:body}
   Union{Nothing,${1:type}}
   """
 ################################################################
+## Functions - Docstring
 ################################################################
   "Documented Function with Examples":
     prefix: "functionde"
@@ -127,6 +128,7 @@ ${4:examples}
 """
 function ${1:name}(${2:args})
 \t${4:body}
+  return {5:return value}
 end
     '''
 
