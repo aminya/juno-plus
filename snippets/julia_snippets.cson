@@ -45,13 +45,13 @@ ${1:body}
     '''
 ################################################################
   "Charecter Code":
-    prefix: "charcode"
+    prefix: "char code"
     body: '''
     Int('${1:C}')
     '''
 ################################################################
   "Charecter from Code":
-    prefix: "charFromCode"
+    prefix: "char from code"
     body: '''
     Char('${1:65}')
     '''
@@ -63,7 +63,7 @@ ${1:body}
     '''
 ################################################################
   "Loop through charecters":
-    prefix: "forchar"
+    prefix: "for char"
     body: '''
     for ${1:c} in ${2:str}
       ${3:body}
@@ -71,13 +71,13 @@ ${1:body}
     '''
 ################################################################
   "First matching string":
-    prefix: "findfirststring"
+    prefix: "findfirst string"
     body: '''
     findfirst("${1:find}", "${2:source}")
     '''
 ################################################################
   "Find and replace string":
-    prefix: "replacestring"
+    prefix: "replace string"
     body: '''
     replace("${1:source}", "${2:find}"=>"${3:replace}")
     '''
@@ -125,25 +125,25 @@ ${1:body}
   """
 ################################################################
   "where multi":
-    prefix: "wheremulti"
+    prefix: "where multi"
     body: """
   where {${1:T}, ${2:N}}
   """
 ################################################################
   "where <:":
-    prefix: "whereupper"
+    prefix: "where upper"
     body: """
   where {${1:T1}<:${2:T2}}
   """
 ################################################################
   "UnionAll using where":
-    prefix: "UnionAllwhere"
+    prefix: "UnionAll where"
     body: """
   ${1:name}{${2:T}} where {${2:T}}
   """
 ################################################################
   "Inheritted Struct":
-    prefix: "structinheritted"
+    prefix: "struct inheritted"
     body: """
   struct ${1:name} <: ${2:BaseType}
     \t${3:fields}
@@ -151,7 +151,7 @@ ${1:body}
   """
 ################################################################
   "Parametric Struct":
-    prefix: "structinheritted"
+    prefix: "struct parametric"
     body: """
   struct ${1:name}{${2:Parameter}}
     \t${3:fields}
@@ -161,7 +161,7 @@ ${1:body}
 ## Functions - Docstring
 ################################################################
   "Documented Function with Examples":
-    prefix: "functionde"
+    prefix: "function de"
     body: '''
 """
     ${1:name}(${2:args})
@@ -220,7 +220,7 @@ ${1:examples}
 ################################################################
 
   'Hidden Output for Julia code chunk':
-    'prefix': 'outJuliaFalse'
+    'prefix': 'out julia false'
     'body': """
     ```{julia; results ="hidden"}
     $1
@@ -230,7 +230,7 @@ ${1:examples}
 
 
   'Non Echoed Julia code chunk':
-    'prefix': 'echoJuliaFalse'
+    'prefix': 'echo julia false'
     'body': """
     ```{julia; echo=false}
     $1
@@ -240,7 +240,7 @@ ${1:examples}
 ################################################################
 
   'Evaluated Julia code chunk':
-    'prefix': 'evalJuliaTrue'
+    'prefix': 'eval julia true'
     'body': """
     ```{julia; eval=true}
     $1
@@ -250,7 +250,7 @@ ${1:examples}
 ################################################################
 
   'Non-evaluated Julia code chunk':
-    'prefix': 'evalJuliaFalse'
+    'prefix': 'eval julia false'
     'body': """
     ```{julia; eval=false}
     $1
@@ -260,7 +260,7 @@ ${1:examples}
 ################################################################
 
   'Terminal Julia code chunk':
-    'prefix': 'termJulia'
+    'prefix': 'term julia'
     'body': """
     ```{julia; term=true}
     $1
@@ -270,7 +270,7 @@ ${1:examples}
 ################################################################
 
   'Hold the output for a Block of Julia code chunk':
-    'prefix': 'holdJulia'
+    'prefix': 'hold julia'
     'body': """
     ```{julia; hold=true}
     $1
