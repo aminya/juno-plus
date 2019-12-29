@@ -62,6 +62,14 @@ ${1:body}
     '\\\\u${1:65}'
     '''
 ################################################################
+  "Loop through charecters":
+    prefix: "forchar"
+    body: '''
+    for ${1:c} in ${2:str}
+      ${3:body}
+    end
+    '''
+################################################################
 
   "Documented Function with Examples":
     prefix: "functionde"
