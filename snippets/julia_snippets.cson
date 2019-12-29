@@ -44,6 +44,12 @@ ${1:body}
 """
     '''
 ################################################################
+  "Charecter Code":
+    prefix: "charcode"
+    body: '''
+    Int('${1:C}')
+    '''
+################################################################
 
   "Documented Function with Examples":
     prefix: "functionde"
