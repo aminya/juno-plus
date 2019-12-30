@@ -109,3 +109,6 @@
     prefix: "r octal"
     body: '\\\\ZZZ'
 ################################################################
+  "Regex hex character ZZ":
+    prefix: "r hex"
+    body: '\\\\ZZ'
