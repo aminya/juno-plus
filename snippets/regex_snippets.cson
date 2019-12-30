@@ -120,3 +120,8 @@
   "Regex Non-capturing group":
     prefix: "r group non-capturing"
     body: '(?:${1:chars})'
+################################################################
+  "Regex any of":
+    prefix: "r any of"
+    body: '[${1:chars}]'
+################################################################
