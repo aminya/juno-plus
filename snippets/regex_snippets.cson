@@ -200,8 +200,15 @@
   "Regex password complex":
     prefix: "rc password complex"
     body: '''(?=(.*[0-9]))(?=.*[\\\\!@#$%^&*()\\\\\\\\[\\\\]{}\\\\-_+=~`|:;"'<>,./?])(?=.*[a-z])(?=(.*[A-Z]))(?=(.*)).{8,}'''
+    description: 'Should have 1 lowercase letter, 1 uppercase letter, 1 number, 1 special character and be at least 8 characters long'
 ################################################################
   "Regex password moderate":
     prefix: "rc password moderate"
     body: '''(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$'''
+    description: 'Should have 1 lowercase letter, 1 uppercase letter, 1 number, and be at least 8 characters long'
+################################################################
+  "Regex username":
+    prefix: "rc username"
+    body: '''(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$'''
+    description: 'Alphanumeric string that may include _ and – having a length of 3 to 16 characters'
 ################################################################
