@@ -1,7 +1,7 @@
 {
   "name": "juno-plus",
   "main": "./lib/juno-plus",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "Enhances Julia Client Toolbar",
   "keywords": [
     "julia",
