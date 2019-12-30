@@ -117,6 +117,10 @@
     prefix: "r group"
     body: '(${1:chars})'
 ################################################################
+  "Regex backreference group":
+    prefix: "r backreference"
+    body: '\\\\${1:groupNum}'
+################################################################
   "Regex Non-capturing group":
     prefix: "r group non-capturing"
     body: '(?:${1:chars})'
