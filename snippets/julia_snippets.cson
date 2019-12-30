@@ -371,11 +371,11 @@ ${1:examples}
 ################################################################
   "key => val pair":
     prefix: "pair"
-    body: '${1:key} => ${2:val}'
+    body: '${1:key} => ${2:value}'
 ################################################################
   "Dict pair":
     prefix: "Dict pair"
-    body: 'Dict(${1:key} => ${2:val}, ${3:key} => ${4:val})'
+    body: 'Dict(${1:key1} => ${2:value1}, ${3:key2} => ${4:value2})'
 ################################################################
   "Dict keys":
     prefix: "Dict keys"
@@ -384,3 +384,11 @@ ${1:examples}
   "Dict values":
     prefix: "Dict values"
     body: 'values(${1:dict})'
+################################################################
+  "Loop through key-value pairs":
+    prefix: "for Dict"
+    body: '''
+    for (${1:key},${2:value}) in ${3:dict}
+        ${4:body}
+    end
+    '''
