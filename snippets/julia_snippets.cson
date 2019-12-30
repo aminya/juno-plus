@@ -157,6 +157,20 @@ ${1:body}
   abstract type ${1:name}{${2:Parameter}} end
   """
 ################################################################
+  "typeof subtype":
+    prefix: "typeof subtype"
+    body: """
+  typeof(${1:object}) <: ${2:type}
+  """
+################################################################
+  "typeof isa":
+    prefix: "typeof isa"
+    body: """
+  isa(${1:object}, ${2:type})
+  """
+################################################################
+## Structs
+################################################################
   "Inheritted Struct":
     prefix: "struct inheritted"
     body: """
@@ -188,18 +202,6 @@ ${1:body}
   "Struct field types":
     prefix: "struct field types"
     body: '${1:structName}.types'
-################################################################
-  "typeof subtype":
-    prefix: "typeof subtype"
-    body: """
-  typeof(${1:object}) <: ${2:type}
-  """
-################################################################
-  "typeof isa":
-    prefix: "typeof isa"
-    body: """
-  isa(${1:object}, ${2:type})
-  """
 ################################################################
 ## Conditionals
 ################################################################
