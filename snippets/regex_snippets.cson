@@ -141,3 +141,7 @@
     prefix: "r among"
     body: '[${1:0}-${1:9}]'
 ################################################################
+  "Regex positive lookahead group":
+    prefix: "r group positive lookahead"
+    body: '(?=${1:chars})'
+################################################################
