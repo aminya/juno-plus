@@ -145,3 +145,6 @@
     prefix: "r group positive lookahead"
     body: '(?=${1:chars})'
 ################################################################
+  "Regex negative lookahead group":
+    prefix: "r group negative lookahead"
+    body: '(?!${1:chars})'
