@@ -229,6 +229,24 @@ ${1:body}
   end
   """
 ################################################################
+  "try catch full":
+    prefix: "try catch full"
+    body: """
+  try
+    ${1:failable}
+  catch ex
+    if isa(ex, ${2:SomeExcep})
+        ${3:handle}
+    elseif isa(ex, ${4:SomeExcep2})
+        ${5:handle2}
+    else
+        ${6:handleOther}
+    end
+  finally
+    ${7:doAnyWays}
+  end
+  """
+################################################################
 ## Loops
 ################################################################
   "enumeratation - index, value":
