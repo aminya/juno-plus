@@ -20,3 +20,8 @@
   "Regex Anything except newline":
     prefix: "r any except newline"
     body: '.'
+################################################################
+  "Regex or":
+    prefix: "r or"
+    body: '|'
+################################################################
