@@ -112,3 +112,7 @@
   "Regex hex character ZZ":
     prefix: "r hex"
     body: '\\\\ZZ'
+################################################################
+  "Regex group":
+    prefix: "r group"
+    body: '()'
