@@ -39,6 +39,8 @@ Converted code snippets are available under `snippets_converted` folder.
 
 ## Julia Snippets
 
+To use snippets type the keyword `without space`.
+
 There are some cool snippets in this package. For example:
 
 `switch-case`:
