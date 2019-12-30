@@ -381,3 +381,6 @@ ${1:examples}
     prefix: "Dict keys"
     body: 'keys(${1:dict})'
 ################################################################
+  "Dict values":
+    prefix: "Dict values"
+    body: 'values(${1:dict})'
