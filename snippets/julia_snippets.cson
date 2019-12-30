@@ -205,6 +205,18 @@ ${1:body}
   end
   """
 ################################################################
+  "if elseif":
+    prefix: "if elseif"
+    body: """
+  if ${1:condition1}
+
+  elseif ${2:condition2}
+
+  elseif ${3:condition3}
+
+  end
+  """
+################################################################
 ## Functions - Docstring
 ################################################################
   "Documented Function with Examples":
