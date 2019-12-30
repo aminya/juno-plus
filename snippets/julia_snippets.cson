@@ -313,7 +313,24 @@ ${4:examples}
 """
 function ${1:name}(${2:args})
 \t${4:body}
-  return {5:return value}
+end
+    '''
+################################################################
+  "Function Full":
+    prefix: "function full"
+    body: '''
+"""
+    ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}
+
+${5:documentation}
+# Examples
+```julia
+${6:examples}
+```
+"""
+function ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}
+\t${7:body}
+  return {8:return value}
 end
     '''
 ################################################################
