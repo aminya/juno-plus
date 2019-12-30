@@ -17,3 +17,6 @@
     prefix: "r end"
     body: '$'
 ################################################################
+  "Regex Anything except newline":
+    prefix: "r any except newline"
+    body: '.'
