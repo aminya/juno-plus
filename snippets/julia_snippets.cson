@@ -171,8 +171,8 @@ ${1:body}
 ################################################################
 ## Structs
 ################################################################
-  "Inheritted Struct":
-    prefix: "struct inheritted"
+  "inherited Struct":
+    prefix: "struct inherited"
     body: """
   struct ${1:name} <: ${2:BaseType}
     \t${3:fields}
@@ -187,8 +187,8 @@ ${1:body}
   end
   """
 ################################################################
-  "Parametric Inheritted Struct":
-    prefix: "struct parametric inheritted"
+  "Parametric inherited Struct":
+    prefix: "struct parametric inherited"
     body: """
   struct ${1:name}{${2:Parameter}} <: ${3:BaseType}
     \t${4:fields}

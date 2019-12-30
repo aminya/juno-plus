@@ -1,21 +1,27 @@
-## 0.8
+## 0.8.1
 * Julia, Regex, Weave code snippets are added.
-
 
 ## Julia Snippets
 
+
+### Basics and Arithmetic
 Snippet Description | Keyword
 --|--
-## Basics and Arithmetic
 Swap | swap
 Constant | const
 !. | !.
 null | null
 nan | nan
-## Commenting  
+
+## Commenting
+Snippet Description | Keyword
+--|--
 Separator | sep
 Comment Block | com
-## Strings and Characters  
+
+## Strings and Characters
+Snippet Description | Keyword
+--|--
 Triple " | q3
 Charecter Code | char code
 Charecter from Code | char from code
@@ -23,7 +29,10 @@ UTF charecter | utf
 Loop through charecters | for char
 First matching string | findfirst string
 Find and replace string | replace string
-## Types  |    |  
+
+## Types  
+Snippet Description | Keyword
+--|--
 Int | int
 UInt | uint
 Float32 | single
@@ -38,17 +47,26 @@ UnionAll using where | UnionAll where
 Parametric abstract type | abstract type parametric
 typeof subtype | typeof subtype
 typeof isa | typeof isa
-## Structs  |  
-Inheritted Struct | struct inheritted
+
+## Structs
+Snippet Description | Keyword
+--|--
+inherited Struct | struct inherited
 Parametric Struct | struct parametric
-Parametric Inheritted Struct | struct parametric inheritted
+Parametric inherited Struct | struct parametric inherited
 Struct field names | struct field names
 Struct field types | struct field types
-## Conditionals  |  
+
+## Conditionals
+Snippet Description | Keyword
+--|--
 switch | switch case
 if elseif | if elseif
 try catch full | try catch full
-## Loops  |  
+
+## Loops
+Snippet Description | Keyword
+--|--
 enumeration - index, value | for enumerate
 nested loop - i,j | for nested
 do while | do while
@@ -57,13 +75,19 @@ continue | continue
 while with break | while break
 for with break | for break
 for with continue | for continue
-## Functions - Docstring  |  
+
+## Functions - Docstring
+Snippet Description | Keyword
+--|--
 Documented Function with Examples | function doc example
 Function Full | function full
 Docstring | doc
 Docstring with Examples | doc example
 Julia Example block | example
-## Dictionaries - Collections  |  
+
+## Dictionaries - Collections
+Snippet Description | Keyword
+--|--
 key => val pair | pair
 Dict pair | Dict pair
 Dict keys | Dict keys
@@ -74,7 +98,10 @@ Loop through key-value pairs | for Dict
 Snippet Description | Keyword
 --|--
 Regex literal | reg
-## Regex Syntax  |  
+
+## Regex Syntax  
+Snippet Description | Keyword
+--|--
 Regex Start | reg start
 Regex End | reg end
 Regex Anything except newline | reg any except newline
@@ -112,49 +139,85 @@ Regex positive lookahead group | reg group positive lookahead
 Regex negative lookahead group | reg group negative lookahead
 Regex negative lookbehind | reg group negative lookbehind
 Regex Word Boundary | reg word boundary
-## Regex Common  |  
-## Numbers  |  
+
+## Regex Common
+## Numbers
+Snippet Description | Keyword
+--|--
 Regex whole numbers | regc numbers whole
 Regex decimal number | regc numbers decimal
 Regex whole + decimal number | regc numbers whole + decimal
 Regex negative, positive whole + decimal number | regc numbers negative, positive whole + decimal
 Regex whole + decimal + fractions numbers | regc numbers whole + decimal + fractions
-## Strings  |  
+
+## Strings  
+Snippet Description | Keyword
+--|--
 Regex slug | regc slug
 Regex duplicates | regc duplicates
-## Alphanumeric Characters  |  
+
+## Alphanumeric Characters
+Snippet Description | Keyword
+--|--
 Regex alphanumeric without space | regc alphanumeric without space
 Regex alphanumeric with space | regc alphanumeric with space
-## File Path  |  
+
+## File Path
+Snippet Description | Keyword
+--|--
 Regex file path with filename.extension | regc file path with filename.extension
 Regex file path with optional filename.extension | regc file path optional filename.extension
 Regex filename.extension (3 chars) | regc filename.extension
-## Dates  |  
+
+## Dates
+Snippet Description | Keyword
+--|--
 Regex date YYYY-MM-dd | regc date YYYYMMdd
 Regex date dd-MM-YYYY using -,. , / with check for leap year | regc date ddMMYYYY
 Regex date dd-mmm-YYYY using separators -, ., / | regc date ddmmmYYYY
-## Time  |  
+
+## Time
+Snippet Description | Keyword
+--|--
 Regex time HH:MM 12-hour, optional leading 0 | regc time HHMM 12h optional leading 0
 Regex time HH:MM 12-hour AM/PM optional leading 0 | regc time HHMM 12h AM/PM optional leading 0
 Regex time HH:MM 24-hour with leading 0 | regc time HHMM 24h with leading 0
 Regex time HH:MM 24-hour, optional leading 0 | regc time HHMM 24h, optional leading 0
 Regex time HH:MM:SS 24-hour | regc time HHMMSS 24h
-## Email  |  
+
+## Email  
+Snippet Description | Keyword
+--|--
 Regex email common | regc email common
 Regex email uncommon | regc email uncommon
-## Password Strength  |  
+
+## Password Strength
+Snippet Description | Keyword
+--|--
 Regex password complex | regc password complex
 Regex password moderate | regc password moderate
-## Username  |  
+
+## Username  
+Snippet Description | Keyword
+--|--
 Regex username | regc username
-## URL  |  
+
+## URL  
+Snippet Description | Keyword
+--|--
 Regex url http(s) | regc url http(s)
 Regex url protocol optional | regc url optional protocol
-## IP Address  |  
+
+## IP Address  
+Snippet Description | Keyword
+--|--
 Regex IPv4 address | regc IPv4
 Regex IPv6 address | regc IPv6
 Regex IPv4 or IPv6 address | regc IPv4 or IPv6
-## Identity Documents  |  
+
+## Identity Documents  
+Snippet Description | Keyword
+--|--
 Regex passport | regc passport
 
 ## Weave Snippets

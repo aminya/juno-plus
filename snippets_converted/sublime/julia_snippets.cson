@@ -116,7 +116,7 @@
     },
     {
       "contents": "struct ${1:name} <: ${2:BaseType}\n  \t${3:fields}\nend",
-      "trigger": "struct inheritted\tInheritted Struct"
+      "trigger": "struct inherited\tinherited Struct"
     },
     {
       "contents": "struct ${1:name}{${2:Parameter}}\n  \t${3:fields}\nend",
@@ -124,7 +124,7 @@
     },
     {
       "contents": "struct ${1:name}{${2:Parameter}} <: ${3:BaseType}\n  \t${4:fields}\nend",
-      "trigger": "struct parametric inheritted\tParametric Inheritted Struct"
+      "trigger": "struct parametric inherited\tParametric inherited Struct"
     },
     {
       "contents": "fieldnames(${1:structName})",

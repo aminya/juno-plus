@@ -111,16 +111,16 @@
     "prefix": "typeof isa",
     "body": "isa(${1:object}, ${2:type})"
   },
-  "Inheritted Struct": {
-    "prefix": "struct inheritted",
+  "inherited Struct": {
+    "prefix": "struct inherited",
     "body": "struct ${1:name} <: ${2:BaseType}\n  \t${3:fields}\nend"
   },
   "Parametric Struct": {
     "prefix": "struct parametric",
     "body": "struct ${1:name}{${2:Parameter}}\n  \t${3:fields}\nend"
   },
-  "Parametric Inheritted Struct": {
-    "prefix": "struct parametric inheritted",
+  "Parametric inherited Struct": {
+    "prefix": "struct parametric inherited",
     "body": "struct ${1:name}{${2:Parameter}} <: ${3:BaseType}\n  \t${4:fields}\nend"
   },
   "Struct field names": {
