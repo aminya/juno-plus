@@ -115,4 +115,8 @@
 ################################################################
   "Regex group":
     prefix: "r group"
-    body: '()'
+    body: '(${1:chars})'
+################################################################
+  "Regex Non-capturing group":
+    prefix: "r group non-capturing"
+    body: '(?:${1:chars})'
