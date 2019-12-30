@@ -173,4 +173,7 @@
     prefix: "r whole + decimal numbers"
     body: '^\\\\d*(\\\\.\\\\d+)?$'
 ################################################################
+  "Regex Negative, Positive Whole + Decimal Numbers":
+    prefix: "r negative, positive whole + decimal Numbers"
+    body: '^-?\\\\d*(\\\\.\\\\d+)?$'
 ################################################################
