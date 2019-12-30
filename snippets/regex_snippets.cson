@@ -148,3 +148,7 @@
   "Regex negative lookahead group":
     prefix: "r group negative lookahead"
     body: '(?!${1:chars})'
+################################################################
+  "Regex Word Boundary":
+    prefix: "r word boundary"
+    body: '\\\\b'
