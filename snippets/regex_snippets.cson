@@ -161,31 +161,35 @@
 ################################################################
 # Regex Common
 ################################################################
-  "Regex Whole numbers":
-    prefix: "rc whole numbers"
+  "Regex whole numbers":
+    prefix: "rc numbers whole"
     body: '^\\\\d+$'
 ################################################################
-  "Regex Decimal Numbers":
-    prefix: "rc decimal numbers"
+  "Regex decimal number":
+    prefix: "rc numbers decimal"
     body: '^\\\\d*\\\\.\\\\d+$'
 ################################################################
-  "Regex Whole + Decimal Numbers":
-    prefix: "rc whole + decimal numbers"
+  "Regex whole + decimal number":
+    prefix: "rc numbers whole + decimal"
     body: '^\\\\d*(\\\\.\\\\d+)?$'
 ################################################################
-  "Regex Negative, Positive Whole + Decimal Numbers":
-    prefix: "rc negative, positive whole + decimal Numbers"
+  "Regex negative, positive whole + decimal number":
+    prefix: "rc numbers negative, positive whole + decimal"
     body: '^-?\\\\d*(\\\\.\\\\d+)?$'
 ################################################################
-  "Regex Whole + Decimal + Fractions numbers":
-    prefix: "rc Whole + Decimal + Fractions numbers"
+  "Regex whole + decimal + fractions numbers":
+    prefix: "rc numbers whole + decimal + fractions "
     body: '[-]?[0-9]+[,.]?[0-9]*([\\\\/][0-9]+[,.]?[0-9]*)*'
 ################################################################
-  "Regex Alphanumeric without space":
+  "Regex alphanumeric without space":
     prefix: "rc alphanumeric without space"
     body: '^[a-zA-Z0-9]*$'
 ################################################################
-  "Regex Alphanumeric with space":
+  "Regex alphanumeric with space":
     prefix: "rc alphanumeric with space "
     body: '^[a-zA-Z0-9 ]*$'
+################################################################
+  "Regex email common":
+    prefix: "rc email common"
+    body: '^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6})*$'
 ################################################################
