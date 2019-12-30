@@ -182,6 +182,10 @@
     body: '[-]?[0-9]+[,.]?[0-9]*([\\\\/][0-9]+[,.]?[0-9]*)*'
 ################################################################
   "Regex Alphanumeric without space":
-    prefix: "rc Alphanumeric without space"
+    prefix: "rc alphanumeric without space"
     body: '^[a-zA-Z0-9]*$'
+################################################################
+  "Regex Alphanumeric with space":
+    prefix: "rc alphanumeric with space "
+    body: '^[a-zA-Z0-9 ]*$'
 ################################################################
