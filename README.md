@@ -39,6 +39,19 @@ Converted code snippets are available under `snippets_converted` folder.
 
 ## Julia Snippets
 
+There are some cool snippets in this package. For example:
+
+`switch-case`:
+
+![switch-case](assets/switchcase.gif)
+
+`do-while`:
+
+![do-while](assets/dowhile.gif)
+
+`!.`:
+
+![!.](assets/!..gif)
 
 ### Basics and Arithmetic
 Snippet Description | Keyword
