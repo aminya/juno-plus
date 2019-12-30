@@ -33,3 +33,6 @@
     prefix: "r 0<= time"
     body: '*'
 ################################################################
+  "Regex previous 1<= time":
+    prefix: "r 1<= time"
+    body: '+'
