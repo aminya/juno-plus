@@ -1,0 +1,218 @@
+{
+  "Swap": {
+    "prefix": "swap",
+    "body": "${1:x}, ${2:y} = ${1:x}, ${2:y}"
+  },
+  "Constant": {
+    "prefix": "const",
+    "body": "const ${1:varname} = ${2:value}"
+  },
+  "!.": {
+    "prefix": "!.",
+    "body": "(!).(${1:var})"
+  },
+  "null": {
+    "prefix": "null",
+    "body": "nothing"
+  },
+  "nan": {
+    "prefix": "nan",
+    "body": "NaN"
+  },
+  "Separator": {
+    "prefix": "sep",
+    "body": "################################################################"
+  },
+  "Comment Block": {
+    "prefix": "com",
+    "body": "#= ${1:comment} =#"
+  },
+  "Triple \" ": {
+    "prefix": "q3",
+    "body": "\"\"\"\n${1:body}\n\"\"\""
+  },
+  "Character Code": {
+    "prefix": "char code",
+    "body": "Int('${1:C}')"
+  },
+  "Character from Code": {
+    "prefix": "char from code",
+    "body": "Char('${1:65}')"
+  },
+  "UTF charecter": {
+    "prefix": "utf",
+    "body": "'\\\\u${1:65}'"
+  },
+  "Loop through charecters": {
+    "prefix": "for char",
+    "body": "for ${1:c} in ${2:str}\n  ${3:body}\nend"
+  },
+  "First matching string": {
+    "prefix": "findfirst string",
+    "body": "findfirst(\"${1:find}\", \"${2:source}\")"
+  },
+  "Find and replace string": {
+    "prefix": "replace string",
+    "body": "replace(\"${1:source}\", \"${2:find}\"=>\"${3:replace}\")"
+  },
+  "Int": {
+    "prefix": "int",
+    "body": "Int"
+  },
+  "UInt": {
+    "prefix": "uint",
+    "body": "UInt"
+  },
+  "Float32": {
+    "prefix": "single",
+    "body": "Float32"
+  },
+  "Float64": {
+    "prefix": "double",
+    "body": "Float64"
+  },
+  "Parametric type": {
+    "prefix": "Type parametric",
+    "body": "${1:name}{${2:Parameter}}"
+  },
+  "Union{}": {
+    "prefix": "Union",
+    "body": "Union{${1:type1},${2:type2}}"
+  },
+  "Union{Nothing,type}": {
+    "prefix": "UN",
+    "body": "Union{Nothing,${1:type}}"
+  },
+  "where": {
+    "prefix": "where",
+    "body": "where {${1:T}}"
+  },
+  "where multi": {
+    "prefix": "where multi",
+    "body": "where {${1:T}, ${2:N}}"
+  },
+  "where <:": {
+    "prefix": "where upper",
+    "body": "where {${1:T1}<:${2:T2}}"
+  },
+  "UnionAll using where": {
+    "prefix": "UnionAll where",
+    "body": "${1:name}{${2:T}} where {${2:T}}"
+  },
+  "Parametric abstract type": {
+    "prefix": "abstract type parametric",
+    "body": "abstract type ${1:name}{${2:Parameter}} end"
+  },
+  "typeof subtype": {
+    "prefix": "typeof subtype",
+    "body": "typeof(${1:object}) <: ${2:type}"
+  },
+  "typeof isa": {
+    "prefix": "typeof isa",
+    "body": "isa(${1:object}, ${2:type})"
+  },
+  "Inheritted Struct": {
+    "prefix": "struct inheritted",
+    "body": "struct ${1:name} <: ${2:BaseType}\n  \t${3:fields}\nend"
+  },
+  "Parametric Struct": {
+    "prefix": "struct parametric",
+    "body": "struct ${1:name}{${2:Parameter}}\n  \t${3:fields}\nend"
+  },
+  "Parametric Inheritted Struct": {
+    "prefix": "struct parametric inheritted",
+    "body": "struct ${1:name}{${2:Parameter}} <: ${3:BaseType}\n  \t${4:fields}\nend"
+  },
+  "Struct field names": {
+    "prefix": "struct field names",
+    "body": "fieldnames(${1:structName})"
+  },
+  "Struct field types": {
+    "prefix": "struct field types",
+    "body": "${1:structName}.types"
+  },
+  "switch": {
+    "prefix": "switch case",
+    "body": "if ${1:var} == ${2:value1}\n\nelseif ${1:var} == ${3:value2}\n\nelseif ${1:var} == ${4:value3}\n\nelse\n\nend"
+  },
+  "if elseif": {
+    "prefix": "if elseif",
+    "body": "if ${1:condition1}\n\nelseif ${2:condition2}\n\nelse ${4:condition3}\n\nend"
+  },
+  "try catch full": {
+    "prefix": "try catch full",
+    "body": "try\n  ${1:failable}\ncatch ex\n  if isa(ex, ${2:SomeExcep})\n      ${3:handle}\n  elseif isa(ex, ${4:SomeExcep2})\n      ${5:handle2}\n  else\n      ${6:handleOther}\n  end\nfinally\n  ${7:doAnyWays}\nend"
+  },
+  "enumeration - index, value": {
+    "prefix": "for enumerate",
+    "body": "for (${1:i},${2:val}) in enumerate(${3:itter})\n  ${4:body}\nend"
+  },
+  "nested loop - i,j": {
+    "prefix": "for nested",
+    "body": "for ${1:i} in {2:vali}, ${3:j} in {4:valj}\n  ${5:body}\nend"
+  },
+  "do while": {
+    "prefix": "do while",
+    "body": "while true\n  ${1:body}\n  ${2:condition} && break\nend"
+  },
+  "break": {
+    "prefix": "break",
+    "body": "if ${1:breakCondition}\n\n  break\nend"
+  },
+  "continue": {
+    "prefix": "continue",
+    "body": "if ${1:continueCondition}\n\n  continue\nend"
+  },
+  "while with break": {
+    "prefix": "while break",
+    "body": "while ${1:loopCondition}\n\n  if ${2:breakCondition}\n\n    break\n  end\n\nend"
+  },
+  "for with break": {
+    "prefix": "for break",
+    "body": "for ${1:loopCondition}\n\n  if ${2:breakCondition}\n\n    break\n  end\n\nend"
+  },
+  "for with continue": {
+    "prefix": "for continue",
+    "body": "for ${1:loopCondition}\n\n  if ${2:continueCondition}\n\n    continue\n  end\n\nend"
+  },
+  "Documented Function with Examples": {
+    "prefix": "function doc example",
+    "body": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n# Examples\n```julia\n${4:examples}\n```\n\"\"\"\nfunction ${1:name}(${2:args})\n\t${4:body}\nend"
+  },
+  "Function Full": {
+    "prefix": "function full",
+    "body": "\"\"\"\n    ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}\n\n${5:documentation}\n# Examples\n```julia\n${6:examples}\n```\n\"\"\"\nfunction ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}\n\t${7:body}\n  return {8:return value}\nend"
+  },
+  "Docstring": {
+    "prefix": "doc",
+    "body": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n\"\"\""
+  },
+  "Docstring with Examples": {
+    "prefix": "doc example",
+    "body": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n# Examples\n```julia\n${4:examples}\n```\n\"\"\""
+  },
+  "Julia Example block": {
+    "prefix": "example",
+    "body": "# Examples\n```julia\n${1:examples}\n```"
+  },
+  "key => val pair": {
+    "prefix": "pair",
+    "body": "${1:key} => ${2:value}"
+  },
+  "Dict pair": {
+    "prefix": "Dict pair",
+    "body": "Dict(${1:key1} => ${2:value1}, ${3:key2} => ${4:value2})"
+  },
+  "Dict keys": {
+    "prefix": "Dict keys",
+    "body": "keys(${1:dict})"
+  },
+  "Dict values": {
+    "prefix": "Dict values",
+    "body": "values(${1:dict})"
+  },
+  "Loop through key-value pairs": {
+    "prefix": "for Dict",
+    "body": "for (${1:key},${2:value}) in ${3:dict}\n    ${4:body}\nend"
+  }
+}

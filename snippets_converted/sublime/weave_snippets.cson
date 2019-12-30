@@ -1,0 +1,42 @@
+{
+  "#": "Generated with Atomizr – https://atom.io/packages/atomizr",
+  "scope": "source.weave.md",
+  "completions": [
+    {
+      "contents": "```{julia; results =\"hidden\"}\n$1\n```",
+      "trigger": "out julia false\tHidden Output for Julia code chunk"
+    },
+    {
+      "contents": "```{julia; echo=false}\n$1\n```",
+      "trigger": "echo julia false\tNon Echoed Julia code chunk"
+    },
+    {
+      "contents": "```{julia; eval=true}\n$1\n```",
+      "trigger": "eval julia true\tEvaluated Julia code chunk"
+    },
+    {
+      "contents": "```{julia; eval=false}\n$1\n```",
+      "trigger": "eval julia false\tNon-evaluated Julia code chunk"
+    },
+    {
+      "contents": "```{julia; term=true}\n$1\n```",
+      "trigger": "term julia\tTerminal Julia code chunk"
+    },
+    {
+      "contents": "```{julia; hold=true}\n$1\n```",
+      "trigger": "hold julia\tHold the output for a Block of Julia code chunk"
+    },
+    {
+      "contents": "`j $1`",
+      "trigger": "inline\tInline Julia Code"
+    },
+    {
+      "contents": "<!-- @af -->\n$$\n$1\n$$",
+      "trigger": "latex\tLatex"
+    },
+    {
+      "contents": "--------------------------------------------------",
+      "trigger": "sep\tSeparator"
+    }
+  ]
+}

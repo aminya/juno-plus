@@ -1,0 +1,222 @@
+{
+  "#": "Generated with Atomizr – https://atom.io/packages/atomizr",
+  "scope": "source.julia",
+  "completions": [
+    {
+      "contents": "${1:x}, ${2:y} = ${1:x}, ${2:y}",
+      "trigger": "swap\tSwap"
+    },
+    {
+      "contents": "const ${1:varname} = ${2:value}",
+      "trigger": "const\tConstant"
+    },
+    {
+      "contents": "(!).(${1:var})",
+      "trigger": "!."
+    },
+    {
+      "contents": "nothing",
+      "trigger": "null"
+    },
+    {
+      "contents": "NaN",
+      "trigger": "nan"
+    },
+    {
+      "contents": "################################################################",
+      "trigger": "sep\tSeparator"
+    },
+    {
+      "contents": "#= ${1:comment} =#",
+      "trigger": "com\tComment Block"
+    },
+    {
+      "contents": "\"\"\"\n${1:body}\n\"\"\"",
+      "trigger": "q3\tTriple \" "
+    },
+    {
+      "contents": "Int('${1:C}')",
+      "trigger": "char code\tCharacter Code"
+    },
+    {
+      "contents": "Char('${1:65}')",
+      "trigger": "char from code\tCharacter from Code"
+    },
+    {
+      "contents": "'\\\\u${1:65}'",
+      "trigger": "utf\tUTF charecter"
+    },
+    {
+      "contents": "for ${1:c} in ${2:str}\n  ${3:body}\nend",
+      "trigger": "for char\tLoop through charecters"
+    },
+    {
+      "contents": "findfirst(\"${1:find}\", \"${2:source}\")",
+      "trigger": "findfirst string\tFirst matching string"
+    },
+    {
+      "contents": "replace(\"${1:source}\", \"${2:find}\"=>\"${3:replace}\")",
+      "trigger": "replace string\tFind and replace string"
+    },
+    {
+      "contents": "Int",
+      "trigger": "int\tInt"
+    },
+    {
+      "contents": "UInt",
+      "trigger": "uint\tUInt"
+    },
+    {
+      "contents": "Float32",
+      "trigger": "single\tFloat32"
+    },
+    {
+      "contents": "Float64",
+      "trigger": "double\tFloat64"
+    },
+    {
+      "contents": "${1:name}{${2:Parameter}}",
+      "trigger": "Type parametric\tParametric type"
+    },
+    {
+      "contents": "Union{${1:type1},${2:type2}}",
+      "trigger": "Union\tUnion{}"
+    },
+    {
+      "contents": "Union{Nothing,${1:type}}",
+      "trigger": "UN\tUnion{Nothing,type}"
+    },
+    {
+      "contents": "where {${1:T}}",
+      "trigger": "where"
+    },
+    {
+      "contents": "where {${1:T}, ${2:N}}",
+      "trigger": "where multi"
+    },
+    {
+      "contents": "where {${1:T1}<:${2:T2}}",
+      "trigger": "where upper\twhere <:"
+    },
+    {
+      "contents": "${1:name}{${2:T}} where {${2:T}}",
+      "trigger": "UnionAll where\tUnionAll using where"
+    },
+    {
+      "contents": "abstract type ${1:name}{${2:Parameter}} end",
+      "trigger": "abstract type parametric\tParametric abstract type"
+    },
+    {
+      "contents": "typeof(${1:object}) <: ${2:type}",
+      "trigger": "typeof subtype"
+    },
+    {
+      "contents": "isa(${1:object}, ${2:type})",
+      "trigger": "typeof isa"
+    },
+    {
+      "contents": "struct ${1:name} <: ${2:BaseType}\n  \t${3:fields}\nend",
+      "trigger": "struct inheritted\tInheritted Struct"
+    },
+    {
+      "contents": "struct ${1:name}{${2:Parameter}}\n  \t${3:fields}\nend",
+      "trigger": "struct parametric\tParametric Struct"
+    },
+    {
+      "contents": "struct ${1:name}{${2:Parameter}} <: ${3:BaseType}\n  \t${4:fields}\nend",
+      "trigger": "struct parametric inheritted\tParametric Inheritted Struct"
+    },
+    {
+      "contents": "fieldnames(${1:structName})",
+      "trigger": "struct field names\tStruct field names"
+    },
+    {
+      "contents": "${1:structName}.types",
+      "trigger": "struct field types\tStruct field types"
+    },
+    {
+      "contents": "if ${1:var} == ${2:value1}\n\nelseif ${1:var} == ${3:value2}\n\nelseif ${1:var} == ${4:value3}\n\nelse\n\nend",
+      "trigger": "switch case\tswitch"
+    },
+    {
+      "contents": "if ${1:condition1}\n\nelseif ${2:condition2}\n\nelse ${4:condition3}\n\nend",
+      "trigger": "if elseif"
+    },
+    {
+      "contents": "try\n  ${1:failable}\ncatch ex\n  if isa(ex, ${2:SomeExcep})\n      ${3:handle}\n  elseif isa(ex, ${4:SomeExcep2})\n      ${5:handle2}\n  else\n      ${6:handleOther}\n  end\nfinally\n  ${7:doAnyWays}\nend",
+      "trigger": "try catch full"
+    },
+    {
+      "contents": "for (${1:i},${2:val}) in enumerate(${3:itter})\n  ${4:body}\nend",
+      "trigger": "for enumerate\tenumeration - index, value"
+    },
+    {
+      "contents": "for ${1:i} in {2:vali}, ${3:j} in {4:valj}\n  ${5:body}\nend",
+      "trigger": "for nested\tnested loop - i,j"
+    },
+    {
+      "contents": "while true\n  ${1:body}\n  ${2:condition} && break\nend",
+      "trigger": "do while"
+    },
+    {
+      "contents": "if ${1:breakCondition}\n\n  break\nend",
+      "trigger": "break"
+    },
+    {
+      "contents": "if ${1:continueCondition}\n\n  continue\nend",
+      "trigger": "continue"
+    },
+    {
+      "contents": "while ${1:loopCondition}\n\n  if ${2:breakCondition}\n\n    break\n  end\n\nend",
+      "trigger": "while break\twhile with break"
+    },
+    {
+      "contents": "for ${1:loopCondition}\n\n  if ${2:breakCondition}\n\n    break\n  end\n\nend",
+      "trigger": "for break\tfor with break"
+    },
+    {
+      "contents": "for ${1:loopCondition}\n\n  if ${2:continueCondition}\n\n    continue\n  end\n\nend",
+      "trigger": "for continue\tfor with continue"
+    },
+    {
+      "contents": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n# Examples\n```julia\n${4:examples}\n```\n\"\"\"\nfunction ${1:name}(${2:args})\n\t${4:body}\nend",
+      "trigger": "function doc example\tDocumented Function with Examples"
+    },
+    {
+      "contents": "\"\"\"\n    ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}\n\n${5:documentation}\n# Examples\n```julia\n${6:examples}\n```\n\"\"\"\nfunction ${1:name}(${2:args}; ${3:kwargs})::{4:returnType}\n\t${7:body}\n  return {8:return value}\nend",
+      "trigger": "function full\tFunction Full"
+    },
+    {
+      "contents": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n\"\"\"",
+      "trigger": "doc\tDocstring"
+    },
+    {
+      "contents": "\"\"\"\n    ${1:name}(${2:args})\n\n${3:documentation}\n# Examples\n```julia\n${4:examples}\n```\n\"\"\"",
+      "trigger": "doc example\tDocstring with Examples"
+    },
+    {
+      "contents": "# Examples\n```julia\n${1:examples}\n```",
+      "trigger": "example\tJulia Example block"
+    },
+    {
+      "contents": "${1:key} => ${2:value}",
+      "trigger": "pair\tkey => val pair"
+    },
+    {
+      "contents": "Dict(${1:key1} => ${2:value1}, ${3:key2} => ${4:value2})",
+      "trigger": "Dict pair"
+    },
+    {
+      "contents": "keys(${1:dict})",
+      "trigger": "Dict keys"
+    },
+    {
+      "contents": "values(${1:dict})",
+      "trigger": "Dict values"
+    },
+    {
+      "contents": "for (${1:key},${2:value}) in ${3:dict}\n    ${4:body}\nend",
+      "trigger": "for Dict\tLoop through key-value pairs"
+    }
+  ]
+}

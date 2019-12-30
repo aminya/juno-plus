@@ -1,0 +1,38 @@
+{
+  "Hidden Output for Julia code chunk": {
+    "prefix": "out julia false",
+    "body": "```{julia; results =\"hidden\"}\n$1\n```"
+  },
+  "Non Echoed Julia code chunk": {
+    "prefix": "echo julia false",
+    "body": "```{julia; echo=false}\n$1\n```"
+  },
+  "Evaluated Julia code chunk": {
+    "prefix": "eval julia true",
+    "body": "```{julia; eval=true}\n$1\n```"
+  },
+  "Non-evaluated Julia code chunk": {
+    "prefix": "eval julia false",
+    "body": "```{julia; eval=false}\n$1\n```"
+  },
+  "Terminal Julia code chunk": {
+    "prefix": "term julia",
+    "body": "```{julia; term=true}\n$1\n```"
+  },
+  "Hold the output for a Block of Julia code chunk": {
+    "prefix": "hold julia",
+    "body": "```{julia; hold=true}\n$1\n```"
+  },
+  "Inline Julia Code": {
+    "prefix": "inline",
+    "body": "`j $1`"
+  },
+  "Latex": {
+    "prefix": "latex",
+    "body": "<!-- @af -->\n$$\n$1\n$$"
+  },
+  "Separator": {
+    "prefix": "sep",
+    "body": "--------------------------------------------------"
+  }
+}

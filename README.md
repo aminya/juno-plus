@@ -6,6 +6,10 @@ This is a simple Atom's package that enhances Julia Client Toolbar by adding som
 ### Installation
 https://atom.io/packages/juno-plus
 
+## VSCode - Sublime Installation
+
+Converted code snippets are available under `snippets_converted` folder.
+
 ## Buttons
 
 ### Files and Folders
