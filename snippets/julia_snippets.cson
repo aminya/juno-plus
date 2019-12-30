@@ -173,6 +173,10 @@ ${1:body}
   end
   """
 ################################################################
+  "Struct field names":
+    prefix: "struct field names"
+    body: 'fieldnames(${1:structName})'
+################################################################
   "typeof subtype":
     prefix: "typeof subtype"
     body: """
