@@ -32,15 +32,15 @@
     body: '\\\\'
 ################################################################
   "Regex previous 0<= time":
-    prefix: "reg 0<= time"
+    prefix: "reg 0 or more"
     body: '*'
 ################################################################
   "Regex previous 1<= time":
-    prefix: "reg 1<= time"
+    prefix: "reg 1 or more"
     body: '+'
 ################################################################
   "Regex previous 0 or 1 time":
-    prefix: "reg 0 or 1 time"
+    prefix: "reg 0 or 1"
     body: '?'
 ################################################################
   "Regex previous n times":
@@ -48,7 +48,7 @@
     body: '{${1:n}}'
 ################################################################
   "Regex previous n<= times":
-    prefix: "reg n<= times"
+    prefix: "reg n or more"
     body: '{${1:n}, }'
 ################################################################
   "Regex previous n1-n2 times":
@@ -136,11 +136,11 @@
     body: '[^${1:chars}]'
 ################################################################
   "Regex among char":
-    prefix: "reg among"
+    prefix: "reg among char"
     body: '[${1:a}-${1:z}]'
 ################################################################
   "Regex among digits":
-    prefix: "reg among"
+    prefix: "reg among number"
     body: '[${1:0}-${1:9}]'
 ################################################################
   "Regex positive lookahead group":
@@ -160,6 +160,8 @@
     body: '\\\\b'
 ################################################################
 ## Regex Common
+################################################################
+### Numbers
 ################################################################
   "Regex whole numbers":
     prefix: "regc numbers whole"
@@ -181,6 +183,8 @@
     prefix: "regc numbers whole + decimal + fractions "
     body: '[-]?[0-9]+[,.]?[0-9]*([\\\\/][0-9]+[,.]?[0-9]*)*'
 ################################################################
+### Alphanumeric Characters
+################################################################
   "Regex alphanumeric without space":
     prefix: "regc alphanumeric without space"
     body: '^[a-zA-Z0-9]*$'
@@ -189,6 +193,14 @@
     prefix: "regc alphanumeric with space "
     body: '^[a-zA-Z0-9 ]*$'
 ################################################################
+### Dates
+################################################################
+  "Regex Date Format YYYY-MM-dd":
+    prefix: "regc Date Format YYYY-MM-dd"
+    body: '([12]\\\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\\\d|3[01]))'
+################################################################
+### Email
+################################################################
   "Regex email common":
     prefix: "regc email common"
     body: '^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,6})*$'
@@ -196,6 +208,8 @@
   "Regex email uncommon":
     prefix: "regc email uncommon"
     body: '^([a-z0-9_\\\\.\\\\+-]+)@([\\\\da-z\\\\.-]+)\\\\.([a-z\\\\.]{2,6})$'
+################################################################
+### Password Strength
 ################################################################
   "Regex password complex":
     prefix: "regc password complex"
@@ -207,10 +221,14 @@
     body: '''(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$'''
     description: 'Should have 1 lowercase letter, 1 uppercase letter, 1 number, and be at least 8 characters long'
 ################################################################
+### Username
+################################################################
   "Regex username":
     prefix: "regc username"
     body: '''(?=(.*[0-9]))((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.{8,}$'''
     description: 'Alphanumeric string that may include _ and – having a length of 3 to 16 characters'
+################################################################
+### URL
 ################################################################
   "Regex url http(s)":
     prefix: "regc url http(s)"
@@ -219,6 +237,8 @@
   "Regex url protocol optional":
     prefix: "regc url protocol optional"
     body: '(https?:\\\\/\\\\/)?(www\\\\.)?[-a-zA-Z0-9@:%._\\\\+~#=]{2,256}\\\\.[a-z]{2,6}\\\\b([-a-zA-Z0-9@:%_\\\\+.~#?&//=]*)'
+################################################################
+### IP Address
 ################################################################
   "Regex IPv4 address":
     prefix: "regc IPv4 address "
