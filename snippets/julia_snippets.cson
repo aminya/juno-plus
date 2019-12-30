@@ -261,7 +261,7 @@ ${1:body}
   "while with break":
     prefix: "while break"
     body: """
-  while ${1:continueCondition}
+  while ${1:loopCondition}
 
     if ${2:breakCondition}
 
@@ -274,11 +274,24 @@ ${1:body}
   "for with break":
     prefix: "for break"
     body: """
-  for ${1:continueCondition}
+  for ${1:loopCondition}
 
     if ${2:breakCondition}
 
       break
+    end
+
+  end
+  """
+################################################################
+  "for with contintue":
+    prefix: "for contintue"
+    body: """
+  for ${1:loopCondition}
+
+    if ${2:continueCondition}
+
+      contintue
     end
 
   end
