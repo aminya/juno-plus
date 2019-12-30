@@ -177,6 +177,10 @@ ${1:body}
     prefix: "struct field names"
     body: 'fieldnames(${1:structName})'
 ################################################################
+  "Struct field types":
+    prefix: "struct field types"
+    body: '${1:structName}.types'
+################################################################
   "typeof subtype":
     prefix: "typeof subtype"
     body: """
