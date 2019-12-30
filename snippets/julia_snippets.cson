@@ -45,7 +45,7 @@
     #= ${1:comment} =#
     '''
 ################################################################
-## Strings and Charecters
+## Strings and Characters
 ################################################################
   "Triple \" ":
     prefix: "q3"
@@ -55,13 +55,13 @@ ${1:body}
 """
     '''
 ################################################################
-  "Charecter Code":
+  "Character Code":
     prefix: "char code"
     body: '''
     Int('${1:C}')
     '''
 ################################################################
-  "Charecter from Code":
+  "Character from Code":
     prefix: "char from code"
     body: '''
     Char('${1:65}')
@@ -251,7 +251,7 @@ ${1:body}
 ################################################################
 ## Loops
 ################################################################
-  "enumeratation - index, value":
+  "enumeration - index, value":
     prefix: "for enumerate"
     body: """
   for (${1:i},${2:val}) in enumerate(${3:itter})
@@ -285,12 +285,12 @@ ${1:body}
     end
   """
 ################################################################
-  "contintue":
-    prefix: "contintue"
+  "continue":
+    prefix: "continue"
     body: """
-    if ${1:contintueCondition}
+    if ${1:continueCondition}
 
-      contintue
+      continue
     end
   """
 ################################################################
@@ -320,14 +320,14 @@ ${1:body}
   end
   """
 ################################################################
-  "for with contintue":
-    prefix: "for contintue"
+  "for with continue":
+    prefix: "for continue"
     body: """
   for ${1:loopCondition}
 
     if ${2:continueCondition}
 
-      contintue
+      continue
     end
 
   end
