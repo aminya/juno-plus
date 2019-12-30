@@ -202,6 +202,8 @@ ${1:body}
 
   elseif ${1:var} == ${4:value3}
 
+  else
+
   end
   """
 ################################################################
@@ -212,7 +214,7 @@ ${1:body}
 
   elseif ${2:condition2}
 
-  elseif ${3:condition3}
+  else ${4:condition3}
 
   end
   """
