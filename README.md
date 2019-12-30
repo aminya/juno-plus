@@ -1,5 +1,5 @@
 # juno-plus Atom package
-This is a simple Atom's package that enhances Julia IDE (Juno) by adding some useful buttons and code snippets.
+This is an Atom's package that enhances Julia IDE (Juno) by adding some useful buttons and code snippets.
 
 ![image](https://user-images.githubusercontent.com/16418197/68539924-ece5bc00-034f-11ea-9fa4-da30d12135e3.png)
 
