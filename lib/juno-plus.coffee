@@ -150,83 +150,84 @@ module.exports =
 
     @bar.addSpacer()
 
-    @bar.addButton
-      icon: 'md-planet'
-      iconset: 'ion'
-      tooltip: 'Start Remote Julia Process'
-      callback: 'julia-client:start-remote-julia-process'
+    if enableJunoButtons
+      @bar.addButton
+        icon: 'md-planet'
+        iconset: 'ion'
+        tooltip: 'Start Remote Julia Process'
+        callback: 'julia-client:start-remote-julia-process'
 
-    @bar.addButton
-      icon: 'alpha-j'
-      iconset: 'mdi'
-      tooltip: 'Start Local Julia Process'
-      callback: 'julia-client:start-julia'
+      @bar.addButton
+        icon: 'alpha-j'
+        iconset: 'mdi'
+        tooltip: 'Start Local Julia Process'
+        callback: 'julia-client:start-julia'
 
-    @bar.addButton
-      icon: 'md-infinite'
-      iconset: 'ion'
-      tooltip: 'Revise Julia'
-      callback: 'juno-plus:Revise'
+      @bar.addButton
+        icon: 'md-infinite'
+        iconset: 'ion'
+        tooltip: 'Revise Julia'
+        callback: 'juno-plus:Revise'
 
-    @bar.addButton
-      icon: 'md-pause'
-      iconset: 'ion'
-      tooltip: 'Interrupt Julia'
-      callback: 'julia-client:interrupt-julia'
+      @bar.addButton
+        icon: 'md-pause'
+        iconset: 'ion'
+        tooltip: 'Interrupt Julia'
+        callback: 'julia-client:interrupt-julia'
 
-    @bar.addButton
-      icon: 'md-square'
-      iconset: 'ion'
-      tooltip: 'Stop Julia'
-      callback: 'julia-client:kill-julia'
+      @bar.addButton
+        icon: 'md-square'
+        iconset: 'ion'
+        tooltip: 'Stop Julia'
+        callback: 'julia-client:kill-julia'
 
-    @bar.addButton
-      icon: 'sync'
-      tooltip: 'Restart Julia'
-      callback:'juno-plus:restart-julia'
+      @bar.addButton
+        icon: 'sync'
+        tooltip: 'Restart Julia'
+        callback:'juno-plus:restart-julia'
 
-    @bar.addButton
-      icon: 'eraser'
-      iconset: 'fa'
-      tooltip: 'Clear Julia Console'
-      callback: 'julia-client:clear-REPL'
+      @bar.addButton
+        icon: 'eraser'
+        iconset: 'fa'
+        tooltip: 'Clear Julia Console'
+        callback: 'julia-client:clear-REPL'
 
-    # Evaluation
+      # Evaluation
 
-    @bar.addSpacer()
+      @bar.addSpacer()
 
-    @bar.addButton
-      icon: 'md-play'
-      iconset: 'ion'
-      tooltip: 'Run All'
-      callback: 'julia-client:run-all'
+      @bar.addButton
+        icon: 'md-play'
+        iconset: 'ion'
+        tooltip: 'Run All'
+        callback: 'julia-client:run-all'
 
-    @bar.addButton
-      icon: 'ios-skip-forward'
-      iconset: 'ion'
-      tooltip: 'Run Cell'
-      callback: 'julia-client:run-cell-and-move'
+      @bar.addButton
+        icon: 'ios-skip-forward'
+        iconset: 'ion'
+        tooltip: 'Run Cell'
+        callback: 'julia-client:run-cell-and-move'
 
-    @bar.addButton
-      icon: 'zap'
-      tooltip: 'Run Block'
-      callback: 'julia-client:run-and-move'
+      @bar.addButton
+        icon: 'zap'
+        tooltip: 'Run Block'
+        callback: 'julia-client:run-and-move'
 
-    # Code Tools
+      # Code Tools
 
-    @bar.addSpacer()
+      @bar.addSpacer()
 
-    # Documentation
-    @bar.addButton
-      icon: 'question'
-      tooltip: 'Show Documentation [Selection]'
-      callback: 'julia-client:show-documentation'
+      # Documentation
+      @bar.addButton
+        icon: 'question'
+        tooltip: 'Show Documentation [Selection]'
+        callback: 'julia-client:show-documentation'
 
-    # Go to definition
-    @bar.addButton
-      icon: 'diff-renamed'
-      tooltip: 'Go to definition [Selection]'
-      callback: 'julia-client:goto-symbol'
+      # Go to definition
+      @bar.addButton
+        icon: 'diff-renamed'
+        tooltip: 'Go to definition [Selection]'
+        callback: 'julia-client:goto-symbol'
 
     # Bookmarks
     @bar.addButton
@@ -241,12 +242,13 @@ module.exports =
       tooltip: 'View Bookmarks'
       callback: 'bookmarks:view-all'
 
-    # Code Formatters
-    @bar.addButton
-      icon: 'format-float-none'
-      iconset: 'mdi'
-      tooltip: 'Format Code'
-      callback: 'julia-client:format-code'
+    if enableJunoButtons
+      # Code Formatters
+      @bar.addButton
+        icon: 'format-float-none'
+        iconset: 'mdi'
+        tooltip: 'Format Code'
+        callback: 'julia-client:format-code'
 
     if atom.packages.loadedPackages['atom-beautify']
       @bar.addButton
@@ -276,7 +278,7 @@ module.exports =
 
     # Layout Adjustment
 
-    if layoutAdjustmentButtons
+    if enableJunoButtons && layoutAdjustmentButtons
       @bar.addSpacer()
 
       @bar.addButton
@@ -320,7 +322,7 @@ module.exports =
         callback: 'markdown-preview:toggle'
         tooltip: 'Markdown Preview'
 
-    if atom.packages.loadedPackages['language-weave']
+    if enableJunoButtons && atom.packages.loadedPackages['language-weave']
       @bar.addButton
         icon: 'language-html5',
         iconset: 'mdi',
@@ -360,7 +362,12 @@ module.exports =
       tooltip: 'Toggle Command Palette'
       iconset: 'fa'
 
-    # @bar.addButton
+    @bar.addButton
+      icon: 'plug'
+      callback: 'juno-toolbar-plus:enable-disable-juno'
+      tooltip: 'Enable/Disable Juno'
+
+  # @bar.addButton
     #   icon: 'x'
     #   callback: 'tool-bar:toggle'
     #   tooltip: 'Close Tool-Bar'
