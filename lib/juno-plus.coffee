@@ -156,15 +156,21 @@ module.exports =
     @bar.addSpacer()
 
     @bar.addButton
-      icon: 'zap'
-      tooltip: 'Run Block'
-      callback: 'julia-client:run-and-move'
-
-    @bar.addButton
       icon: 'md-play'
       iconset: 'ion'
       tooltip: 'Run All'
       callback: 'julia-client:run-all'
+
+    @bar.addButton
+      icon: 'ios-skip-forward'
+      iconset: 'ion'
+      tooltip: 'Run Cell'
+      callback: 'julia-client:run-cell-and-move'
+
+    @bar.addButton
+      icon: 'zap'
+      tooltip: 'Run Block'
+      callback: 'julia-client:run-and-move'
 
     # Code Tools
 
