@@ -49,6 +49,33 @@ module.exports =
       command += "Juno.clearconsole();"
       evalsimple(command)
 
+    # Disable Juno
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:DisableJuno': (event) ->
+      element = atom.workspace.getElement()
+      atom.commands.dispatch(element, 'windows:reload')
+      if atom.packages.loadedPackages['julia-client']
+        atom.commands.dispatch(element, 'julia-client:close-juno-panes')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-julia')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-indent-detective')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-ink')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-julia-client')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-weave')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-uber-juno')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-linter-julia')
+        .then () ->   atom.commands.dispatch(element, 'windows:reload')
+        JunoOn = false
+      else
+        atom.commands.dispatch(element, 'toggle-packages:toggle-language-julia')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-julia-client')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-ink')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-indent-detective')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-weave')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-uber-juno')
+        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-linter-julia')
+        .then () ->   atom.commands.dispatch(element, 'dev-live-reload:reload-all')
+        .then () -> atom.commands.dispatch(element, 'windows:reload')
+        JunoOn = true
+
   deactivate: ->
     @bar?.removeItems()
 
