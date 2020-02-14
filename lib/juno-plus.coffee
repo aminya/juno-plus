@@ -56,6 +56,8 @@ module.exports =
       command += "Juno.clearconsole();"
       evalsimple(command)
 
+    atom.commands.add 'atom-workspace', 'juno-toolbar:force-restart', ->
+      atom.restartApplication()
     # Disable Juno
     atom.commands.add 'atom-workspace', 'juno-toolbar-plus:DisableJuno': (event) ->
       element = atom.workspace.getElement()
