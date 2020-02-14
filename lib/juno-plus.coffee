@@ -21,6 +21,13 @@ module.exports =
       title: 'Toolbar Position'
       description: 'Puts toolbar at top (changing requires restart).'
 
+    JunoPackages:
+      type: 'array'
+      default:  [ "julia-client", "ink", "language-julia", "language-weave", "uber-juno"]
+      items:
+        type: 'string'
+      title: 'Juno Packages for Enabling/Disabling'
+      description: 'Write the name of packages that you want to be enabled/disabled using plug button'
 
   consumeJuliaClient: (client) ->
     # getting client object
