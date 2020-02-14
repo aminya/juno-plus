@@ -1,3 +1,2 @@
-## 0.8.2
-* Adding go to definition
-* Adding run cell
+## 0.9
+* Enable/Disable Juno button

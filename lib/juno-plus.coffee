@@ -62,7 +62,7 @@ module.exports =
     atom.commands.add 'atom-workspace', 'juno-toolbar:restart', ->
       atom.commands.dispatch('windows:reload')
       atom.commands.dispatch('dev-live-reload:reload-all')
-      
+
     # Disable Juno
     atom.commands.add 'atom-workspace', 'juno-toolbar-plus:enable-disable-juno': (event) ->
       try
