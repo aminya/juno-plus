@@ -1,5 +1,5 @@
 juliaClient = null
-JunoOn = false
+JunoOn = true
 
 module.exports =
   config:
@@ -64,31 +64,26 @@ module.exports =
       atom.commands.dispatch('dev-live-reload:reload-all')
       
     # Disable Juno
-    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:DisableJuno': (event) ->
-      element = atom.workspace.getElement()
-      atom.commands.dispatch(element, 'windows:reload')
-      if atom.packages.loadedPackages['julia-client']
-        atom.commands.dispatch(element, 'julia-client:close-juno-panes')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-julia')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-indent-detective')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-ink')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-julia-client')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-weave')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-uber-juno')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-linter-julia')
-        .then () ->   atom.commands.dispatch(element, 'windows:reload')
-        JunoOn = false
-      else
-        atom.commands.dispatch(element, 'toggle-packages:toggle-language-julia')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-julia-client')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-ink')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-indent-detective')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-language-weave')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-uber-juno')
-        .then () ->   atom.commands.dispatch(element, 'toggle-packages:toggle-linter-julia')
-        .then () ->   atom.commands.dispatch(element, 'dev-live-reload:reload-all')
-        .then () -> atom.commands.dispatch(element, 'windows:reload')
-        JunoOn = true
+    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:enable-disable-juno': (event) ->
+      try
+        packages = atom.config.get('juno-plus.JunoPackages')
+        element = atom.workspace.getElement()
+        atom.commands.dispatch(element, 'juno-toolbar:restart')
+        if atom.packages.loadedPackages['julia-client'] && JunoOn
+          atom.commands.dispatch(element, 'julia-client:close-juno-panes')
+          for p in packages
+            atom.packages.disablePackage(p)
+          JunoOn = false
+        else
+          for p in packages
+            atom.packages.enablePackage(p)
+          JunoOn = true
+        atom.commands.dispatch(element, 'juno-toolbar:restart')
+        atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+reload+Enter")
+      catch e
+        atom.notifications.addWarning(e)
+        atom.notifications.addError("Something went wrong, Atom will reload")
+        atom.commands.dispatch(element, 'juno-toolbar:force-restart')
 
   deactivate: ->
     @bar?.removeItems()
