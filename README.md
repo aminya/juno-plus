@@ -23,6 +23,7 @@ Converted code snippets are available under `snippets_converted` folder.
 * Erase console
 * Show documentation of selection
 * using Revise
+* Run cell
 
 ### Code Tools:
 * Bookmarks
@@ -36,6 +37,7 @@ Converted code snippets are available under `snippets_converted` folder.
 * Open Settings
 * Fullscreen
 * Command Palette
+* Restart Juno
 
 ## Julia Snippets
 
