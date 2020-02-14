@@ -176,6 +176,12 @@ module.exports =
       tooltip: 'Show Documentation [Selection]'
       callback: 'julia-client:show-documentation'
 
+    # Go to definition
+    @bar.addButton
+      icon: 'diff-renamed'
+      tooltip: 'Go to definition [Selection]'
+      callback: 'julia-client:goto-symbol'
+
     # Bookmarks
     @bar.addButton
       icon: 'md-bookmark'
