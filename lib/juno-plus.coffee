@@ -90,6 +90,9 @@ module.exports =
 
   consumeToolBar: (bar) ->
 
+    if atom.packages.loadedPackages['julia-client'] && JunoOn
+      enableJunoButtons = true
+
     # Enabling Toolbar
     if atom.config.get('juno-plus.enableToolbarPlus')
       atom.config.set('julia-client.uiOptions.enableToolBar', false)
