@@ -1,4 +1,5 @@
 juliaClient = null
+JunoOn = false
 
 module.exports =
   config:
