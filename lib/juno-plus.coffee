@@ -21,6 +21,12 @@ module.exports =
       title: 'Layout Adjustment Buttons'
       description: 'Adds buttons to adjust the layout (changing requires restart).'
 
+    WeaveButtons:
+      type: 'boolean'
+      default: false
+      title: 'Weave Buttons'
+      description: 'Adds buttons to perform weave functions (changing requires restart).'
+
     topPosition:
       type: 'boolean'
       default: true
@@ -112,7 +118,6 @@ module.exports =
     # getting toolbar object
     @bar = bar 'juno-plus'
 
-    # layout Adjustment Buttons
     if atom.config.get('juno-plus.layoutAdjustmentButtons')
       layoutAdjustmentButtons = true
     else
@@ -122,6 +127,12 @@ module.exports =
       StartJuliaProcessButtons = true
     else
       StartJuliaProcessButtons = false
+
+    if atom.config.get('juno-plus.WeaveButtons')
+      WeaveButtons = true
+    else
+      WeaveButtons = false
+
     # Buttons:
 
     # Files & Folders
@@ -346,7 +357,7 @@ module.exports =
         callback: 'markdown-preview:toggle'
         tooltip: 'Markdown Preview'
 
-    if enableJunoButtons && atom.packages.loadedPackages['language-weave']
+    if enableJunoButtons && atom.packages.loadedPackages['language-weave'] && WeaveButtons
       @bar.addButton
         icon: 'language-html5',
         iconset: 'mdi',
