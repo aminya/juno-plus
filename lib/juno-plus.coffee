@@ -9,6 +9,12 @@ module.exports =
       title: 'Enable Juno Toolbar Plus'
       description: 'Replaces Julia Client Toolbar (changing requires 2 restarts!).'
 
+    StartJuliaProcessButtons:
+      type: 'boolean'
+      default: false
+      title: 'Start Julia Process Buttons'
+      description: 'Adds buttons to Start Julia Process (changing requires restart).'
+
     layoutAdjustmentButtons:
       type: 'boolean'
       default: false
@@ -112,6 +118,10 @@ module.exports =
     else
       layoutAdjustmentButtons = false
 
+    if atom.config.get('juno-plus.StartJuliaProcessButtons')
+      StartJuliaProcessButtons = true
+    else
+      StartJuliaProcessButtons = false
     # Buttons:
 
     # Files & Folders
@@ -151,17 +161,18 @@ module.exports =
     @bar.addSpacer()
 
     if enableJunoButtons
-      @bar.addButton
-        icon: 'md-planet'
-        iconset: 'ion'
-        tooltip: 'Start Remote Julia Process'
-        callback: 'julia-client:start-remote-julia-process'
+      if StartJuliaProcessButtons
+        @bar.addButton
+          icon: 'md-planet'
+          iconset: 'ion'
+          tooltip: 'Start Remote Julia Process'
+          callback: 'julia-client:start-remote-julia-process'
 
-      @bar.addButton
-        icon: 'alpha-j'
-        iconset: 'mdi'
-        tooltip: 'Start Local Julia Process'
-        callback: 'julia-client:start-julia'
+        @bar.addButton
+          icon: 'alpha-j'
+          iconset: 'mdi'
+          tooltip: 'Start Local Julia Process'
+          callback: 'julia-client:start-julia'
 
       @bar.addButton
         icon: 'md-infinite'
