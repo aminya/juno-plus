@@ -213,6 +213,13 @@ module.exports =
         tooltip: 'Run Block'
         callback: 'julia-client:run-and-move'
 
+      # Debugging
+      @bar.addButton
+        text: '<i class="fa fa-bug"></i><i class="fa fa-play"></i>'
+        html: true
+        tooltip: 'Debug: Run File'
+        callback: 'julia-debug:run-file'
+
       # Code Tools
 
       @bar.addSpacer()
