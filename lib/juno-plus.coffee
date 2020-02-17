@@ -1,5 +1,6 @@
 juliaClient = null
 JunoOn = true
+allFolded = false
 
 module.exports =
   config:
@@ -102,6 +103,16 @@ module.exports =
         atom.notifications.addWarning(e)
         atom.notifications.addError("Something went wrong, Atom will reload")
         atom.commands.dispatch(element, 'juno-toolbar:force-restart')
+    atom.commands.add 'atom-text-editor',
+      'juno-plus:toggle-folding': (event) ->
+        editor = @getModel()
+        bufferRow = editor.bufferPositionForScreenPosition(editor.getCursorScreenPosition()).row
+        if allFolded
+          editor.unfoldAll()
+          allFolded = false
+        else
+          editor.foldAll()
+          allFolded = true
 
   deactivate: ->
     @bar?.removeItems()
@@ -306,16 +317,10 @@ module.exports =
 
     # Fold
     @bar.addButton
-      icon: 'chevron-right'
-      callback: 'editor:fold-all'
-      tooltip: 'Fold all'
-      iconset: 'fa'
-
-    @bar.addButton
-      icon: 'chevron-down'
-      callback: 'editor:unfold-all'
-      tooltip: 'Unfold all'
-      iconset: 'fa'
+      text: '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>'
+      html: true
+      tooltip: 'Toggle Folding'
+      callback: 'juno-plus:toggle-folding'
 
     # Layout Adjustment
 
