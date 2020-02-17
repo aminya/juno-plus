@@ -1,5 +1,6 @@
 juliaClient = null
 JunoOn = true
+allFolded = false
 
 module.exports =
   config:
@@ -74,19 +75,19 @@ module.exports =
       command += "Juno.clearconsole();"
       evalsimple(command)
 
-    atom.commands.add 'atom-workspace', 'juno-toolbar:force-restart', ->
+    atom.commands.add 'atom-workspace', 'juno-plus:force-restart', ->
       atom.restartApplication()
 
-    atom.commands.add 'atom-workspace', 'juno-toolbar:restart', ->
+    atom.commands.add 'atom-workspace', 'juno-plus:restart', ->
       atom.commands.dispatch('windows:reload')
       atom.commands.dispatch('dev-live-reload:reload-all')
 
     # Disable Juno
-    atom.commands.add 'atom-workspace', 'juno-toolbar-plus:enable-disable-juno': (event) ->
+    atom.commands.add 'atom-workspace', 'juno-plus:enable-disable-juno': (event) ->
       try
         packages = atom.config.get('juno-plus.JunoPackages')
         element = atom.workspace.getElement()
-        atom.commands.dispatch(element, 'juno-toolbar:restart')
+        atom.commands.dispatch(element, 'juno-plus:restart')
         if atom.packages.loadedPackages['julia-client'] && JunoOn
           atom.commands.dispatch(element, 'julia-client:close-juno-panes')
           for p in packages
@@ -96,12 +97,23 @@ module.exports =
           for p in packages
             atom.packages.enablePackage(p)
           JunoOn = true
-        atom.commands.dispatch(element, 'juno-toolbar:restart')
+        atom.commands.dispatch(element, 'juno-plus:restart')
         atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+reload+Enter")
       catch e
         atom.notifications.addWarning(e)
         atom.notifications.addError("Something went wrong, Atom will reload")
-        atom.commands.dispatch(element, 'juno-toolbar:force-restart')
+        atom.commands.dispatch(element, 'juno-plus:force-restart')
+
+    atom.commands.add 'atom-text-editor',
+      'juno-plus:toggle-folding': (event) ->
+        editor = @getModel()
+        bufferRow = editor.bufferPositionForScreenPosition(editor.getCursorScreenPosition()).row
+        if allFolded
+          editor.unfoldAll()
+          allFolded = false
+        else
+          editor.foldAll()
+          allFolded = true
 
   deactivate: ->
     @bar?.removeItems()
@@ -306,16 +318,10 @@ module.exports =
 
     # Fold
     @bar.addButton
-      icon: 'chevron-right'
-      callback: 'editor:fold-all'
-      tooltip: 'Fold all'
-      iconset: 'fa'
-
-    @bar.addButton
-      icon: 'chevron-down'
-      callback: 'editor:unfold-all'
-      tooltip: 'Unfold all'
-      iconset: 'fa'
+      text: '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>'
+      html: true
+      tooltip: 'Toggle Folding'
+      callback: 'juno-plus:toggle-folding'
 
     # Layout Adjustment
 
@@ -405,7 +411,7 @@ module.exports =
 
     @bar.addButton
       icon: 'plug'
-      callback: 'juno-toolbar-plus:enable-disable-juno'
+      callback: 'juno-plus:enable-disable-juno'
       tooltip: 'Enable/Disable Juno'
 
   # @bar.addButton

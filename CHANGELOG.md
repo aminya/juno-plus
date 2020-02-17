@@ -3,3 +3,4 @@
 * new button Debug: Step into File
 * Adds options for enabling "Start Julia Process" Buttons (defaults to false)
 * Adds options for enabling "Weave Buttons" (defaults to false)
+* Combining fold buttons to a toggle folding button
