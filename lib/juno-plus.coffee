@@ -8,30 +8,35 @@ module.exports =
       default: true
       title: 'Enable Juno Toolbar Plus'
       description: 'Replaces Julia Client Toolbar (changing requires 2 restarts!).'
+      order: 1
 
     StartJuliaProcessButtons:
       type: 'boolean'
       default: false
       title: 'Start Julia Process Buttons'
       description: 'Adds buttons to Start Julia Process (changing requires restart).'
+      order: 2
 
     layoutAdjustmentButtons:
       type: 'boolean'
       default: false
       title: 'Layout Adjustment Buttons'
       description: 'Adds buttons to adjust the layout (changing requires restart).'
+      order: 3
 
     WeaveButtons:
       type: 'boolean'
       default: false
       title: 'Weave Buttons'
       description: 'Adds buttons to perform weave functions (changing requires restart).'
+      order: 4
 
     topPosition:
       type: 'boolean'
       default: true
       title: 'Toolbar Position'
       description: 'Puts toolbar at top (changing requires restart).'
+      order: 5
 
     JunoPackages:
       type: 'array'
@@ -40,6 +45,7 @@ module.exports =
         type: 'string'
       title: 'Juno Packages for Enabling/Disabling'
       description: 'Write the name of packages that you want to be enabled/disabled using plug button'
+      order: 6
 
   consumeJuliaClient: (client) ->
     # getting client object
