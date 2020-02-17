@@ -8,7 +8,7 @@ https://atom.io/packages/juno-plus
 
 After installation, if the Julia Client icons are still present, you might need to reload/restart Atom 2 times! (because this package adjusts Julia Client and Tool-bar config settings).
 
-## VSCode - Sublime Installation
+#### VSCode - Sublime Installation
 
 Converted code snippets are available under `snippets_converted` folder.
 
@@ -23,7 +23,7 @@ Converted code snippets are available under `snippets_converted` folder.
 * Restart Julia (which removes workspace)
 * Erase console
 
-# Evaluation and Debugging:
+### Evaluation and Debugging:
 * Run cell
 * Debug: Run File
 * Debug: Step into File
