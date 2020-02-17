@@ -1,7 +1,7 @@
 # juno-plus Atom package
 This is an Atom's package that enhances Julia IDE (Juno) by adding some useful buttons and code snippets.
 
-![image](https://user-images.githubusercontent.com/16418197/68539924-ece5bc00-034f-11ea-9fa4-da30d12135e3.png)
+![screenshot](https://user-images.githubusercontent.com/16418197/74638167-fe99e500-5130-11ea-93c1-0a60b8f37049.jpg)
 
 ### Atom Installation
 https://atom.io/packages/juno-plus
@@ -19,13 +19,18 @@ Converted code snippets are available under `snippets_converted` folder.
 * Select Julia working directory
 
 ### Process:
+* using Revise
 * Restart Julia (which removes workspace)
 * Erase console
-* Show documentation of selection
-* using Revise
+
+# Evaluation and Debugging:
 * Run cell
+* Debug: Run File
+* Debug: Step into File
 
 ### Code Tools:
+* Show documentation of the selection
+* Go to definition of the selection
 * Bookmarks
 * Fold all - Unfold all: useful for code overview
 * Auto Indent Selection (faster than Julia-Client formatting button)
