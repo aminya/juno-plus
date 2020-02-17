@@ -9,11 +9,23 @@ module.exports =
       title: 'Enable Juno Toolbar Plus'
       description: 'Replaces Julia Client Toolbar (changing requires 2 restarts!).'
 
+    StartJuliaProcessButtons:
+      type: 'boolean'
+      default: false
+      title: 'Start Julia Process Buttons'
+      description: 'Adds buttons to Start Julia Process (changing requires restart).'
+
     layoutAdjustmentButtons:
       type: 'boolean'
       default: false
       title: 'Layout Adjustment Buttons'
       description: 'Adds buttons to adjust the layout (changing requires restart).'
+
+    WeaveButtons:
+      type: 'boolean'
+      default: false
+      title: 'Weave Buttons'
+      description: 'Adds buttons to perform weave functions (changing requires restart).'
 
     topPosition:
       type: 'boolean'
@@ -106,11 +118,20 @@ module.exports =
     # getting toolbar object
     @bar = bar 'juno-plus'
 
-    # layout Adjustment Buttons
     if atom.config.get('juno-plus.layoutAdjustmentButtons')
       layoutAdjustmentButtons = true
     else
       layoutAdjustmentButtons = false
+
+    if atom.config.get('juno-plus.StartJuliaProcessButtons')
+      StartJuliaProcessButtons = true
+    else
+      StartJuliaProcessButtons = false
+
+    if atom.config.get('juno-plus.WeaveButtons')
+      WeaveButtons = true
+    else
+      WeaveButtons = false
 
     # Buttons:
 
@@ -151,17 +172,18 @@ module.exports =
     @bar.addSpacer()
 
     if enableJunoButtons
-      @bar.addButton
-        icon: 'md-planet'
-        iconset: 'ion'
-        tooltip: 'Start Remote Julia Process'
-        callback: 'julia-client:start-remote-julia-process'
+      if StartJuliaProcessButtons
+        @bar.addButton
+          icon: 'md-planet'
+          iconset: 'ion'
+          tooltip: 'Start Remote Julia Process'
+          callback: 'julia-client:start-remote-julia-process'
 
-      @bar.addButton
-        icon: 'alpha-j'
-        iconset: 'mdi'
-        tooltip: 'Start Local Julia Process'
-        callback: 'julia-client:start-julia'
+        @bar.addButton
+          icon: 'alpha-j'
+          iconset: 'mdi'
+          tooltip: 'Start Local Julia Process'
+          callback: 'julia-client:start-julia'
 
       @bar.addButton
         icon: 'md-infinite'
@@ -212,6 +234,19 @@ module.exports =
         icon: 'zap'
         tooltip: 'Run Block'
         callback: 'julia-client:run-and-move'
+
+      # Debugging
+      @bar.addButton
+        text: '<i class="fa fa-bug"></i><i class="fa fa-play"></i>'
+        html: true
+        tooltip: 'Debug: Run File'
+        callback: 'julia-debug:run-file'
+
+      @bar.addButton
+        text: '<i class="fa fa-bug"></i><i class="fa fa-step-forward"></i>'
+        html: true
+        tooltip: 'Debug: Step into File'
+        callback: 'julia-debug:step-through-file'
 
       # Code Tools
 
@@ -322,7 +357,7 @@ module.exports =
         callback: 'markdown-preview:toggle'
         tooltip: 'Markdown Preview'
 
-    if enableJunoButtons && atom.packages.loadedPackages['language-weave']
+    if enableJunoButtons && atom.packages.loadedPackages['language-weave'] && WeaveButtons
       @bar.addButton
         icon: 'language-html5',
         iconset: 'mdi',
