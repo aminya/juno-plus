@@ -1,13 +1,6 @@
 .DS_Store
 npm-debug.log
 node_modules
-.idea/vcs.xml
-.idea/modules.xml
-.idea/misc.xml
-.idea/libraries/Atom.xml
-.idea/juno-plus.iml
-.idea/jsLibraryMappings.xml
+.idea/*
 lib/juno-plus.js
 lib/juno-plus.js.map
-.idea/watcherTasks.xml
-.idea/libraries/Generated_files.xml
