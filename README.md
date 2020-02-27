@@ -292,6 +292,10 @@ Inline Julia Code | inline
 Latex | latex
 Separator | sep
 
-Repo: https://github.com/aminya/juno-plus
 
+## Discussion:
+Discourse https://discourse.julialang.org/t/ann-juno-plus-0-10-2/32807/5
+Repo: https://github.com/aminya/juno-plus
 If you have any suggestions, I would be happy to include.
+
+
