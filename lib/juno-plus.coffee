@@ -66,8 +66,14 @@ module.exports =
     # Restart Julia
     atom.commands.add 'atom-workspace', 'juno-plus:restart-julia': (event) ->
       element = atom.workspace.getElement()
-      atom.commands.dispatch(element, 'julia-client:kill-julia')
-      .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+      try
+        atom.commands.dispatch(element, 'julia-client:kill-julia')
+        # .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+        setTimeout(() -> {
+          atom.commands.dispatch(element, 'julia-client:start-julia')
+           }, 1000);
+      catch e
+        atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
 
     # Revise
     atom.commands.add 'atom-workspace', 'juno-plus:Revise': (event) ->
