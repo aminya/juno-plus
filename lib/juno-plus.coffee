@@ -53,11 +53,27 @@ module.exports =
     juliaClient = client
 
   activate: ->
+
+    # Force Restart Atom
+    atom.commands.add 'atom-workspace', 'juno-plus:force-restart-atom', ->
+      atom.restartApplication()
+
+    # Restart Atom
+    atom.commands.add 'atom-workspace', 'juno-plus:restart-atom', ->
+      atom.commands.dispatch('windows:reload')
+      atom.commands.dispatch('dev-live-reload:reload-all')
+
     # Restart Julia
     atom.commands.add 'atom-workspace', 'juno-plus:restart-julia': (event) ->
       element = atom.workspace.getElement()
-      atom.commands.dispatch(element, 'julia-client:kill-julia')
-      .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+      try
+        atom.commands.dispatch(element, 'julia-client:kill-julia')
+        # .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+        setTimeout(() -> {
+          atom.commands.dispatch(element, 'julia-client:start-julia')
+           }, 1000);
+      catch e
+        atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
 
     # Revise
     atom.commands.add 'atom-workspace', 'juno-plus:Revise': (event) ->
@@ -75,13 +91,6 @@ module.exports =
       command += "Juno.clearconsole();"
       evalsimple(command)
 
-    atom.commands.add 'atom-workspace', 'juno-plus:force-restart', ->
-      atom.restartApplication()
-
-    atom.commands.add 'atom-workspace', 'juno-plus:restart', ->
-      atom.commands.dispatch('windows:reload')
-      atom.commands.dispatch('dev-live-reload:reload-all')
-
     # Disable Juno
     atom.commands.add 'atom-workspace', 'juno-plus:enable-disable-juno': (event) ->
       try
@@ -97,13 +106,14 @@ module.exports =
           for p in packages
             atom.packages.enablePackage(p)
           JunoOn = true
-        atom.commands.dispatch(element, 'juno-plus:restart')
+        atom.commands.dispatch(element, 'juno-plus:restart-atom')
         atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+reload+Enter")
       catch e
         atom.notifications.addWarning(e)
         atom.notifications.addError("Something went wrong, Atom will reload")
-        atom.commands.dispatch(element, 'juno-plus:force-restart')
+        atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
 
+    # Folding Toggle
     atom.commands.add 'atom-text-editor',
       'juno-plus:toggle-folding': (event) ->
         editor = @getModel()
