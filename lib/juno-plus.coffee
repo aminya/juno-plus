@@ -260,7 +260,8 @@ module.exports =
         callback: 'julia-client:run-cell-and-move'
 
       @bar.addButton
-        icon: 'zap'
+        icon: 'paragraph'
+        iconset: 'fa'
         tooltip: 'Run Block'
         callback: 'julia-client:run-and-move'
 
