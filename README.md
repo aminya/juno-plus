@@ -27,6 +27,8 @@ Converted code snippets are available under `snippets_converted` folder.
 * Run cell
 * Debug: Run File
 * Debug: Step into File
+* Debug: Run Block
+* Debug: Step into Block
 
 ### Code Tools:
 * Show documentation of the selection
