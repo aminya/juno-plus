@@ -69,11 +69,12 @@ module.exports =
       try
         atom.commands.dispatch(element, 'julia-client:kill-julia')
         # .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
-        setTimeout(() -> {
+        setTimeout ( ->
           atom.commands.dispatch(element, 'julia-client:start-julia')
-           }, 1000);
+        ), 500
       catch e
-        atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
+        atom.notifications.addError("Juno failed to reset, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter")
+        # atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
 
     # Revise
     atom.commands.add 'atom-workspace', 'juno-plus:Revise': (event) ->
