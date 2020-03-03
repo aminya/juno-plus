@@ -1,7 +1,7 @@
 # juno-plus Atom package
 This is an Atom's package that enhances Julia IDE (Juno) by adding some useful buttons and code snippets.
 
-![screenshot](https://user-images.githubusercontent.com/16418197/74640884-ed070c00-5135-11ea-8b7c-9cacafc0c78f.jpg)
+![screenshot](https://user-images.githubusercontent.com/16418197/75744516-14370f00-5cda-11ea-9aa5-cb818362dd3d.jpg)
 
 ### Atom Installation
 https://atom.io/packages/juno-plus
@@ -297,5 +297,3 @@ Separator | sep
 Discourse https://discourse.julialang.org/t/ann-juno-plus-0-10-2/32807/5
 Repo: https://github.com/aminya/juno-plus
 If you have any suggestions, I would be happy to include.
-
-
