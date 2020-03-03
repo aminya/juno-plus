@@ -283,6 +283,12 @@ module.exports =
         tooltip: 'Debug: Run Block'
         callback: 'julia-debug:run-block'
 
+      @bar.addButton
+        text: '<i class="fa fa-bug"></i><i class="fa fa-paragraph"></i><i class="fa fa-share"></i>'
+        html: true
+        tooltip: 'Debug: Step Into Block'
+        callback: 'julia-debug:step-through-block'
+
       # Code Tools
 
       @bar.addSpacer()
