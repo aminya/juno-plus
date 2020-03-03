@@ -290,6 +290,23 @@ module.exports =
         tooltip: 'Debug: Step Into Block'
         callback: 'julia-debug:step-through-block'
 
+      # ## https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+      # ## https://fontawesome.com/v4.7.0/icons/
+      # @bar.addButton
+      #   text: '''
+      #   <style>
+      #     .fa-stack { font-size: 0.5em; }
+      #     i { vertical-align: middle; }
+      #   </style>
+      #   <span class="fa-stack fa">
+      #     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
+      #     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
+      #   </span>
+      #   '''
+      #   html: true
+      #   tooltip: 'Debug: Run File'
+      #   callback: 'julia-debug:run-file'
+
       # Code Tools
 
       @bar.addSpacer()
