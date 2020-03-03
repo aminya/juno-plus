@@ -272,7 +272,7 @@ module.exports =
         callback: 'julia-debug:run-file'
 
       @bar.addButton
-        text: '<i class="fa fa-bug"></i><i class="fa fa-step-forward"></i>'
+        text: '<i class="fa fa-bug"></i><i class="fa fa-share"></i>'
         html: true
         tooltip: 'Debug: Step Into File'
         callback: 'julia-debug:step-through-file'
