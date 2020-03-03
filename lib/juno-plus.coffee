@@ -108,7 +108,7 @@ module.exports =
             atom.packages.enablePackage(p)
           JunoOn = true
         atom.commands.dispatch(element, 'juno-plus:restart-atom')
-        atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+reload+Enter")
+        atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter")
       catch e
         atom.notifications.addWarning(e)
         atom.notifications.addError("Something went wrong, Atom will reload")
@@ -223,7 +223,7 @@ module.exports =
       @bar.addButton
         icon: 'md-pause'
         iconset: 'ion'
-        tooltip: 'Interrupt Julia'
+        tooltip: 'Interrupt Julia (Stop Running)'
         callback: 'julia-client:interrupt-julia'
 
       @bar.addButton
@@ -256,7 +256,7 @@ module.exports =
       @bar.addButton
         icon: 'ios-skip-forward'
         iconset: 'ion'
-        tooltip: 'Run Cell'
+        tooltip: 'Run Cell (between \#\#)'
         callback: 'julia-client:run-cell-and-move'
 
       @bar.addButton
@@ -274,7 +274,7 @@ module.exports =
       @bar.addButton
         text: '<i class="fa fa-bug"></i><i class="fa fa-step-forward"></i>'
         html: true
-        tooltip: 'Debug: Step into File'
+        tooltip: 'Debug: Step Into File'
         callback: 'julia-debug:step-through-file'
 
       # Code Tools
