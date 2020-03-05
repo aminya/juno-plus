@@ -2,6 +2,8 @@ juliaClient = null
 JunoOn = true
 allFolded = false
 
+import {AtomEnvironment as atom} from "atom"
+
 module.exports =
   config:
     enableToolbarPlus:
@@ -68,13 +70,13 @@ module.exports =
       element = atom.workspace.getElement()
       try
         atom.commands.dispatch(element, 'julia-client:kill-julia')
-        # .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')
+        .then () -> atom.commands.dispatch(element, 'julia-client:start-julia')     # comment!!!!!!!!
         setTimeout ( ->
           atom.commands.dispatch(element, 'julia-client:start-julia')
         ), 500
       catch e
         atom.notifications.addError("Juno failed to reset, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter")
-        # atom.commands.dispatch(element, 'juno-plus:force-restart-atom')
+        atom.commands.dispatch(element, 'juno-plus:force-restart-atom')    # comment!!!!!!!!
 
     # Revise
     atom.commands.add 'atom-workspace', 'juno-plus:Revise': (event) ->
@@ -290,22 +292,23 @@ module.exports =
         tooltip: 'Debug: Step Into Block'
         callback: 'julia-debug:step-through-block'
 
-      # ## https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
-      # ## https://fontawesome.com/v4.7.0/icons/
-      # @bar.addButton
-      #   text: '''
-      #   <style>
-      #     .fa-stack { font-size: 0.5em; }
-      #     i { vertical-align: middle; }
-      #   </style>
-      #   <span class="fa-stack fa">
-      #     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
-      #     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
-      #   </span>
-      #   '''
-      #   html: true
-      #   tooltip: 'Debug: Run File'
-      #   callback: 'julia-debug:run-file'
+    # comment
+    ## https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+       ## https://fontawesome.com/v4.7.0/icons/
+       @bar.addButton
+         text: '''
+         <style>
+           .fa-stack { font-size: 0.5em; }
+           i { vertical-align: middle; }
+         </style>
+         <span class="fa-stack fa">
+           <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
+           <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
+         </span>
+         '''
+         html: true
+         tooltip: 'Debug: Run File'
+         callback: 'julia-debug:run-file'
 
       # Code Tools
 
@@ -427,11 +430,12 @@ module.exports =
 
     @bar.addSpacer()
 
-    # @bar.addButton
-    #   icon: 'tools'
-    #   iconset: 'fa'
-    #   tooltip: 'Julia Client Settings...'
-    #   callback: 'julia-client:settings'
+    # comment
+    @bar.addButton
+       icon: 'tools'
+       iconset: 'fa'
+       tooltip: 'Julia Client Settings...'
+       callback: 'julia-client:settings'
 
     @bar.addButton
       icon: 'gear'
@@ -455,8 +459,9 @@ module.exports =
       callback: 'juno-plus:enable-disable-juno'
       tooltip: 'Enable/Disable Juno'
 
-  # @bar.addButton
-    #   icon: 'x'
-    #   callback: 'tool-bar:toggle'
-    #   tooltip: 'Close Tool-Bar'
-    #   iconset: ''
+     # comment
+     @bar.addButton
+         icon: 'x'
+         callback: 'tool-bar:toggle'
+         tooltip: 'Close Tool-Bar'
+         iconset: ''
