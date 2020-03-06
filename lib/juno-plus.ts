@@ -69,11 +69,11 @@ module.exports = {
     activate() {
 
         // Force Restart Atom
-        atom.commands.add('atom-workspace', {
-            'juno-plus:force-restart-atom'() {
-                atom.restartApplication();
-            }
-        });
+        // atom.commands.add('atom-workspace', {
+        //     'juno-plus:force-restart-atom'() {
+        //         atom.restartApplication();
+        //     }
+        // });
 
         // Restart Atom
         atom.commands.add('atom-workspace', {
@@ -148,7 +148,7 @@ module.exports = {
                     } catch (e) {
                         atom.notifications.addWarning(e);
                         atom.notifications.addError("Something went wrong, Atom will reload");
-                        atom.commands.dispatch(element, 'juno-plus:force-restart-atom');
+                        atom.restartApplication();
                     }
                 }
             }

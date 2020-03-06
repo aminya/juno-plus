@@ -133,7 +133,7 @@ module.exports = {
                 catch (e) {
                     atom.notifications.addWarning(e);
                     atom.notifications.addError("Something went wrong, Atom will reload");
-                    atom.commands.dispatch(element, 'juno-plus:force-restart-atom');
+                    atom.restartApplication();
                 }
             }
         });
