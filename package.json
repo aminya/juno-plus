@@ -30,8 +30,5 @@
         "0.1.0": "consumeJuliaClient"
       }
     }
-  },
-  "dependencies": {
-    "atom": "^1.4.1"
   }
 }
