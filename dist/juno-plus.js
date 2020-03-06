@@ -115,7 +115,6 @@ module.exports = {
         atom.commands.add('atom-workspace', {
             'juno-plus:enable-disable-juno'() {
                 const element = atom.workspace.getElement();
-                ;
                 try {
                     const packages = atom.config.get('juno-plus.JunoPackages');
                     atom.commands.dispatch(element, 'juno-plus:restart');

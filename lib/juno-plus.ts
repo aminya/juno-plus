@@ -86,19 +86,19 @@ module.exports = {
         // Restart Julia
         atom.commands.add('atom-workspace', {
                 'juno-plus:restart-julia'() {
-                  const element = atom.workspace.getElement();
-                  try {
-                    atom.commands.dispatch(element, 'julia-client:kill-julia')
-                        .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
-                    // @ts-ignore
-                    // setTimeout(function () {
-                    //     {
-                    //         atom.commands.dispatch(element, 'julia-client:start-julia')
-                    //     }
-                    // }, 250);
-                  } catch (e) {
-                    atom.commands.dispatch(element, 'julia-client:start-julia');
-                  }
+                    const element = atom.workspace.getElement();
+                    try {
+                        atom.commands.dispatch(element, 'julia-client:kill-julia')
+                            .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
+                        // @ts-ignore
+                        // setTimeout(function () {
+                        //     {
+                        //         atom.commands.dispatch(element, 'julia-client:start-julia')
+                        //     }
+                        // }, 250);
+                    } catch (e) {
+                        atom.commands.dispatch(element, 'julia-client:start-julia');
+                    }
                 }
             }
         );
@@ -131,7 +131,7 @@ module.exports = {
         // Disable Juno
         atom.commands.add('atom-workspace', {
                 'juno-plus:enable-disable-juno'() {
-                    const element = atom.workspace.getElement();;
+                    const element = atom.workspace.getElement();
                     try {
                         const packages = atom.config.get('juno-plus.JunoPackages');
                         atom.commands.dispatch(element, 'juno-plus:restart');
