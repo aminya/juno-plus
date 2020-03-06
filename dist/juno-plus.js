@@ -158,7 +158,7 @@ module.exports = {
         return (this.bar != null ? this.bar.removeItems() : undefined);
     },
     consumeToolBar(bar) {
-        const enableJunoButtons = atom.packages.loadedPackages['julia-client'] && JunoOn;
+        const enableJunoButtons = atom.packages.isPackageLoaded('julia-client') && JunoOn;
         const layoutAdjustmentButtons = atom.config.get('juno-plus.layoutAdjustmentButtons');
         const StartJuliaProcessButtons = atom.config.get('juno-plus.StartJuliaProcessButtons');
         const WeaveButtons = atom.config.get('juno-plus.WeaveButtons');
@@ -341,7 +341,7 @@ module.exports = {
                 callback: 'julia-client:format-code'
             });
         }
-        if (atom.packages.loadedPackages['atom-beautify']) {
+        if (atom.packages.isPackageLoaded('atom-beautify')) {
             this.bar.addButton({
                 'icon': 'star',
                 'callback': 'atom-beautify:beautify-editor',
@@ -398,14 +398,14 @@ module.exports = {
         }
         // Viewers
         this.bar.addSpacer();
-        if (atom.packages.loadedPackages['markdown-preview']) {
+        if (atom.packages.isPackageLoaded('markdown-preview')) {
             this.bar.addButton({
                 icon: 'markdown',
                 callback: 'markdown-preview:toggle',
                 tooltip: 'Markdown Preview'
             });
         }
-        if (enableJunoButtons && atom.packages.loadedPackages['language-weave'] && WeaveButtons) {
+        if (enableJunoButtons && atom.packages.isPackageLoaded('language-weave') && WeaveButtons) {
             this.bar.addButton({
                 icon: 'language-html5',
                 iconset: 'mdi',
