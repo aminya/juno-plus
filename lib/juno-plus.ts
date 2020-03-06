@@ -85,8 +85,8 @@ export default {
       const element = atom.workspace.getElement();
       try {
         atom.commands.dispatch(element, 'julia-client:kill-julia')
-        // .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
-        return setTimeout(( () => atom.commands.dispatch(element, 'julia-client:start-julia')), 500);
+        .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
+        // return setTimeout(( () => atom.commands.dispatch(element, 'julia-client:start-julia')), 500);
       } catch (e) {
         atom.notifications.addError("Juno failed to reset, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter");
         return atom.commands.dispatch(element, 'juno-plus:force-restart-atom');
