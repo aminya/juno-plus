@@ -170,9 +170,7 @@ module.exports = {
             icon: 'file-code',
             iconset: 'fa',
             tooltip: 'New Julia File',
-            callback() {
-                atom.workspace.open().then(ed => ed.setGrammar(atom.grammars.grammarForScopeName('source.julia')));
-            }
+            callback: 'julia:new-julia-file'
         });
         this.bar.addButton({
             icon: 'save',
