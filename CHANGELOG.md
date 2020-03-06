@@ -1,3 +1,7 @@
+## 0.11
+* Rewrite codebase in typescript
+* Many performance optimizations and bug fixes
+
 ## 0.10
 * new button Debug: Run File
 * new button Debug: Step into File
