@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+//    "forceConsistentCasingInFileNames": true,
+//    "importHelpers": true,
+    "lib": ["es6"],
+    "module": "commonjs",
+    "noLib": false,
+    "outDir": "../dist",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "es6"
+  },
+  "compileOnSave": true
+}
