@@ -2,13 +2,13 @@
   "compilerOptions": {
 //    "forceConsistentCasingInFileNames": true,
 //    "importHelpers": true,
-    "lib": ["es6"],
+    "lib": ["ES2018"],
     "module": "commonjs",
-    "noLib": false,
+//    "noLib": false,
     "outDir": "../dist",
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "target": "es6"
+//    "preserveConstEnums": true,
+//    "sourceMap": true,
+    "target": "ES2018"
   },
   "compileOnSave": true
 }
