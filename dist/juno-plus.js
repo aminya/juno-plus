@@ -1,7 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- */
 let juliaClient = null;
 let JunoOn = true;
 let allFolded = false;
@@ -63,16 +59,21 @@ module.exports = {
     },
     activate() {
         // Force Restart Atom
-        atom.commands.add('atom-workspace', { 'juno-plus:force-restart-atom'() {
+        atom.commands.add('atom-workspace', {
+            'juno-plus:force-restart-atom'() {
                 atom.restartApplication();
-            } });
+            }
+        });
         // Restart Atom
-        atom.commands.add('atom-workspace', { 'juno-plus:restart-atom'() {
+        atom.commands.add('atom-workspace', {
+            'juno-plus:restart-atom'() {
                 atom.commands.dispatch('windows:reload');
                 atom.commands.dispatch('dev-live-reload:reload-all');
-            } });
+            }
+        });
         // Restart Julia
-        atom.commands.add('atom-workspace', { 'juno-plus:restart-julia'() {
+        atom.commands.add('atom-workspace', {
+            'juno-plus:restart-julia'() {
                 const element = atom.workspace.getElement();
                 // try {
                 atom.commands.dispatch(element, 'julia-client:kill-julia');
@@ -90,7 +91,9 @@ module.exports = {
             }
         });
         // Revise
-        atom.commands.add('atom-workspace', { 'juno-plus:Revise'() {
+        // DS102: Remove unnecessary code created because of implicit returns
+        atom.commands.add('atom-workspace', {
+            'juno-plus:Revise'() {
                 juliaClient.boot();
                 const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] });
                 const command = 'using Revise;';
@@ -99,7 +102,8 @@ module.exports = {
             }
         });
         // Clear Console
-        atom.commands.add('atom-workspace', { 'juno-plus:ClearConsole'() {
+        atom.commands.add('atom-workspace', {
+            'juno-plus:ClearConsole'() {
                 juliaClient.boot();
                 const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] });
                 let command = "println(\"\\33[2J\");";
@@ -108,7 +112,8 @@ module.exports = {
             }
         });
         // Disable Juno
-        atom.commands.add('atom-workspace', { 'juno-plus:enable-disable-juno'() {
+        atom.commands.add('atom-workspace', {
+            'juno-plus:enable-disable-juno'() {
                 let element;
                 try {
                     let p;
