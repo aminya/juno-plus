@@ -16,6 +16,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "packageDependencies": [
+    "atom",
     "tool-bar",
     "julia-client"
   ],

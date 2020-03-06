@@ -85,7 +85,7 @@ export default {
       const element = atom.workspace.getElement();
       try {
         atom.commands.dispatch(element, 'julia-client:kill-julia')
-        .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));     // comment!!!!!!!!
+        // .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
         return setTimeout(( () => atom.commands.dispatch(element, 'julia-client:start-julia')), 500);
       } catch (e) {
         atom.notifications.addError("Juno failed to reset, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter");
@@ -93,7 +93,7 @@ export default {
       }
     }
   }
-    );    // comment!!!!!!!!
+    );
 
     // Revise
     atom.commands.add('atom-workspace', { 'juno-plus:Revise'(event) {
@@ -361,24 +361,23 @@ export default {
         callback: 'julia-debug:step-through-block'
       });
 
-    // comment
-    //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
-       //# https://fontawesome.com/v4.7.0/icons/
-      this.bar.addButton({
-         text: `\
-<style>
-  .fa-stack { font-size: 0.5em; }
-  i { vertical-align: middle; }
-</style>
-<span class="fa-stack fa">
-  <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
-  <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
-</span>\
-`,
-         html: true,
-         tooltip: 'Debug: Run File',
-         callback: 'julia-debug:run-file'
-       });
+      //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+      //# https://fontawesome.com/v4.7.0/icons/
+      // this.bar.addButton({
+      //    text: `\
+      //   <style>
+      //     .fa-stack { font-size: 0.5em; }
+      //     i { vertical-align: middle; }
+      //   </style>
+      //   <span class="fa-stack fa">
+      //     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
+      //     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
+      //   </span>\
+      //   `,
+      //    html: true,
+      //    tooltip: 'Debug: Run File',
+      //    callback: 'julia-debug:run-file'
+      //  });
 
       // Code Tools
 
@@ -523,13 +522,12 @@ export default {
 
     this.bar.addSpacer();
 
-    // comment
-    this.bar.addButton({
-       icon: 'tools',
-       iconset: 'fa',
-       tooltip: 'Julia Client Settings...',
-       callback: 'julia-client:settings'
-    });
+    // this.bar.addButton({
+    //    icon: 'tools',
+    //    iconset: 'fa',
+    //    tooltip: 'Julia Client Settings...',
+    //    callback: 'julia-client:settings'
+    // });
 
     this.bar.addButton({
       icon: 'gear',
@@ -557,12 +555,11 @@ export default {
       tooltip: 'Enable/Disable Juno'
     });
 
-     // comment
-    return this.bar.addButton({
-         icon: 'x',
-         callback: 'tool-bar:toggle',
-         tooltip: 'Close Tool-Bar',
-         iconset: ''
-     });
+    // this.bar.addButton({
+    //      icon: 'x',
+    //      callback: 'tool-bar:toggle',
+    //      tooltip: 'Close Tool-Bar',
+    //      iconset: ''
+    //  });
   }
 };
