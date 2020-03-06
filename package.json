@@ -19,6 +19,9 @@
     "tool-bar",
     "julia-client"
   ],
+  "devDependencies": {
+    "@types/atom": "^1.40.1"
+  },
   "consumedServices": {
     "tool-bar": {
       "versions": {

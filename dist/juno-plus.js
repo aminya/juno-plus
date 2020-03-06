@@ -1,9 +1,6 @@
 let juliaClient = null;
 let JunoOn = true;
 let allFolded = false;
-// enable for auto-complete
-// import {AtomEnvironment as atom} from "atom";
-// import atom = require("atom");
 // @ts-ignore
 module.exports = {
     config: {
