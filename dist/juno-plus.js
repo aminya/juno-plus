@@ -1,6 +1,7 @@
 let juliaClient = null;
 let JunoOn = true;
 let allFolded = false;
+// TODO: getElement replacement
 // @ts-ignore
 module.exports = {
     config: {
@@ -75,6 +76,8 @@ module.exports = {
             'juno-plus:restart-julia'() {
                 // @ts-ignore
                 let target = atom.workspace.getElement();
+                if (!target)
+                    return;
                 atom.commands.dispatch(target, 'julia-client:kill-julia')
                     .then(() => atom.commands.dispatch(target, 'julia-client:start-julia'));
                 // @ts-ignore
