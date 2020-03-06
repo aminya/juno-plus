@@ -59,11 +59,11 @@ module.exports = {
     },
     activate() {
         // Force Restart Atom
-        atom.commands.add('atom-workspace', {
-            'juno-plus:force-restart-atom'() {
-                atom.restartApplication();
-            }
-        });
+        // atom.commands.add('atom-workspace', {
+        //     'juno-plus:force-restart-atom'() {
+        //         atom.restartApplication();
+        //     }
+        // });
         // Restart Atom
         atom.commands.add('atom-workspace', {
             'juno-plus:restart-atom'() {
@@ -75,32 +75,37 @@ module.exports = {
         atom.commands.add('atom-workspace', {
             'juno-plus:restart-julia'() {
                 const element = atom.workspace.getElement();
-                atom.commands.dispatch(element, 'julia-client:kill-julia')
-                    .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
-                // @ts-ignore
-                // setTimeout(function () {
-                //     {
-                //         atom.commands.dispatch(element, 'julia-client:start-julia')
-                //     }
-                // }, 250);
+                try {
+                    atom.commands.dispatch(element, 'julia-client:kill-julia')
+                        .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
+                    // @ts-ignore
+                    // setTimeout(function () {
+                    //     {
+                    //         atom.commands.dispatch(element, 'julia-client:start-julia')
+                    //     }
+                    // }, 250);
+                }
+                catch (e) {
+                    atom.commands.dispatch(element, 'julia-client:start-julia');
+                }
             }
         });
         // Revise
         // DS102: Remove unnecessary code created because of implicit returns
         atom.commands.add('atom-workspace', {
             'juno-plus:Revise'() {
+                atom.notifications.addSuccess("Starting Revise");
                 juliaClient.boot();
-                const evalsimple = juliaClient.import({ rpc: ['evalsimple'] });
-                const command = 'using Revise;';
+                const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] });
+                const command = 'using Revise; println("Revise is ready");';
                 evalsimple(command);
-                atom.notifications.addSuccess("Revise Started");
             }
         });
         // Clear Console
         atom.commands.add('atom-workspace', {
             'juno-plus:ClearConsole'() {
                 juliaClient.boot();
-                const evalsimple = juliaClient.import({ rpc: ['evalsimple'] });
+                const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] }); // import function
                 let command = "println(\"\\33[2J\");";
                 command += "Juno.clearconsole();";
                 evalsimple(command);
