@@ -64,20 +64,23 @@ module.exports = {
         // Restart Atom
         atom.commands.add('atom-workspace', {
             'juno-plus:restart-atom'() {
-                atom.commands.dispatch('windows:reload');
-                atom.commands.dispatch('dev-live-reload:reload-all');
+                // @ts-ignore
+                let target = atom.workspace.getElement();
+                atom.commands.dispatch(target, 'windows:reload');
+                atom.commands.dispatch(target, 'dev-live-reload:reload-all');
             }
         });
         // Restart Julia
         atom.commands.add('atom-workspace', {
             'juno-plus:restart-julia'() {
-                let element = atom.workspace.getElement();
-                atom.commands.dispatch(element, 'julia-client:kill-julia')
-                    .then(() => atom.commands.dispatch(element, 'julia-client:start-julia'));
+                // @ts-ignore
+                let target = atom.workspace.getElement();
+                atom.commands.dispatch(target, 'julia-client:kill-julia')
+                    .then(() => atom.commands.dispatch(target, 'julia-client:start-julia'));
                 // @ts-ignore
                 // setTimeout(function () {
                 //     {
-                //         atom.commands.dispatch(element, 'julia-client:start-julia')
+                //         atom.commands.dispatch(target, 'julia-client:start-julia')
                 //     }
                 // }, 250);
             }
@@ -106,12 +109,13 @@ module.exports = {
         // Disable Juno
         atom.commands.add('atom-workspace', {
             'juno-plus:enable-disable-juno'() {
-                const element = atom.workspace.getElement();
+                // @ts-ignore
+                const target = atom.workspace.getElement();
                 try {
                     const packages = atom.config.get('juno-plus.JunoPackages');
-                    atom.commands.dispatch(element, 'juno-plus:restart');
-                    if (atom.packages.loadedPackages['julia-client'] && JunoOn) {
-                        atom.commands.dispatch(element, 'julia-client:close-juno-panes');
+                    atom.commands.dispatch(target, 'juno-plus:restart');
+                    if (atom.packages.isPackageLoaded('julia-client') && JunoOn) {
+                        atom.commands.dispatch(target, 'julia-client:close-juno-panes');
                         for (let p of packages) {
                             atom.packages.disablePackage(p);
                         }
@@ -123,7 +127,7 @@ module.exports = {
                         }
                         JunoOn = true;
                     }
-                    atom.commands.dispatch(element, 'juno-plus:restart-atom');
+                    atom.commands.dispatch(target, 'juno-plus:restart-atom');
                     atom.notifications.addInfo("Reset done. If you want to update Toolbar or in case of an error, reload Atom using (Ctrl+Shift+P)+\"reload\"+Enter");
                 }
                 catch (e) {
