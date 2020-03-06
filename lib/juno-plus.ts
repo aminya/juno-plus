@@ -103,13 +103,11 @@ module.exports = {
         // DS102: Remove unnecessary code created because of implicit returns
         atom.commands.add('atom-workspace', {
                 'juno-plus:Revise'() {
+                    atom.notifications.addSuccess("Starting Revise")
                     juliaClient.boot();
-                    const {
-                        evalsimple
-                    } = juliaClient.import({rpc: ['evalsimple']});
-                    const command = 'using Revise;';
+                    const {evalsimple} = juliaClient.import({rpc: ['evalsimple']});
+                    const command = 'using Revise; println("Revise is ready");';
                     evalsimple(command);
-                    atom.notifications.addSuccess("Revise Started");
                 }
             }
         );
@@ -118,9 +116,7 @@ module.exports = {
         atom.commands.add('atom-workspace', {
                 'juno-plus:ClearConsole'() {
                     juliaClient.boot();
-                    const {
-                        evalsimple
-                    } = juliaClient.import({rpc: ['evalsimple']});
+                    const {evalsimple} = juliaClient.import({rpc: ['evalsimple']}); // import function
                     let command = "println(\"\\33[2J\");";
                     command += "Juno.clearconsole();";
                     evalsimple(command);

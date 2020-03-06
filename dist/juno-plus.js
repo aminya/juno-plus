@@ -90,7 +90,7 @@ module.exports = {
         atom.commands.add('atom-workspace', {
             'juno-plus:Revise'() {
                 juliaClient.boot();
-                const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] });
+                const evalsimple = juliaClient.import({ rpc: ['evalsimple'] });
                 const command = 'using Revise;';
                 evalsimple(command);
                 atom.notifications.addSuccess("Revise Started");
@@ -100,7 +100,7 @@ module.exports = {
         atom.commands.add('atom-workspace', {
             'juno-plus:ClearConsole'() {
                 juliaClient.boot();
-                const { evalsimple } = juliaClient.import({ rpc: ['evalsimple'] });
+                const evalsimple = juliaClient.import({ rpc: ['evalsimple'] });
                 let command = "println(\"\\33[2J\");";
                 command += "Juno.clearconsole();";
                 evalsimple(command);
