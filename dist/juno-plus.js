@@ -114,11 +114,11 @@ module.exports = {
         // Disable Juno
         atom.commands.add('atom-workspace', {
             'juno-plus:enable-disable-juno'() {
-                let element;
+                const element = atom.workspace.getElement();
+                ;
                 try {
                     let p;
                     const packages = atom.config.get('juno-plus.JunoPackages');
-                    element = atom.workspace.getElement();
                     atom.commands.dispatch(element, 'juno-plus:restart');
                     if (atom.packages.loadedPackages['julia-client'] && JunoOn) {
                         atom.commands.dispatch(element, 'julia-client:close-juno-panes');
