@@ -138,17 +138,16 @@ module.exports = {
                 'juno-plus:enable-disable-juno'() {
                     const element = atom.workspace.getElement();;
                     try {
-                        let p;
                         const packages = atom.config.get('juno-plus.JunoPackages');
                         atom.commands.dispatch(element, 'juno-plus:restart');
                         if (atom.packages.loadedPackages['julia-client'] && JunoOn) {
                             atom.commands.dispatch(element, 'julia-client:close-juno-panes');
-                            for (p of packages) {
+                            for (let p of packages) {
                                 atom.packages.disablePackage(p);
                             }
                             JunoOn = false;
                         } else {
-                            for (p of packages) {
+                            for (let p of packages) {
                                 atom.packages.enablePackage(p);
                             }
                             JunoOn = true;
