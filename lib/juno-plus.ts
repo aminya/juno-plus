@@ -192,6 +192,9 @@ module.exports = {
         const layoutAdjustmentButtons = atom.config.get('juno-plus.layoutAdjustmentButtons');
         const StartJuliaProcessButtons = atom.config.get('juno-plus.StartJuliaProcessButtons');
         const WeaveButtons = atom.config.get('juno-plus.WeaveButtons');
+        // doesn't change across different sizes
+        // const iconsize = parseInt(atom.config.get('tool-bar.iconSize'), 10);
+        // const iconstyle = `style="font-size:${iconsize / 1.7 + "px"}"`
 
         // getting toolbar object
         this.bar = bar('juno-plus');
@@ -315,28 +318,61 @@ module.exports = {
 
             // Debugging
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-play"></i>',
+                text: `
+                  <style> 
+                    .junop_container {
+                      display: flex;
+                      justify-content: space-between;
+                    }                         
+                    .junop_column {
+                      flex-direction: column;
+                    }
+                  </style>
+                  <!-- write style only once -->
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-play" style="font-size: 70%"></i>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Run File',
                 callback: 'julia-debug:run-file'
             });
 
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-share"></i>',
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-share" style="font-size: 70%"></i>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Step Into File',
                 callback: 'julia-debug:step-through-file'
             });
 
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-paragraph"></i>',
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-paragraph" style="font-size: 70%"></i>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Run Block',
                 callback: 'julia-debug:run-block'
             });
 
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-paragraph"></i><i class="fa fa-share"></i>',
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <div class="junop_container">
+                         <i class="fa fa-paragraph" style="font-size: 70%"></i>
+                         <i class="fa fa-share" style="font-size: 70%"></i>
+                     </div>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Step Into Block',
                 callback: 'julia-debug:step-through-block'
@@ -345,7 +381,10 @@ module.exports = {
             //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
             //# https://fontawesome.com/v4.7.0/icons/
             // this.bar.addButton({
-            //    text: `\
+            //   text: `
+            //   <head>
+            //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+            //   </head>
             //   <style>
             //     .fa-stack { font-size: 0.5em; }
             //     i { vertical-align: middle; }
@@ -474,7 +513,7 @@ module.exports = {
 
         this.bar.addSpacer();
 
-        if (atom.packages.isPackageLoaded('markdown-preview')){
+        if (atom.packages.isPackageLoaded('markdown-preview')) {
             this.bar.addButton({
                 icon: 'markdown',
                 callback: 'markdown-preview:toggle',
