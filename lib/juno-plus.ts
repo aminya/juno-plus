@@ -192,6 +192,9 @@ module.exports = {
         const layoutAdjustmentButtons = atom.config.get('juno-plus.layoutAdjustmentButtons');
         const StartJuliaProcessButtons = atom.config.get('juno-plus.StartJuliaProcessButtons');
         const WeaveButtons = atom.config.get('juno-plus.WeaveButtons');
+        // doesn't change across different sizes
+        // const iconsize = parseInt(atom.config.get('tool-bar.iconSize'), 10);
+        // const iconstyle = `style="font-size:${iconsize / 1.7 + "px"}"`
 
         // getting toolbar object
         this.bar = bar('juno-plus');
