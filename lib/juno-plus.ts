@@ -319,6 +319,17 @@ module.exports = {
             // Debugging
             this.bar.addButton({
                 text: '<i class="fa fa-bug"></i><i class="fa fa-play"></i>',
+                text: `
+                  <style> 
+                    .junop_container {
+                      display: flex;
+                      justify-content: space-between;
+                    }                         
+                    .junop_column {
+                      flex-direction: column;
+                    }
+                  </style>
+                  <!-- write style only once -->
                 html: true,
                 tooltip: 'Debug: Run File',
                 callback: 'julia-debug:run-file'
