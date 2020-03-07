@@ -1,5 +1,6 @@
 ## 0.11
 * Rewrite codebase in typescript
+* Stack icons for saving space
 * Many performance optimizations and bug fixes
 
 ## 0.10
