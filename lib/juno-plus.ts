@@ -340,7 +340,12 @@ module.exports = {
             });
 
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-share"></i>',
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-share" style="font-size: 70%"></i>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Step Into File',
                 callback: 'julia-debug:step-through-file'
