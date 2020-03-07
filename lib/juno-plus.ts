@@ -352,7 +352,12 @@ module.exports = {
             });
 
             this.bar.addButton({
-                text: '<i class="fa fa-bug"></i><i class="fa fa-paragraph"></i>',
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-paragraph" style="font-size: 70%"></i>
+                  </div>
+              `,
                 html: true,
                 tooltip: 'Debug: Run Block',
                 callback: 'julia-debug:run-block'
