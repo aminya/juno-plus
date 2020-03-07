@@ -348,7 +348,10 @@ module.exports = {
             //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
             //# https://fontawesome.com/v4.7.0/icons/
             // this.bar.addButton({
-            //    text: `\
+            //   text: `
+            //   <head>
+            //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+            //   </head>
             //   <style>
             //     .fa-stack { font-size: 0.5em; }
             //     i { vertical-align: middle; }
@@ -477,7 +480,7 @@ module.exports = {
 
         this.bar.addSpacer();
 
-        if (atom.packages.isPackageLoaded('markdown-preview')){
+        if (atom.packages.isPackageLoaded('markdown-preview')) {
             this.bar.addButton({
                 icon: 'markdown',
                 callback: 'markdown-preview:toggle',
