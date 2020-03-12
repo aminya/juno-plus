@@ -41,6 +41,13 @@ export declare const config: {
         description: string;
         order: number;
     };
+    ColorfulIcons: {
+        type: string;
+        default: boolean;
+        title: string;
+        description: string;
+        order: number;
+    };
     JunoPackages: {
         type: string;
         default: string[];

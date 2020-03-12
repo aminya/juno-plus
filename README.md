@@ -3,6 +3,9 @@ This is an Atom's package that enhances Julia IDE (Juno) by adding some useful b
 
 ![screenshot](https://user-images.githubusercontent.com/16418197/76136227-ed881980-5ff4-11ea-8584-6a8025b8c874.jpg)
 
+![colorful](https://user-images.githubusercontent.com/16418197/76567589-1ab54b80-647d-11ea-8914-525c36161d4c.png)
+
+
 ### Atom Installation
 https://atom.io/packages/juno-plus
 
