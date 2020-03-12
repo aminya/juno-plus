@@ -33,5 +33,11 @@
         "0.1.0": "consumeJuliaClient"
       }
     }
+  },
+  "prettier": {
+    "semi": false,
+    "arrowParens": "always",
+    "printWidth:": 120,
+    "tabWidth": 4
   }
 }
