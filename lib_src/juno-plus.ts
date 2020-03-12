@@ -55,6 +55,14 @@ export const config = {
         order:6
     },
 
+    ColorfulIcons: {
+        type: "boolean",
+        default: true,
+        title: "Colorful Icons",
+        description: "Colors the icons (changing requires restart).",
+        order: 7
+    },
+
     JunoPackages: {
         type: "array",
         default: [
@@ -70,7 +78,7 @@ export const config = {
         title: "Juno Packages for Enabling/Disabling",
         description:
             "Write the name of packages that you want to be enabled/disabled using plug button",
-        order: 7
+        order: 8
     }
 }
 
@@ -224,9 +232,10 @@ export function consumeToolBar(bar) {
     const StartJuliaProcessButtons = atom.config.get("juno-plus.StartJuliaProcessButtons")
     const WeaveButtons = atom.config.get("juno-plus.WeaveButtons")
 
+    const ColorfulIcons = atom.config.get("juno-plus.ColorfulIcons")
     // Buttons:
 
-    // Files & Folders
+    if (ColorfulIcons) {
 
     if (JunoLoaded) {
         this.bar.addButton({
