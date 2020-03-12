@@ -1,3 +1,4 @@
+export const config = {
     IconSizes: {
         type: "boolean",
         default: true,
@@ -5,6 +6,8 @@
         description: "Makes the size of Icons 21px (changing requires restart).",
         order:6
     },
+export function consumeJuliaClient(client) {
+export function activate() {
     // Toolbar Position
     if (atom.config.get("juno-plus.ToolbarPosition")) {
         atom.config.set("tool-bar.position", "Top")
@@ -14,6 +17,8 @@
         atom.config.set("tool-bar.iconSize", '21px')
     }
 
+export function deactivate() {
+export function consumeToolBar(bar) {
     // Loaded Packages
     const JunoLoaded = atom.packages.isPackageLoaded("julia-client") && JunoOn
     const WeaveLoaded = atom.packages.isPackageLoaded("julia-client")
