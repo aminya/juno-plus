@@ -236,132 +236,147 @@ export function consumeToolBar(bar) {
     // Buttons:
 
     if (ColorfulIcons) {
+        // Files & Folders
 
-    if (JunoLoaded) {
-        this.bar.addButton({
-            icon: "file-code",
-            iconset: "fa",
-            tooltip: "New Julia File",
-            callback: "julia:new-julia-file"
-        })
-    } else {
-        this.bar.addButton({
-            icon: "file-code",
-            iconset: "fa",
-            tooltip: "New File",
-            callback: "application:new-file"
-        })
-    }
-
-    this.bar.addButton({
-        icon: "save",
-        iconset: "fa",
-        tooltip: "Save",
-        callback: "core:save"
-    })
-
-    this.bar.addButton({
-        icon: "folder-open",
-        iconset: "fa",
-        tooltip: "Open File...",
-        callback: "application:open-file"
-    })
-
-    this.bar.addButton({
-        icon: "file-submodule",
-        tooltip: "Open Folder...",
-        callback: "application:open-folder"
-    })
-
-    this.bar.addButton({
-        icon: "file-symlink-directory",
-        tooltip: "Select Working Directory...",
-        callback: "julia-client:select-working-folder"
-    })
-
-    // Julia process
-
-    this.bar.addSpacer()
-
-    if (JunoLoaded) {
-        if (StartJuliaProcessButtons) {
+        if (JunoLoaded) {
             this.bar.addButton({
-                icon: "md-planet",
-                iconset: "ion",
-                tooltip: "Start Remote Julia Process",
-                callback: "julia-client:start-remote-julia-process"
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New Julia File",
+                callback: "julia:new-julia-file",
+                color: "purple"
             })
-
+        } else {
             this.bar.addButton({
-                icon: "alpha-j",
-                iconset: "mdi",
-                tooltip: "Start Local Julia Process",
-                callback: "julia-client:start-julia"
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New File",
+                callback: "application:new-file",
+                color: "khaki"
             })
         }
 
         this.bar.addButton({
-            icon: "md-infinite",
-            iconset: "ion",
-            tooltip: "Revise Julia",
-            callback: "juno-plus:Revise"
-        })
-
-        this.bar.addButton({
-            icon: "md-pause",
-            iconset: "ion",
-            tooltip: "Interrupt Julia (Stop Running)",
-            callback: "julia-client:interrupt-julia"
-        })
-
-        this.bar.addButton({
-            icon: "md-square",
-            iconset: "ion",
-            tooltip: "Stop Julia",
-            callback: "julia-client:kill-julia"
-        })
-
-        this.bar.addButton({
-            icon: "sync",
-            tooltip: "Restart Julia",
-            callback: "juno-plus:restart-julia"
-        })
-
-        this.bar.addButton({
-            icon: "eraser",
+            icon: "save",
             iconset: "fa",
-            tooltip: "Clear Julia Console",
-            callback: "julia-client:clear-REPL"
+            tooltip: "Save",
+            callback: "core:save"
         })
 
-        // Evaluation
+        this.bar.addButton({
+            icon: "folder-open",
+            iconset: "fa",
+            tooltip: "Open File...",
+            callback: "application:open-file",
+            color: "khaki"
+        })
+
+        this.bar.addButton({
+            icon: "file-submodule",
+            tooltip: "Open Folder...",
+            callback: "application:open-folder",
+            color: "khaki"
+        })
+
+        this.bar.addButton({
+            icon: "file-symlink-directory",
+            tooltip: "Select Working Directory...",
+            callback: "julia-client:select-working-folder",
+            color: "khaki"
+        })
+
+        // Julia process
 
         this.bar.addSpacer()
 
-        this.bar.addButton({
-            icon: "md-play",
-            iconset: "ion",
-            tooltip: "Run All",
-            callback: "julia-client:run-all"
-        })
+        if (JunoLoaded) {
+            if (StartJuliaProcessButtons) {
+                this.bar.addButton({
+                    icon: "md-planet",
+                    iconset: "ion",
+                    tooltip: "Start Remote Julia Process",
+                    callback: "julia-client:start-remote-julia-process",
+                    color: "mediumvioletred"
+                })
 
-        this.bar.addButton({
-            icon: "ios-skip-forward",
-            iconset: "ion",
-            tooltip: "Run Cell (between ##)",
-            callback: "julia-client:run-cell-and-move"
-        })
+                this.bar.addButton({
+                    icon: "alpha-j",
+                    iconset: "mdi",
+                    tooltip: "Start Local Julia Process",
+                    callback: "julia-client:start-julia",
+                    color: "mediumvioletred"
+                })
+            }
 
-        this.bar.addButton({
-            icon: "paragraph",
-            iconset: "fa",
-            tooltip: "Run Block",
-            callback: "julia-client:run-and-move"
-        })
+            this.bar.addButton({
+                icon: "md-infinite",
+                iconset: "ion",
+                tooltip: "Revise Julia",
+                callback: "juno-plus:Revise"
+            })
 
-        // Debugging
-        this.bar.addButton({
-            text: `
+            this.bar.addButton({
+                icon: "md-pause",
+                iconset: "ion",
+                tooltip: "Interrupt Julia (Stop Running)",
+                callback: "julia-client:interrupt-julia",
+                color: "yellow"
+            })
+
+            this.bar.addButton({
+                icon: "md-square",
+                iconset: "ion",
+                tooltip: "Stop Julia",
+                callback: "julia-client:kill-julia",
+                color: "crimson"
+            })
+
+            this.bar.addButton({
+                icon: "sync",
+                tooltip: "Restart Julia",
+                callback: "juno-plus:restart-julia",
+                color: "dodgerblue"
+            })
+
+            this.bar.addButton({
+                icon: "eraser",
+                iconset: "fa",
+                tooltip: "Clear Julia Console",
+                callback: "julia-client:clear-REPL",
+                color: "yellow"
+            })
+
+            // Evaluation
+
+            this.bar.addSpacer()
+
+            this.bar.addButton({
+                icon: "md-play",
+                iconset: "ion",
+                tooltip: "Run All",
+                callback: "julia-client:run-all",
+                color: "springgreen"
+            })
+
+            this.bar.addButton({
+                icon: "ios-skip-forward",
+                iconset: "ion",
+                tooltip: "Run Cell (between ##)",
+                callback: "julia-client:run-cell-and-move",
+                color: "springgreen"
+            })
+
+            this.bar.addButton({
+                icon: "paragraph",
+                iconset: "fa",
+                tooltip: "Run Block",
+                callback: "julia-client:run-and-move",
+                color: "springgreen"
+            })
+
+            // Debugging
+            this.bar.addButton({
+                text: `
                   <style> 
                     .junop_container {
                       display: flex;
@@ -377,37 +392,40 @@ export function consumeToolBar(bar) {
                      <i class="fa fa-play" style="font-size: 70%"></i>
                   </div>
               `,
-            html: true,
-            tooltip: "Debug: Run File",
-            callback: "julia-debug:run-file"
-        })
+                html: true,
+                tooltip: "Debug: Run File",
+                callback: "julia-debug:run-file",
+                color: "brown"
+            })
 
-        this.bar.addButton({
-            text: `
+            this.bar.addButton({
+                text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
                      <i class="fa fa-share" style="font-size: 70%"></i>
                   </div>
               `,
-            html: true,
-            tooltip: "Debug: Step Into File",
-            callback: "julia-debug:step-through-file"
-        })
+                html: true,
+                tooltip: "Debug: Step Into File",
+                callback: "julia-debug:step-through-file",
+                color: "brown"
+            })
 
-        this.bar.addButton({
-            text: `
+            this.bar.addButton({
+                text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
                      <i class="fa fa-paragraph" style="font-size: 70%"></i>
                   </div>
               `,
-            html: true,
-            tooltip: "Debug: Run Block",
-            callback: "julia-debug:run-block"
-        })
+                html: true,
+                tooltip: "Debug: Run Block",
+                callback: "julia-debug:run-block",
+                color: "brown"
+            })
 
-        this.bar.addButton({
-            text: `
+            this.bar.addButton({
+                text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
                      <div class="junop_container">
@@ -416,212 +434,621 @@ export function consumeToolBar(bar) {
                      </div>
                   </div>
               `,
-            html: true,
-            tooltip: "Debug: Step Into Block",
-            callback: "julia-debug:step-through-block"
+                html: true,
+                tooltip: "Debug: Step Into Block",
+                callback: "julia-debug:step-through-block",
+                color: "brown"
+            })
+
+            //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+            //# https://fontawesome.com/v4.7.0/icons/
+            // this.bar.addButton({
+            //   text: `
+            //   <head>
+            //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+            //   </head>
+            //   <style>
+            //     .fa-stack { font-size: 0.5em; }
+            //     i { vertical-align: middle; }
+            //   </style>
+            //   <span class="fa-stack fa">
+            //     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
+            //     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
+            //   </span>\
+            //   `,
+            //    html: true,
+            //    tooltip: 'Debug: Run File',
+            //    callback: 'julia-debug:run-file'
+            //  });
+
+            // Code Tools
+
+            this.bar.addSpacer()
+
+            // Documentation
+            this.bar.addButton({
+                icon: "question",
+                tooltip: "Show Documentation [Selection]",
+                callback: "julia-client:show-documentation",
+            })
+
+            // Go to definition
+            this.bar.addButton({
+                icon: "diff-renamed",
+                tooltip: "Go to definition [Selection]",
+                callback: "julia-client:goto-symbol",
+                color: "aqua"
+            })
+        }
+
+        // Bookmarks
+        this.bar.addButton({
+            icon: "md-bookmark",
+            iconset: "ion",
+            tooltip: "Add Bookmar Here",
+            callback: "bookmarks:toggle-bookmark",
+            color: "steelblue"
         })
 
-        //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
-        //# https://fontawesome.com/v4.7.0/icons/
+        this.bar.addButton({
+            icon: "md-bookmarks",
+            iconset: "ion",
+            tooltip: "View Bookmarks",
+            callback: "bookmarks:view-all",
+            color: "steelblue"
+        })
+
+        if (JunoLoaded) {
+            // Code Formatters
+            this.bar.addButton({
+                icon: "format-float-none",
+                iconset: "mdi",
+                tooltip: "Format Code",
+                callback: "julia-client:format-code",
+                color: "peachpuff"
+            })
+        }
+
+        if (BeautifyLoaded) {
+            this.bar.addButton({
+                icon: "star",
+                callback: "atom-beautify:beautify-editor",
+                tooltip: "Beautify",
+                iconset: "fa",
+                color: "peachpuff"
+            })
+        }
+
+        this.bar.addButton({
+            icon: "indent",
+            callback: "editor:auto-indent",
+            tooltip: "Auto indent (selection)",
+            iconset: "fa",
+            color: "moccasin"
+        })
+
+        // Fold
+        this.bar.addButton({
+            text:
+                '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>',
+            html: true,
+            tooltip: "Toggle Folding",
+            callback: "juno-plus:toggle-folding"
+        })
+
+        // Layout Adjustment
+
+        if (JunoLoaded && layoutAdjustmentButtons) {
+            this.bar.addSpacer()
+
+            this.bar.addButton({
+                icon: "terminal",
+                tooltip: "Show REPL",
+                callback: "julia-client:open-REPL"
+            })
+
+            this.bar.addButton({
+                icon: "book",
+                tooltip: "Show Workspace",
+                callback: "julia-client:open-workspace"
+            })
+
+            this.bar.addButton({
+                icon: "list-unordered",
+                tooltip: "Show Outline",
+                callback: "julia-client:open-outline-pane"
+            })
+
+            this.bar.addButton({
+                icon: "info",
+                tooltip: "Show Documentation Browser",
+                callback: "julia-client:open-documentation-browser",
+            })
+
+            this.bar.addButton({
+                icon: "graph",
+                tooltip: "Show Plot Pane",
+                callback: "julia-client:open-plot-pane"
+            })
+
+            this.bar.addButton({
+                icon: "bug",
+                tooltip: "Show Debugger Pane",
+                callback: "julia-debug:open-debugger-pane",
+                color: "brown"
+            })
+        }
+
+        // Viewers
+
+        this.bar.addSpacer()
+
+        if (MarkDownPreviewLoaded) {
+            this.bar.addButton({
+                icon: "markdown",
+                callback: "markdown-preview:toggle",
+                tooltip: "Markdown Preview",
+            })
+        }
+
+        if (JunoLoaded && WeaveButtons && WeaveLoaded) {
+            this.bar.addButton({
+                icon: "language-html5",
+                iconset: "mdi",
+                callback: "weave:weave-to-html",
+                tooltip: "Weave HTML",
+                color: "indigo"
+            })
+
+            this.bar.addButton({
+                icon: "file-pdf",
+                iconset: "fa",
+                callback: "weave:weave-to-pdf",
+                tooltip: "Weave PDF",
+                color: "indigo"
+            })
+        }
+
+        // Atom
+
+        this.bar.addSpacer()
+
         // this.bar.addButton({
-        //   text: `
-        //   <head>
-        //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-        //   </head>
-        //   <style>
-        //     .fa-stack { font-size: 0.5em; }
-        //     i { vertical-align: middle; }
-        //   </style>
-        //   <span class="fa-stack fa">
-        //     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
-        //     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
-        //   </span>\
-        //   `,
-        //    html: true,
-        //    tooltip: 'Debug: Run File',
-        //    callback: 'julia-debug:run-file'
+        //    icon: 'tools',
+        //    iconset: 'fa',
+        //    tooltip: 'Julia Client Settings...',
+        //    callback: 'julia-client:settings'
+        // });
+
+        this.bar.addButton({
+            icon: "gear",
+            callback: "settings-view:open",
+            tooltip: "Open Settings View",
+            color: "slategray"
+        })
+
+        this.bar.addButton({
+            iconset: "fa",
+            icon: "arrows-alt",
+            tooltip: "Toggle Fullscreen",
+            callback: "window:toggle-full-screen",
+            color: "slategray"
+        })
+
+        this.bar.addButton({
+            icon: "grip-lines",
+            callback: "command-palette:toggle",
+            tooltip: "Toggle Command Palette",
+            iconset: "fa",
+            color: "slategray"
+        })
+
+        this.bar.addButton({
+            icon: "plug",
+            callback: "juno-plus:enable-disable-juno",
+            tooltip: "Enable/Disable Juno"
+        })
+
+        // this.bar.addButton({
+        //      icon: 'x',
+        //      callback: 'tool-bar:toggle',
+        //      tooltip: 'Close Tool-Bar',
+        //      iconset: ''
         //  });
 
-        // Code Tools
+
+    } // Colorless buttons:
+    else {
+
+        // Files & Folders
+
+        if (JunoLoaded) {
+            this.bar.addButton({
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New Julia File",
+                callback: "julia:new-julia-file"
+            })
+        } else {
+            this.bar.addButton({
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New File",
+                callback: "application:new-file"
+            })
+        }
+
+        this.bar.addButton({
+            icon: "save",
+            iconset: "fa",
+            tooltip: "Save",
+            callback: "core:save"
+        })
+
+        this.bar.addButton({
+            icon: "folder-open",
+            iconset: "fa",
+            tooltip: "Open File...",
+            callback: "application:open-file"
+        })
+
+        this.bar.addButton({
+            icon: "file-submodule",
+            tooltip: "Open Folder...",
+            callback: "application:open-folder"
+        })
+
+        this.bar.addButton({
+            icon: "file-symlink-directory",
+            tooltip: "Select Working Directory...",
+            callback: "julia-client:select-working-folder"
+        })
+
+        // Julia process
 
         this.bar.addSpacer()
 
-        // Documentation
+        if (JunoLoaded) {
+            if (StartJuliaProcessButtons) {
+                this.bar.addButton({
+                    icon: "md-planet",
+                    iconset: "ion",
+                    tooltip: "Start Remote Julia Process",
+                    callback: "julia-client:start-remote-julia-process"
+                })
+
+                this.bar.addButton({
+                    icon: "alpha-j",
+                    iconset: "mdi",
+                    tooltip: "Start Local Julia Process",
+                    callback: "julia-client:start-julia"
+                })
+            }
+
+            this.bar.addButton({
+                icon: "md-infinite",
+                iconset: "ion",
+                tooltip: "Revise Julia",
+                callback: "juno-plus:Revise"
+            })
+
+            this.bar.addButton({
+                icon: "md-pause",
+                iconset: "ion",
+                tooltip: "Interrupt Julia (Stop Running)",
+                callback: "julia-client:interrupt-julia"
+            })
+
+            this.bar.addButton({
+                icon: "md-square",
+                iconset: "ion",
+                tooltip: "Stop Julia",
+                callback: "julia-client:kill-julia"
+            })
+
+            this.bar.addButton({
+                icon: "sync",
+                tooltip: "Restart Julia",
+                callback: "juno-plus:restart-julia"
+            })
+
+            this.bar.addButton({
+                icon: "eraser",
+                iconset: "fa",
+                tooltip: "Clear Julia Console",
+                callback: "julia-client:clear-REPL"
+            })
+
+            // Evaluation
+
+            this.bar.addSpacer()
+
+            this.bar.addButton({
+                icon: "md-play",
+                iconset: "ion",
+                tooltip: "Run All",
+                callback: "julia-client:run-all"
+            })
+
+            this.bar.addButton({
+                icon: "ios-skip-forward",
+                iconset: "ion",
+                tooltip: "Run Cell (between ##)",
+                callback: "julia-client:run-cell-and-move"
+            })
+
+            this.bar.addButton({
+                icon: "paragraph",
+                iconset: "fa",
+                tooltip: "Run Block",
+                callback: "julia-client:run-and-move"
+            })
+
+            // Debugging
+            this.bar.addButton({
+                text: `
+                  <style> 
+                    .junop_container {
+                      display: flex;
+                      justify-content: space-between;
+                    }                         
+                    .junop_column {
+                      flex-direction: column;
+                    }
+                  </style>
+                  <!-- write style only once -->
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-play" style="font-size: 70%"></i>
+                  </div>
+              `,
+                html: true,
+                tooltip: "Debug: Run File",
+                callback: "julia-debug:run-file"
+            })
+
+            this.bar.addButton({
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-share" style="font-size: 70%"></i>
+                  </div>
+              `,
+                html: true,
+                tooltip: "Debug: Step Into File",
+                callback: "julia-debug:step-through-file"
+            })
+
+            this.bar.addButton({
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <i class="fa fa-paragraph" style="font-size: 70%"></i>
+                  </div>
+              `,
+                html: true,
+                tooltip: "Debug: Run Block",
+                callback: "julia-debug:run-block"
+            })
+
+            this.bar.addButton({
+                text: `
+                  <div class="junop_container junop_column">
+                     <i class="fa fa-bug" style="font-size: 70%"></i>
+                     <div class="junop_container">
+                         <i class="fa fa-paragraph" style="font-size: 70%"></i>
+                         <i class="fa fa-share" style="font-size: 70%"></i>
+                     </div>
+                  </div>
+              `,
+                html: true,
+                tooltip: "Debug: Step Into Block",
+                callback: "julia-debug:step-through-block"
+            })
+
+            //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+            //# https://fontawesome.com/v4.7.0/icons/
+            // this.bar.addButton({
+            //   text: `
+            //   <head>
+            //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+            //   </head>
+            //   <style>
+            //     .fa-stack { font-size: 0.5em; }
+            //     i { vertical-align: middle; }
+            //   </style>
+            //   <span class="fa-stack fa">
+            //     <i class="fa fa-bug fa-stack-2x" data-fa-transform="up-6"></i>
+            //     <i class="fa fa-play fa-stack-1x fa-inverse" data-fa-transform="down-6""></i>
+            //   </span>\
+            //   `,
+            //    html: true,
+            //    tooltip: 'Debug: Run File',
+            //    callback: 'julia-debug:run-file'
+            //  });
+
+            // Code Tools
+
+            this.bar.addSpacer()
+
+            // Documentation
+            this.bar.addButton({
+                icon: "question",
+                tooltip: "Show Documentation [Selection]",
+                callback: "julia-client:show-documentation"
+            })
+
+            // Go to definition
+            this.bar.addButton({
+                icon: "diff-renamed",
+                tooltip: "Go to definition [Selection]",
+                callback: "julia-client:goto-symbol"
+            })
+        }
+
+        // Bookmarks
         this.bar.addButton({
-            icon: "question",
-            tooltip: "Show Documentation [Selection]",
-            callback: "julia-client:show-documentation"
+            icon: "md-bookmark",
+            iconset: "ion",
+            tooltip: "Add Bookmar Here",
+            callback: "bookmarks:toggle-bookmark"
         })
 
-        // Go to definition
         this.bar.addButton({
-            icon: "diff-renamed",
-            tooltip: "Go to definition [Selection]",
-            callback: "julia-client:goto-symbol"
+            icon: "md-bookmarks",
+            iconset: "ion",
+            tooltip: "View Bookmarks",
+            callback: "bookmarks:view-all"
         })
-    }
 
-    // Bookmarks
-    this.bar.addButton({
-        icon: "md-bookmark",
-        iconset: "ion",
-        tooltip: "Add Bookmar Here",
-        callback: "bookmarks:toggle-bookmark"
-    })
+        if (JunoLoaded) {
+            // Code Formatters
+            this.bar.addButton({
+                icon: "format-float-none",
+                iconset: "mdi",
+                tooltip: "Format Code",
+                callback: "julia-client:format-code"
+            })
+        }
 
-    this.bar.addButton({
-        icon: "md-bookmarks",
-        iconset: "ion",
-        tooltip: "View Bookmarks",
-        callback: "bookmarks:view-all"
-    })
+        if (BeautifyLoaded) {
+            this.bar.addButton({
+                icon: "star",
+                callback: "atom-beautify:beautify-editor",
+                tooltip: "Beautify",
+                iconset: "fa"
+            })
+        }
 
-    if (JunoLoaded) {
-        // Code Formatters
         this.bar.addButton({
-            icon: "format-float-none",
-            iconset: "mdi",
-            tooltip: "Format Code",
-            callback: "julia-client:format-code"
-        })
-    }
-
-    if (BeautifyLoaded) {
-        this.bar.addButton({
-            icon: "star",
-            callback: "atom-beautify:beautify-editor",
-            tooltip: "Beautify",
+            icon: "indent",
+            callback: "editor:auto-indent",
+            tooltip: "Auto indent (selection)",
             iconset: "fa"
         })
-    }
 
-    this.bar.addButton({
-        icon: "indent",
-        callback: "editor:auto-indent",
-        tooltip: "Auto indent (selection)",
-        iconset: "fa"
-    })
+        // Fold
+        this.bar.addButton({
+            text:
+                '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>',
+            html: true,
+            tooltip: "Toggle Folding",
+            callback: "juno-plus:toggle-folding"
+        })
 
-    // Fold
-    this.bar.addButton({
-        text:
-            '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>',
-        html: true,
-        tooltip: "Toggle Folding",
-        callback: "juno-plus:toggle-folding"
-    })
+        // Layout Adjustment
 
-    // Layout Adjustment
+        if (JunoLoaded && layoutAdjustmentButtons) {
+            this.bar.addSpacer()
 
-    if (JunoLoaded && layoutAdjustmentButtons) {
+            this.bar.addButton({
+                icon: "terminal",
+                tooltip: "Show REPL",
+                callback: "julia-client:open-REPL"
+            })
+
+            this.bar.addButton({
+                icon: "book",
+                tooltip: "Show Workspace",
+                callback: "julia-client:open-workspace"
+            })
+
+            this.bar.addButton({
+                icon: "list-unordered",
+                tooltip: "Show Outline",
+                callback: "julia-client:open-outline-pane"
+            })
+
+            this.bar.addButton({
+                icon: "info",
+                tooltip: "Show Documentation Browser",
+                callback: "julia-client:open-documentation-browser"
+            })
+
+            this.bar.addButton({
+                icon: "graph",
+                tooltip: "Show Plot Pane",
+                callback: "julia-client:open-plot-pane"
+            })
+
+            this.bar.addButton({
+                icon: "bug",
+                tooltip: "Show Debugger Pane",
+                callback: "julia-debug:open-debugger-pane"
+            })
+        }
+
+        // Viewers
+
         this.bar.addSpacer()
 
+        if (MarkDownPreviewLoaded) {
+            this.bar.addButton({
+                icon: "markdown",
+                callback: "markdown-preview:toggle",
+                tooltip: "Markdown Preview"
+            })
+        }
+
+        if (JunoLoaded && WeaveButtons && WeaveLoaded) {
+            this.bar.addButton({
+                icon: "language-html5",
+                iconset: "mdi",
+                callback: "weave:weave-to-html",
+                tooltip: "Weave HTML"
+            })
+
+            this.bar.addButton({
+                icon: "file-pdf",
+                iconset: "fa",
+                callback: "weave:weave-to-pdf",
+                tooltip: "Weave PDF"
+            })
+        }
+
+        // Atom
+
+        this.bar.addSpacer()
+
+        // this.bar.addButton({
+        //    icon: 'tools',
+        //    iconset: 'fa',
+        //    tooltip: 'Julia Client Settings...',
+        //    callback: 'julia-client:settings'
+        // });
+
         this.bar.addButton({
-            icon: "terminal",
-            tooltip: "Show REPL",
-            callback: "julia-client:open-REPL"
+            icon: "gear",
+            callback: "settings-view:open",
+            tooltip: "Open Settings View"
         })
 
         this.bar.addButton({
-            icon: "book",
-            tooltip: "Show Workspace",
-            callback: "julia-client:open-workspace"
-        })
-
-        this.bar.addButton({
-            icon: "list-unordered",
-            tooltip: "Show Outline",
-            callback: "julia-client:open-outline-pane"
-        })
-
-        this.bar.addButton({
-            icon: "info",
-            tooltip: "Show Documentation Browser",
-            callback: "julia-client:open-documentation-browser"
-        })
-
-        this.bar.addButton({
-            icon: "graph",
-            tooltip: "Show Plot Pane",
-            callback: "julia-client:open-plot-pane"
-        })
-
-        this.bar.addButton({
-            icon: "bug",
-            tooltip: "Show Debugger Pane",
-            callback: "julia-debug:open-debugger-pane"
-        })
-    }
-
-    // Viewers
-
-    this.bar.addSpacer()
-
-    if (MarkDownPreviewLoaded) {
-        this.bar.addButton({
-            icon: "markdown",
-            callback: "markdown-preview:toggle",
-            tooltip: "Markdown Preview"
-        })
-    }
-
-    if (JunoLoaded && WeaveButtons && WeaveLoaded) {
-        this.bar.addButton({
-            icon: "language-html5",
-            iconset: "mdi",
-            callback: "weave:weave-to-html",
-            tooltip: "Weave HTML"
-        })
-
-        this.bar.addButton({
-            icon: "file-pdf",
             iconset: "fa",
-            callback: "weave:weave-to-pdf",
-            tooltip: "Weave PDF"
+            icon: "arrows-alt",
+            tooltip: "Toggle Fullscreen",
+            callback: "window:toggle-full-screen"
         })
+
+        this.bar.addButton({
+            icon: "grip-lines",
+            callback: "command-palette:toggle",
+            tooltip: "Toggle Command Palette",
+            iconset: "fa"
+        })
+
+        this.bar.addButton({
+            icon: "plug",
+            callback: "juno-plus:enable-disable-juno",
+            tooltip: "Enable/Disable Juno"
+        })
+
+        // this.bar.addButton({
+        //      icon: 'x',
+        //      callback: 'tool-bar:toggle',
+        //      tooltip: 'Close Tool-Bar',
+        //      iconset: ''
+        //  });
     }
 
-    // Atom
-
-    this.bar.addSpacer()
-
-    // this.bar.addButton({
-    //    icon: 'tools',
-    //    iconset: 'fa',
-    //    tooltip: 'Julia Client Settings...',
-    //    callback: 'julia-client:settings'
-    // });
-
-    this.bar.addButton({
-        icon: "gear",
-        callback: "settings-view:open",
-        tooltip: "Open Settings View"
-    })
-
-    this.bar.addButton({
-        iconset: "fa",
-        icon: "arrows-alt",
-        tooltip: "Toggle Fullscreen",
-        callback: "window:toggle-full-screen"
-    })
-
-    this.bar.addButton({
-        icon: "grip-lines",
-        callback: "command-palette:toggle",
-        tooltip: "Toggle Command Palette",
-        iconset: "fa"
-    })
-
-    this.bar.addButton({
-        icon: "plug",
-        callback: "juno-plus:enable-disable-juno",
-        tooltip: "Enable/Disable Juno"
-    })
-
-    // this.bar.addButton({
-    //      icon: 'x',
-    //      callback: 'tool-bar:toggle',
-    //      tooltip: 'Close Tool-Bar',
-    //      iconset: ''
-    //  });
 }
