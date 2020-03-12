@@ -19,3 +19,18 @@
     const WeaveLoaded = atom.packages.isPackageLoaded("julia-client")
     const MarkDownPreviewLoaded = atom.packages.isPackageLoaded("markdown-preview")
     const BeautifyLoaded = atom.packages.isPackageLoaded("atom-beautify")
+    if (JunoLoaded) {
+        this.bar.addButton({
+            icon: "file-code",
+            iconset: "fa",
+            tooltip: "New Julia File",
+            callback: "julia:new-julia-file"
+        })
+    } else {
+        this.bar.addButton({
+            icon: "file-code",
+            iconset: "fa",
+            tooltip: "New File",
+            callback: "application:new-file"
+        })
+    }
