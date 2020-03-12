@@ -14,3 +14,8 @@
         atom.config.set("tool-bar.iconSize", '21px')
     }
 
+    // Loaded Packages
+    const JunoLoaded = atom.packages.isPackageLoaded("julia-client") && JunoOn
+    const WeaveLoaded = atom.packages.isPackageLoaded("julia-client")
+    const MarkDownPreviewLoaded = atom.packages.isPackageLoaded("markdown-preview")
+    const BeautifyLoaded = atom.packages.isPackageLoaded("atom-beautify")
