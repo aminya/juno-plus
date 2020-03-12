@@ -1,6 +1,6 @@
 {
   "name": "juno-plus",
-  "main": "./dist/juno-plus",
+  "main": "./lib/juno-plus",
   "version": "0.11.4",
   "description": "Enhances Juno - Julia IDE",
   "keywords": [
