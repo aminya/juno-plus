@@ -109,7 +109,7 @@ export function activate() {
     atom.commands.add("atom-workspace", {
         "juno-plus:restart-julia"() {
             // TODO: getElement replacement
-            let target = atom.workspace.getElement()
+            const target = atom.workspace.getElement()
             if (target) {
                 atom.commands.dispatch(target, "julia-client:kill-julia")
                     .then(() =>
@@ -162,12 +162,12 @@ export function activate() {
                         target,
                         "julia-client:close-juno-panes"
                     )
-                    for (let p of packages) {
+                    for (const p of packages) {
                         atom.packages.disablePackage(p)
                     }
                     JunoOn = false
                 } else {
-                    for (let p of packages) {
+                    for (const p of packages) {
                         atom.packages.enablePackage(p)
                     }
                     JunoOn = true
@@ -377,11 +377,11 @@ export function consumeToolBar(bar) {
             // Debugging
             this.bar.addButton({
                 text: `
-                  <style> 
+                  <style>
                     .junop_container {
                       display: flex;
                       justify-content: space-between;
-                    }                         
+                    }
                     .junop_column {
                       flex-direction: column;
                     }
@@ -440,8 +440,8 @@ export function consumeToolBar(bar) {
                 color: "brown"
             })
 
-            //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
-            //# https://fontawesome.com/v4.7.0/icons/
+            //// https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+            //// https://fontawesome.com/v4.7.0/icons/
             // this.bar.addButton({
             //   text: `
             //   <head>
@@ -787,11 +787,11 @@ export function consumeToolBar(bar) {
             // Debugging
             this.bar.addButton({
                 text: `
-                  <style> 
+                  <style>
                     .junop_container {
                       display: flex;
                       justify-content: space-between;
-                    }                         
+                    }
                     .junop_column {
                       flex-direction: column;
                     }
@@ -846,8 +846,8 @@ export function consumeToolBar(bar) {
                 callback: "julia-debug:step-through-block"
             })
 
-            //# https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
-            //# https://fontawesome.com/v4.7.0/icons/
+            //// https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
+            //// https://fontawesome.com/v4.7.0/icons/
             // this.bar.addButton({
             //   text: `
             //   <head>
