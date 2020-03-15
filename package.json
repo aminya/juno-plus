@@ -20,7 +20,8 @@
     "julia-client": "^0.12.3"
   },
   "devDependencies": {
-    "@types/atom": "^1.40.1"
+    "@types/atom": "^1.40.1",
+    "tslint": "latest"
   },
   "consumedServices": {
     "tool-bar": {
