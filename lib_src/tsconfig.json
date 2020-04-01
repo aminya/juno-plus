@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     //// Linting Options - Uncomment options to get more features (usually more restrictive)
-    // "strict": true,    // includes all of the following and more
+    "strict": true,
     "strictNullChecks": true,
     // "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
-    // "noImplicitThis": true,
+    "noImplicitThis": true,
     "noFallthroughCasesInSwitch": true,
     "allowJs": true,
     //// Compilation options
@@ -17,11 +17,11 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "incremental": true,
-    "inlineSourceMap": true,
     // "preserveConstEnums": true,
-    // "sourceMap": true,
+    "inlineSourceMap": true,
+    // "inlineSources": true,
     "preserveSymlinks": true,
-    // "removeComments": true,
+    "removeComments": true,
     // "jsx": "react",
     // "jsxFactory": "etch.dom",
     "lib": ["ES2018", "dom"],
