@@ -86,7 +86,7 @@ export const config = {
     }
 }
 
-export function consumeJuliaClient(client) {
+export function consumeJuliaClient(client: JuliaClient) {
     // getting client object
     juliaClient = client
 }
