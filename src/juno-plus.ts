@@ -219,7 +219,10 @@ export function activate() {
 let toolbar: ToolBarManager | null
 
 export function deactivate() {
-    return this.bar != null ? this.bar.removeItems() : undefined
+    if (toolbar) {
+        toolbar.removeItems();
+        toolbar = null;
+    }
 }
 
 export function consumeToolBar(getToolBar: getToolbarCallback) {
