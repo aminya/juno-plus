@@ -113,9 +113,13 @@
         "version": "1377923021927244ea19433873b997ad8585533b0a56d5de29cda497f7842756",
         "signature": "1377923021927244ea19433873b997ad8585533b0a56d5de29cda497f7842756"
       },
+      "../src/config.d.ts": {
+        "version": "b8341b50fc2e6bdb63fdacf89322d0c55e79f8a214f43a16c1fbf20244ec6852",
+        "signature": "b8341b50fc2e6bdb63fdacf89322d0c55e79f8a214f43a16c1fbf20244ec6852"
+      },
       "../src/tool-bar.d.ts": {
-        "version": "ffca2b3b31befd6f009a1b698a02b35a6615be55f10fc6d7f99e08bff5183d9a",
-        "signature": "ffca2b3b31befd6f009a1b698a02b35a6615be55f10fc6d7f99e08bff5183d9a"
+        "version": "baa99fb354b93e51cfda1ffa2f9af3eb2004145751b2fd0e24523b3721ab97e8",
+        "signature": "baa99fb354b93e51cfda1ffa2f9af3eb2004145751b2fd0e24523b3721ab97e8"
       },
       "../src/juno-plus.ts": {
         "version": "3c80a8463da410bbd9239fc03ee168eccd9a0e4939f9f75e04dcf5d37f8461b8",
@@ -536,7 +540,15 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/config.d.ts": [
+        "../node_modules/@types/atom/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/tool-bar.d.ts": [
+        "../src/config.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1139,6 +1151,7 @@
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "../src/tool-bar.d.ts": [
+        "../src/config.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -1565,6 +1578,13 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/config.d.ts": [
+        "../node_modules/@types/atom/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -1596,7 +1616,6 @@
       "../node_modules/typescript/lib/lib.es2018.regexp.d.ts",
       "../node_modules/typescript/lib/lib.es2020.bigint.d.ts",
       "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "../src/tool-bar.d.ts",
       "../node_modules/@types/node/globals.d.ts",
       "../node_modules/@types/node/assert.d.ts",
       "../node_modules/@types/node/async_hooks.d.ts",
@@ -1651,6 +1670,8 @@
       "../../../../../node_modules/@types/minimatch/index.d.ts",
       "../../../../../node_modules/@types/glob/index.d.ts",
       "../../../../../node_modules/@types/mkdirp/index.d.ts",
+      "../src/config.d.ts",
+      "../src/tool-bar.d.ts",
       [
         "../src/juno-plus.ts",
         [
