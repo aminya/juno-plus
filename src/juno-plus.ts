@@ -1,3 +1,4 @@
+import { ToolBarManager, getToolbarCallback } from "./tool-bar"
 
 type JuliaClient = { boot: () => void; import: (arg0: { rpc: string[] }) => { evalsimple: any } } | null
 
@@ -215,14 +216,16 @@ export function activate() {
 
 }
 
+let toolbar: ToolBarManager | null
+
 export function deactivate() {
     return this.bar != null ? this.bar.removeItems() : undefined
 }
 
-export function consumeToolBar(bar) {
+export function consumeToolBar(getToolBar: getToolbarCallback) {
 
     // getting toolbar object
-    this.bar = bar("juno-plus")
+    toolbar = getToolBar("juno-plus")
 
     // Loaded Packages
     const JunoLoaded = atom.packages.isPackageLoaded("julia-client") && JunoOn
