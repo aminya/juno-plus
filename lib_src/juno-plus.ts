@@ -278,12 +278,14 @@ export function consumeToolBar(bar) {
             color: "khaki"
         })
 
-        this.bar.addButton({
-            icon: "file-symlink-directory",
-            tooltip: "Select Working Directory...",
-            callback: "julia-client:select-working-folder",
-            color: "khaki"
-        })
+        if (JunoLoaded) {
+            this.bar.addButton({
+                icon: "file-symlink-directory",
+                tooltip: "Select Working Directory...",
+                callback: "julia-client:select-working-folder",
+                color: "khaki"
+            })
+        }
 
         // Julia process
 
