@@ -1,4 +1,7 @@
-let juliaClient = null
+
+type JuliaClient = { boot: () => void; import: (arg0: { rpc: string[] }) => { evalsimple: any } } | null
+
+let juliaClient: JuliaClient = null
 let JunoOn = true
 let allFolded = false
 
