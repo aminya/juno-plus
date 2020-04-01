@@ -31,7 +31,19 @@
   },
   "devDependencies": {
     "@types/atom": "^1.40.1",
-    "tslint": "latest"
+    "typescript": "^3.8.3",
+    "eslint": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint-plugin-json": "latest",
+    "eslint-plugin-only-warn": "latest",
+    "prettier": "latest",
+    "tslint": "latest",
+    "tslint-config-prettier": "latest",
+    "babel-preset-minify": "latest",
+    "@babel/plugin-transform-for-of": "latest",
+    "@babel/core": "latest",
+    "@babel/cli": "latest"
   },
   "consumedServices": {
     "tool-bar": {
