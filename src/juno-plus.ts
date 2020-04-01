@@ -709,11 +709,22 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             callback: "application:open-folder"
         })
 
-        toolbar.addButton({
-            icon: "file-symlink-directory",
-            tooltip: "Select Working Directory...",
-            callback: "julia-client:select-working-folder"
-        })
+        if (JunoLoaded) {
+            toolbar.addButton({
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New Julia File",
+                callback: "julia:new-julia-file",
+            })
+        } else {
+            toolbar.addButton({
+                icon: "file-code",
+                iconset: "fa",
+                tooltip: "New File",
+                callback: "application:new-file",
+            })
+
+        }
 
         // Julia process
 
