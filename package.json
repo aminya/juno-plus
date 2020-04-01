@@ -1,6 +1,7 @@
 {
   "name": "juno-plus",
   "main": "./lib/juno-plus",
+  "files": ["lib/**/*"],
   "version": "0.12.0",
   "description": "Enhances Juno - Julia IDE",
   "keywords": [
