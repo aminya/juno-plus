@@ -245,7 +245,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         // Files & Folders
 
         if (JunoLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-code",
                 iconset: "fa",
                 tooltip: "New Julia File",
@@ -253,7 +253,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "purple"
             })
         } else {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-code",
                 iconset: "fa",
                 tooltip: "New File",
@@ -262,14 +262,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
         }
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "save",
             iconset: "fa",
             tooltip: "Save",
             callback: "core:save"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "folder-open",
             iconset: "fa",
             tooltip: "Open File...",
@@ -277,7 +277,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             color: "khaki"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "file-submodule",
             tooltip: "Open Folder...",
             callback: "application:open-folder",
@@ -285,7 +285,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         })
 
         if (JunoLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-symlink-directory",
                 tooltip: "Select Working Directory...",
                 callback: "julia-client:select-working-folder",
@@ -295,11 +295,11 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Julia process
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
         if (JunoLoaded) {
             if (StartJuliaProcessButtons) {
-                this.bar.addButton({
+                toolbar.addButton({
                     icon: "md-planet",
                     iconset: "ion",
                     tooltip: "Start Remote Julia Process",
@@ -307,7 +307,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                     color: "mediumvioletred"
                 })
 
-                this.bar.addButton({
+                toolbar.addButton({
                     icon: "alpha-j",
                     iconset: "mdi",
                     tooltip: "Start Local Julia Process",
@@ -316,14 +316,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 })
             }
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-infinite",
                 iconset: "ion",
                 tooltip: "Revise Julia",
                 callback: "juno-plus:Revise"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-pause",
                 iconset: "ion",
                 tooltip: "Interrupt Julia (Stop Running)",
@@ -331,7 +331,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "yellow"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-square",
                 iconset: "ion",
                 tooltip: "Stop Julia",
@@ -339,14 +339,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "crimson"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "sync",
                 tooltip: "Restart Julia",
                 callback: "juno-plus:restart-julia",
                 color: "dodgerblue"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "eraser",
                 iconset: "fa",
                 tooltip: "Clear Julia Console",
@@ -356,9 +356,9 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             // Evaluation
 
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-play",
                 iconset: "ion",
                 tooltip: "Run All",
@@ -366,7 +366,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "springgreen"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "ios-skip-forward",
                 iconset: "ion",
                 tooltip: "Run Cell (between ##)",
@@ -374,7 +374,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "springgreen"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "paragraph",
                 iconset: "fa",
                 tooltip: "Run Block",
@@ -383,7 +383,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
 
             // Debugging
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <style>
                     .junop_container {
@@ -406,7 +406,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "brown"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -419,7 +419,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "brown"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -432,7 +432,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "brown"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -450,7 +450,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             //// https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
             //// https://fontawesome.com/v4.7.0/icons/
-            // this.bar.addButton({
+            // toolbar.addButton({
             //   text: `
             //   <head>
             //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
@@ -471,17 +471,17 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             // Code Tools
 
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
             // Documentation
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "question",
                 tooltip: "Show Documentation [Selection]",
                 callback: "julia-client:show-documentation",
             })
 
             // Go to definition
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "diff-renamed",
                 tooltip: "Go to definition [Selection]",
                 callback: "julia-client:goto-symbol",
@@ -490,7 +490,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         // Bookmarks
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "md-bookmark",
             iconset: "ion",
             tooltip: "Add Bookmar Here",
@@ -498,7 +498,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             color: "steelblue"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "md-bookmarks",
             iconset: "ion",
             tooltip: "View Bookmarks",
@@ -508,7 +508,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         if (JunoLoaded) {
             // Code Formatters
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "format-float-none",
                 iconset: "mdi",
                 tooltip: "Format Code",
@@ -518,7 +518,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         if (BeautifyLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "star",
                 callback: "atom-beautify:beautify-editor",
                 tooltip: "Beautify",
@@ -527,7 +527,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
         }
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "indent",
             callback: "editor:auto-indent",
             tooltip: "Auto indent (selection)",
@@ -536,7 +536,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         })
 
         // Fold
-        this.bar.addButton({
+        toolbar.addButton({
             text:
                 '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>',
             html: true,
@@ -547,39 +547,39 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         // Layout Adjustment
 
         if (JunoLoaded && layoutAdjustmentButtons) {
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "terminal",
                 tooltip: "Show REPL",
                 callback: "julia-client:open-REPL"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "book",
                 tooltip: "Show Workspace",
                 callback: "julia-client:open-workspace"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "list-unordered",
                 tooltip: "Show Outline",
                 callback: "julia-client:open-outline-pane"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "info",
                 tooltip: "Show Documentation Browser",
                 callback: "julia-client:open-documentation-browser",
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "graph",
                 tooltip: "Show Plot Pane",
                 callback: "julia-client:open-plot-pane"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "bug",
                 tooltip: "Show Debugger Pane",
                 callback: "julia-debug:open-debugger-pane",
@@ -589,10 +589,10 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Viewers
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
         if (MarkDownPreviewLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "markdown",
                 callback: "markdown-preview:toggle",
                 tooltip: "Markdown Preview",
@@ -600,7 +600,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         if (JunoLoaded && WeaveButtons && WeaveLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "language-html5",
                 iconset: "mdi",
                 callback: "weave:weave-to-html",
@@ -608,7 +608,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 color: "indigo"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-pdf",
                 iconset: "fa",
                 callback: "weave:weave-to-pdf",
@@ -619,23 +619,23 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Atom
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
-        // this.bar.addButton({
+        // toolbar.addButton({
         //    icon: 'tools',
         //    iconset: 'fa',
         //    tooltip: 'Julia Client Settings...',
         //    callback: 'julia-client:settings'
         // });
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "gear",
             callback: "settings-view:open",
             tooltip: "Open Settings View",
             color: "slategray"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             iconset: "fa",
             icon: "arrows-alt",
             tooltip: "Toggle Fullscreen",
@@ -643,7 +643,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             color: "slategray"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "grip-lines",
             callback: "command-palette:toggle",
             tooltip: "Toggle Command Palette",
@@ -651,13 +651,13 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             color: "slategray"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "plug",
             callback: "juno-plus:enable-disable-juno",
             tooltip: "Enable/Disable Juno"
         })
 
-        // this.bar.addButton({
+        // toolbar.addButton({
         //      icon: 'x',
         //      callback: 'tool-bar:toggle',
         //      tooltip: 'Close Tool-Bar',
@@ -671,14 +671,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         // Files & Folders
 
         if (JunoLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-code",
                 iconset: "fa",
                 tooltip: "New Julia File",
                 callback: "julia:new-julia-file"
             })
         } else {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-code",
                 iconset: "fa",
                 tooltip: "New File",
@@ -686,27 +686,27 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
         }
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "save",
             iconset: "fa",
             tooltip: "Save",
             callback: "core:save"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "folder-open",
             iconset: "fa",
             tooltip: "Open File...",
             callback: "application:open-file"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "file-submodule",
             tooltip: "Open Folder...",
             callback: "application:open-folder"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "file-symlink-directory",
             tooltip: "Select Working Directory...",
             callback: "julia-client:select-working-folder"
@@ -714,18 +714,18 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Julia process
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
         if (JunoLoaded) {
             if (StartJuliaProcessButtons) {
-                this.bar.addButton({
+                toolbar.addButton({
                     icon: "md-planet",
                     iconset: "ion",
                     tooltip: "Start Remote Julia Process",
                     callback: "julia-client:start-remote-julia-process"
                 })
 
-                this.bar.addButton({
+                toolbar.addButton({
                     icon: "alpha-j",
                     iconset: "mdi",
                     tooltip: "Start Local Julia Process",
@@ -733,34 +733,34 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 })
             }
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-infinite",
                 iconset: "ion",
                 tooltip: "Revise Julia",
                 callback: "juno-plus:Revise"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-pause",
                 iconset: "ion",
                 tooltip: "Interrupt Julia (Stop Running)",
                 callback: "julia-client:interrupt-julia"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-square",
                 iconset: "ion",
                 tooltip: "Stop Julia",
                 callback: "julia-client:kill-julia"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "sync",
                 tooltip: "Restart Julia",
                 callback: "juno-plus:restart-julia"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "eraser",
                 iconset: "fa",
                 tooltip: "Clear Julia Console",
@@ -769,23 +769,23 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             // Evaluation
 
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "md-play",
                 iconset: "ion",
                 tooltip: "Run All",
                 callback: "julia-client:run-all"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "ios-skip-forward",
                 iconset: "ion",
                 tooltip: "Run Cell (between ##)",
                 callback: "julia-client:run-cell-and-move"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "paragraph",
                 iconset: "fa",
                 tooltip: "Run Block",
@@ -793,7 +793,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
 
             // Debugging
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <style>
                     .junop_container {
@@ -815,7 +815,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 callback: "julia-debug:run-file"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -827,7 +827,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 callback: "julia-debug:step-through-file"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -839,7 +839,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
                 callback: "julia-debug:run-block"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 text: `
                   <div class="junop_container junop_column">
                      <i class="fa fa-bug" style="font-size: 70%"></i>
@@ -856,7 +856,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             //// https://fontawesome.com/how-to-use/on-the-web/styling/stacking-icons
             //// https://fontawesome.com/v4.7.0/icons/
-            // this.bar.addButton({
+            // toolbar.addButton({
             //   text: `
             //   <head>
             //     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
@@ -877,17 +877,17 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
             // Code Tools
 
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
             // Documentation
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "question",
                 tooltip: "Show Documentation [Selection]",
                 callback: "julia-client:show-documentation"
             })
 
             // Go to definition
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "diff-renamed",
                 tooltip: "Go to definition [Selection]",
                 callback: "julia-client:goto-symbol"
@@ -895,14 +895,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         // Bookmarks
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "md-bookmark",
             iconset: "ion",
             tooltip: "Add Bookmar Here",
             callback: "bookmarks:toggle-bookmark"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "md-bookmarks",
             iconset: "ion",
             tooltip: "View Bookmarks",
@@ -911,7 +911,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         if (JunoLoaded) {
             // Code Formatters
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "format-float-none",
                 iconset: "mdi",
                 tooltip: "Format Code",
@@ -920,7 +920,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         if (BeautifyLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "star",
                 callback: "atom-beautify:beautify-editor",
                 tooltip: "Beautify",
@@ -928,7 +928,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
             })
         }
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "indent",
             callback: "editor:auto-indent",
             tooltip: "Auto indent (selection)",
@@ -936,7 +936,7 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         })
 
         // Fold
-        this.bar.addButton({
+        toolbar.addButton({
             text:
                 '<i class="fa fa-chevron-right fa-sm"></i><i class="fa fa-chevron-down fa-sm"></i>',
             html: true,
@@ -947,39 +947,39 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         // Layout Adjustment
 
         if (JunoLoaded && layoutAdjustmentButtons) {
-            this.bar.addSpacer()
+            toolbar.addSpacer()
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "terminal",
                 tooltip: "Show REPL",
                 callback: "julia-client:open-REPL"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "book",
                 tooltip: "Show Workspace",
                 callback: "julia-client:open-workspace"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "list-unordered",
                 tooltip: "Show Outline",
                 callback: "julia-client:open-outline-pane"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "info",
                 tooltip: "Show Documentation Browser",
                 callback: "julia-client:open-documentation-browser"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "graph",
                 tooltip: "Show Plot Pane",
                 callback: "julia-client:open-plot-pane"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "bug",
                 tooltip: "Show Debugger Pane",
                 callback: "julia-debug:open-debugger-pane"
@@ -988,10 +988,10 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Viewers
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
         if (MarkDownPreviewLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "markdown",
                 callback: "markdown-preview:toggle",
                 tooltip: "Markdown Preview"
@@ -999,14 +999,14 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
         }
 
         if (JunoLoaded && WeaveButtons && WeaveLoaded) {
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "language-html5",
                 iconset: "mdi",
                 callback: "weave:weave-to-html",
                 tooltip: "Weave HTML"
             })
 
-            this.bar.addButton({
+            toolbar.addButton({
                 icon: "file-pdf",
                 iconset: "fa",
                 callback: "weave:weave-to-pdf",
@@ -1016,42 +1016,42 @@ export function consumeToolBar(getToolBar: getToolbarCallback) {
 
         // Atom
 
-        this.bar.addSpacer()
+        toolbar.addSpacer()
 
-        // this.bar.addButton({
+        // toolbar.addButton({
         //    icon: 'tools',
         //    iconset: 'fa',
         //    tooltip: 'Julia Client Settings...',
         //    callback: 'julia-client:settings'
         // });
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "gear",
             callback: "settings-view:open",
             tooltip: "Open Settings View"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             iconset: "fa",
             icon: "arrows-alt",
             tooltip: "Toggle Fullscreen",
             callback: "window:toggle-full-screen"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "grip-lines",
             callback: "command-palette:toggle",
             tooltip: "Toggle Command Palette",
             iconset: "fa"
         })
 
-        this.bar.addButton({
+        toolbar.addButton({
             icon: "plug",
             callback: "juno-plus:enable-disable-juno",
             tooltip: "Enable/Disable Juno"
         })
 
-        // this.bar.addButton({
+        // toolbar.addButton({
         //      icon: 'x',
         //      callback: 'tool-bar:toggle',
         //      tooltip: 'Close Tool-Bar',
