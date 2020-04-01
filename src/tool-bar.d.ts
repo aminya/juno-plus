@@ -11,7 +11,8 @@ declare interface ButtonOptions {
 
     /* (optional)
     icon set name.
-       - if `iconset` is not given (Octicons, default Atom's flavour)
+    It can be chosen among these:
+       - not given : if `iconset` is not given Octicons (default Atom's flavour) is chosen
        - `ion` with `ios-` and `md- `prefixes for the icon names (Ionicons)
        - `fa` and fab for brands (FontAwesome)
        - `fi` (Foundation)
@@ -25,7 +26,16 @@ declare interface ButtonOptions {
         iconset: 'ion'
         ```
      */
-    iconset?: string
+    iconset?:
+        | undefined
+        | "ion"
+        | "fa"
+        | "fab"
+        | "fi"
+        | "icomoon"
+        | "devicon"
+        | "mdi"
+        | string
 
     /* (optional)
      You can use `text` to:
@@ -79,7 +89,15 @@ declare interface ButtonOptions {
     },
     data: 'foo'
      */
-    callback: string
+    callback:
+        | string
+        | Array<string>
+        | ((data?: any) => void)
+        | { [modifier: string]: string }
+        | { [modifier: string]: (data?: any) => void }
+
+    // If callback is of type `(data: any) => void)` or `{ [modifier: string]: ((data: any) => void) }`, `data` can be passed as the input argument.
+    data?: any
 
     // (optional) defaults to `50`
     priority?: number
@@ -88,8 +106,6 @@ declare interface ButtonOptions {
         The tooltip option may be a string or an object that is passed to Atom's TooltipManager
     */
     tooltip?: string | object
-
-    data?: string
 
     // (optional) Color of the button
     color?: string
@@ -110,7 +126,7 @@ declare interface ButtonOptions {
         class: ['multiple', 'classes', 'also', 'works']
     ```
      */
-    class?: string
+    class?: string | Array<string>
 }
 
 declare interface SpacerOptions {
@@ -132,12 +148,11 @@ export declare class ToolBarManager {
     onDidDestroy(callback: () => void): void
 }
 
-
-
 /*
+
+Passed as an input to `consumeToolBar(getToolBar: getToolbarCallback)` function of your package.
+
 In your main package file, add the following methods and replace your-package-name with your package name.
-
-
 * ```js
 
 let toolBar: ToolBarManager
