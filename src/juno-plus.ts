@@ -76,7 +76,7 @@ export function activate() {
   atom.commands.add("atom-workspace", {
     "juno-plus:restart-atom"() {
       // @ts-ignore
-      let target = atom.workspace.getElement()
+      const target = atom.workspace.getElement()
       atom.commands.dispatch(target, "windows:reload")
       atom.commands.dispatch(target, "dev-live-reload:reload-all")
     },
