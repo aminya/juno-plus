@@ -85,12 +85,12 @@ export function activate() {
   // Restart Julia
   atom.commands.add("atom-workspace", {
     "juno-plus:restart-julia"() {
-      // TODO: getElement replacement
+      // @ts-ignore
       const target = atom.workspace.getElement()
       if (target) {
         atom.commands
           .dispatch(target, "julia-client:kill-julia")
-          .then(() => atom.commands.dispatch(target, "julia-client:start-julia"))
+          ?.then(() => atom.commands.dispatch(target, "julia-client:start-julia"))
       } else {
         return
       }
