@@ -1,4 +1,4 @@
-import { ToolBarManager, getToolbarCallback } from "./tool-bar"
+import type { ToolBarManager, getToolBarManager } from "atom/tool-bar"
 
 type JuliaClient = { boot: () => void; import: (arg0: { rpc: string[] }) => { evalsimple: any } } | null
 
@@ -200,7 +200,7 @@ export function deactivate() {
     }
 }
 
-export function consumeToolBar(getToolBar: getToolbarCallback) {
+export function consumeToolBar(getToolBar: getToolBarManager) {
 
     // getting toolbar object
     toolbar = getToolBar("juno-plus")
