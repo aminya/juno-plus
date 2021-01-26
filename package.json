@@ -15,7 +15,7 @@
   "scripts": {
     "typescript": "tsc -p src/tsconfig.json || echo done",
     "format": "prettier --write .",
-    "lint": "eslint . --ext ts,js,json",
+    "lint": "eslint . --fix",
     "build": "npm run typescript -s",
     "prepare": "npm run build"
   },
