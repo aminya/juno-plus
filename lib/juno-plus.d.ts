@@ -1,4 +1,4 @@
-import { getToolbarCallback } from "./tool-bar";
+import type { getToolBarManager } from "atom/tool-bar";
 declare type JuliaClient = {
     boot: () => void;
     import: (arg0: {
@@ -57,5 +57,5 @@ export declare const config: {
 export declare function consumeJuliaClient(client: JuliaClient): void;
 export declare function activate(): void;
 export declare function deactivate(): void;
-export declare function consumeToolBar(getToolBar: getToolbarCallback): void;
+export declare function consumeToolBar(getToolBar: getToolBarManager): void;
 export {};
