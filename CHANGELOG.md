@@ -1,3 +1,7 @@
+# 0.13
+- Removed overriding tool-bar position or iconsizes
+- Bug fixes
+
 ## 0.11
 * Rewrite codebase in typescript
 * Stack icons for saving space
