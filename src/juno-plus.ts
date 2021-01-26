@@ -171,19 +171,22 @@ export function activate() {
     })
 
     // Folding Toggle
-    // @ts-ignore TODO: what is happening here?
-    atom.commands.add("atom-text-editor", {
-        "juno-plus:toggle-folding"() {
-            const editor = this.getModel()
-            if (allFolded) {
-                editor.unfoldAll()
-                return (allFolded = false)
-            } else {
-                editor.foldAll()
-                return (allFolded = true)
+    atom.commands.add("atom-text-editor",
+        "juno-plus:toggle-folding",
+        (commandEvent) => {
+            const editor = commandEvent.currentTarget.getModel()
+            if (editor) {
+                if (allFolded) {
+                    editor.unfoldAll()
+                    allFolded = false
+                } else {
+                    editor.foldAll()
+                    allFolded = true
+                }
             }
+
         }
-    })
+    )
 
     // Enabling Toolbar
     atom.config.set("julia-client.uiOptions.enableToolBar",
