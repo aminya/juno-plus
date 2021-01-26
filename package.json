@@ -17,7 +17,7 @@
   "license": "MIT",
   "scripts": {
     "typescript": "tsc -p src/tsconfig.json || echo done",
-    "prettier": "prettier --write src/**/*.ts",
+    "format": "prettier --write .",
     "lint": "eslint . --ext ts,js,json",
     "build": "npm run typescript -s",
     "prepare": "npm run build"
@@ -47,11 +47,5 @@
         "0.1.0": "consumeJuliaClient"
       }
     }
-  },
-  "prettier": {
-    "semi": false,
-    "arrowParens": "always",
-    "printWidth:": 120,
-    "tabWidth": 4
   }
 }
