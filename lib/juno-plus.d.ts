@@ -36,20 +36,6 @@ export declare const config: {
         description: string;
         order: number;
     };
-    ToolbarPosition: {
-        type: string;
-        default: boolean;
-        title: string;
-        description: string;
-        order: number;
-    };
-    IconSizes: {
-        type: string;
-        default: boolean;
-        title: string;
-        description: string;
-        order: number;
-    };
     ColorfulIcons: {
         type: string;
         default: boolean;

@@ -43,22 +43,6 @@ export const config = {
         order: 4
     },
 
-    ToolbarPosition: {
-        type: "boolean",
-        default: true,
-        title: "Toolbar Position",
-        description: "Puts toolbar at top (changing requires restart).",
-        order: 5
-    },
-
-    IconSizes: {
-        type: "boolean",
-        default: true,
-        title: "Icons Sizes",
-        description: "Makes the size of Icons 21px (changing requires restart).",
-        order:6
-    },
-
     ColorfulIcons: {
         type: "boolean",
         default: true,
@@ -204,15 +188,6 @@ export function activate() {
     // Enabling Toolbar
     atom.config.set("julia-client.uiOptions.enableToolBar",
         !atom.config.get("juno-plus.enableToolbarPlus"))
-
-    // Toolbar Position
-    if (atom.config.get("juno-plus.ToolbarPosition")) {
-        atom.config.set("tool-bar.position", "Top")
-    }
-    // IconSizes
-    if (atom.config.get("juno-plus.IconSizes")) {
-        atom.config.set("tool-bar.iconSize", '21px')
-    }
 
 }
 
