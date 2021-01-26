@@ -17,9 +17,7 @@
   "license": "MIT",
   "scripts": {
     "typescript": "tsc -p src/tsconfig.json || echo done",
-    "prettier_src": "prettier --write src/**/*.ts",
-    "prettier_out": "prettier --write lib/**/*.js",
-    "babel": "babel lib --out-dir lib --source-maps inline",
+    "prettier": "prettier --write src/**/*.ts",
     "lint": "eslint . --ext ts,js,json",
     "build": "npm run typescript -s",
     "prepare": "npm run build"
@@ -32,20 +30,11 @@
     "julia-client": "^0.12.3"
   },
   "devDependencies": {
-    "@types/atom": "^1.40.1",
-    "typescript": "^4.0.2",
+    "@types/atom": "^1.40.7",
     "eslint": "latest",
-    "@typescript-eslint/eslint-plugin": "latest",
-    "@typescript-eslint/parser": "latest",
-    "eslint-plugin-json": "latest",
-    "eslint-plugin-only-warn": "latest",
+    "eslint-config-atomic": "^1.5.1",
     "prettier": "latest",
-    "tslint": "latest",
-    "tslint-config-prettier": "latest",
-    "babel-preset-minify": "latest",
-    "@babel/plugin-transform-for-of": "latest",
-    "@babel/core": "latest",
-    "@babel/cli": "latest"
+    "typescript": "^4.0.2"
   },
   "consumedServices": {
     "tool-bar": {
