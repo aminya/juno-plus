@@ -107,21 +107,25 @@ export function activate() {
   atom.commands.add("atom-workspace", {
     "juno-plus:Revise"() {
       atom.notifications.addSuccess("Starting Revise")
-      juliaClient.boot()
-      const { evalsimple } = juliaClient.import({ rpc: ["evalsimple"] })
-      const command = 'using Revise; println("Revise is ready");'
-      evalsimple(command)
+      if (juliaClient) {
+        juliaClient.boot()
+        const { evalsimple } = juliaClient.import({ rpc: ["evalsimple"] })
+        const command = 'using Revise; println("Revise is ready");'
+        evalsimple(command)
+      }
     },
   })
 
   // Clear Console
   atom.commands.add("atom-workspace", {
     "juno-plus:ClearConsole"() {
-      juliaClient.boot()
-      const { evalsimple } = juliaClient.import({ rpc: ["evalsimple"] }) // import function
-      let command = 'println("\\33[2J");'
-      command += "Juno.clearconsole();"
-      evalsimple(command)
+      if (juliaClient) {
+        juliaClient.boot()
+        const { evalsimple } = juliaClient.import({ rpc: ["evalsimple"] }) // import function
+        let command = 'println("\\33[2J");'
+        command += "Juno.clearconsole();"
+        evalsimple(command)
+      }
     },
   })
 
